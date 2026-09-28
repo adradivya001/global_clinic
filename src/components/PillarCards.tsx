@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Activity, ShieldCheck, Zap, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Activity, ShieldCheck, Zap, ChevronRight } from 'lucide-react';
 
 interface PillarCardsProps {
   onSelectPillar: (pillar: string) => void;
 }
 
 export const PillarCards: React.FC<PillarCardsProps> = ({ onSelectPillar }) => {
-  const [activeStep, setActiveStep] = useState<number>(0);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
 
   const pillars = [
     {

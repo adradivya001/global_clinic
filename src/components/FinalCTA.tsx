@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Phone, Calendar } from 'lucide-react';
+import { ArrowRight, Phone } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 interface FinalCTAProps {

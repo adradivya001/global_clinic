@@ -225,7 +225,13 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
                     </p>
 
                     {/* CTA Footer */}
-                    <div className="mt-6 flex items-center justify-between">
+                    <div 
+                      className="mt-6 flex items-center justify-between"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onBookClick?.();
+                      }}
+                    >
                        <span className="text-white text-[11px] font-bold uppercase tracking-widest">Explore Treatments</span>
                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
                          isActive ? 'bg-[#F5B400] text-[#041326] shadow-[0_0_15px_rgba(245,180,0,0.4)]' : 'bg-white/10 text-white border border-white/20 group-hover:bg-white/20'

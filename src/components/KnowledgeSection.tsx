@@ -1,11 +1,8 @@
 import React from 'react';
-import { ArrowRight, Clock, BookOpen } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { ARTICLES } from '../data/clinicData';
 
 export const KnowledgeSection: React.FC = () => {
-  const featuredArticle = ARTICLES[0];
-  const sideArticles = ARTICLES.slice(1);
-
   return (
     <section id="knowledge" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">

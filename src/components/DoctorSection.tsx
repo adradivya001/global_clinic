@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, ArrowRight, Quote, Heart, Activity, Award, Shield, UserCheck, Star, Medal, Target } from 'lucide-react';
+import { ArrowRight, Quote, Heart, Activity, Award, Shield, UserCheck, Star, Medal, Target } from 'lucide-react';
 import { DOCTOR_INFO } from '../data/clinicData';
 import doctorPhoto from '../assets/doctor_photo.png';
 

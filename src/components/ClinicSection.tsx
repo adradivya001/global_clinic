@@ -7,15 +7,12 @@ interface ClinicSectionProps {
 }
 
 export const ClinicSection: React.FC<ClinicSectionProps> = ({ onBookClick }) => {
-  const [mapZoom, setMapZoom] = useState(15);
-  const [isMarkerHovered, setIsMarkerHovered] = useState(false);
   const [showPopup, setShowPopup] = useState(true);
 
   // Verified directions URL for Google Maps
   const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CLINIC_INFO.address)}`;
 
   const handleLocateClinic = () => {
-    setMapZoom(16);
     setShowPopup(true);
   };
 
@@ -198,8 +195,6 @@ export const ClinicSection: React.FC<ClinicSectionProps> = ({ onBookClick }) => 
               {/* Custom Pin Card */}
               <div 
                 className="absolute pointer-events-auto cursor-pointer"
-                onMouseEnter={() => setIsMarkerHovered(true)}
-                onMouseLeave={() => setIsMarkerHovered(false)}
                 onClick={() => setShowPopup(!showPopup)}
               >
                 <div className="w-12 h-12 rounded-full bg-[#08213D] border-2 border-[#FFBF1A] shadow-[0_10px_25px_rgba(8,33,61,0.35)] flex items-center justify-center text-[#FFBF1A] hover:scale-110 transition-transform">

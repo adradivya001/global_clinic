@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  ArrowRight, CheckCircle2, Play, Flame, Activity, ShieldCheck, Zap, ChevronDown, Plus, ChevronRight
+  ArrowRight, CheckCircle2, Flame, Activity, ShieldCheck, Zap, Plus, ChevronRight
 } from 'lucide-react';
 
 import anatomyModelImg from '../assets/anatomy_model.png';

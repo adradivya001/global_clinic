@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
 
 export const RecoveryJourney: React.FC = () => {
   const steps = [
