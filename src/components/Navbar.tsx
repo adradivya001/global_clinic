@@ -12,10 +12,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-  const [storiesDropdownOpen, setStoriesDropdownOpen] = useState(false);
+  const [knowledgeDropdownOpen, setKnowledgeDropdownOpen] = useState(false);
 
   const aboutTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const storiesTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const knowledgeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,17 +32,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile drawer on route change
+  // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setAboutDropdownOpen(false);
-    setStoriesDropdownOpen(false);
+    setKnowledgeDropdownOpen(false);
   }, [location.pathname]);
 
   const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
     setAboutDropdownOpen(false);
-    setStoriesDropdownOpen(false);
+    setKnowledgeDropdownOpen(false);
 
     if (href === '/') {
       if (location.pathname === '/') {
@@ -57,49 +57,52 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
   };
 
   const isAboutActive = ['/about', '/doctor', '/clinic'].includes(location.pathname);
-  const isStoriesActive = ['/patient-stories', '/blog'].includes(location.pathname);
+  const isKnowledgeActive = ['/blog', '/patient-stories'].includes(location.pathname);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
         isScrolled
-          ? 'bg-[#060b13]/95 backdrop-blur-md py-2.5 border-b border-white/10 shadow-xl'
-          : 'bg-gradient-to-b from-[#060b13]/95 via-[#060b13]/60 to-transparent py-3.5'
+          ? 'bg-[#060b13]/95 backdrop-blur-md py-2 border-b border-white/10 shadow-xl'
+          : 'bg-gradient-to-b from-[#060b13]/95 via-[#060b13]/60 to-transparent py-2.5 sm:py-3'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-        {/* 1. Left: Clinic Logo Branding */}
-        <Link to="/" className="flex items-center gap-2.5 group shrink-0">
+      <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+        {/* 1. Left: Clinic Logo + 3-Line Gold Text Branding */}
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={clinicLogo}
             alt={CLINIC_INFO.name}
-            className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_0_12px_rgba(212,175,55,0.25)]"
+            className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(212,175,55,0.25)]"
           />
-          <div className="hidden sm:flex flex-col justify-center leading-none">
-            <span className="text-[12px] md:text-[13px] font-bold tracking-[0.12em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
-              GLOBAL PHYSIOTHERAPY
+          <div className="flex flex-col justify-center leading-[1.15] pl-1">
+            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+              GLOBAL
             </span>
-            <span className="text-[9.5px] md:text-[10px] font-semibold tracking-[0.16em] text-slate-400 uppercase whitespace-nowrap mt-0.5">
-              CLINIC ANANTAPUR
+            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+              PHYSIOTHERAPY
+            </span>
+            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+              CLINIC
             </span>
           </div>
         </Link>
 
-        {/* 2. Center: Desktop Clean Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3 shrink-0">
+        {/* 2. Center: Clean Navigation Links matching Reference Image */}
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-10">
           {/* Home */}
           <button
             onClick={() => handleNavClick('/')}
-            className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer ${
+            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/' && !location.hash
-                ? 'text-amber-400 font-semibold bg-white/5'
-                : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                ? 'text-amber-400 font-semibold'
+                : 'text-slate-200 hover:text-amber-400'
             }`}
           >
             Home
           </button>
 
-          {/* About Us (Dropdown) */}
+          {/* About (Dropdown) */}
           <div
             className="relative"
             onMouseEnter={() => {
@@ -112,10 +115,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           >
             <button
               onClick={() => handleNavClick('/about')}
-              className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap flex items-center gap-1 cursor-pointer ${
+              className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
                 isAboutActive
-                  ? 'text-amber-400 font-semibold bg-white/5'
-                  : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                  ? 'text-amber-400 font-semibold'
+                  : 'text-slate-200 hover:text-amber-400'
               }`}
             >
               <span>About</span>
@@ -123,10 +126,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
             </button>
 
             {aboutDropdownOpen && (
-              <div className="absolute top-full left-0 mt-1 w-48 bg-[#0a111e]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-1.5 z-50 animate-[fadeIn_0.15s_ease-out_forwards]">
+              <div className="absolute top-full left-0 mt-2 w-52 bg-[#0a111e]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-1.5 z-50 animate-[fadeIn_0.15s_ease-out_forwards]">
                 <button
                   onClick={() => handleNavClick('/about')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left px-3.5 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     location.pathname === '/about' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
                   }`}
                 >
@@ -134,15 +137,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                 </button>
                 <button
                   onClick={() => handleNavClick('/doctor')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left px-3.5 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     location.pathname === '/doctor' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
                   }`}
                 >
-                  Dr. K. Bhavendra
+                  Dr. K. Bhavendra PT
                 </button>
                 <button
                   onClick={() => handleNavClick('/clinic')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left px-3.5 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     location.pathname === '/clinic' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
                   }`}
                 >
@@ -155,10 +158,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Treatments */}
           <button
             onClick={() => handleNavClick('/treatments')}
-            className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer ${
+            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/treatments'
-                ? 'text-amber-400 font-semibold bg-white/5'
-                : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                ? 'text-amber-400 font-semibold'
+                : 'text-slate-200 hover:text-amber-400'
             }`}
           >
             Treatments
@@ -167,10 +170,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Conditions */}
           <button
             onClick={() => handleNavClick('/conditions')}
-            className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer ${
+            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/conditions'
-                ? 'text-amber-400 font-semibold bg-white/5'
-                : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                ? 'text-amber-400 font-semibold'
+                : 'text-slate-200 hover:text-amber-400'
             }`}
           >
             Conditions
@@ -179,55 +182,55 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Patient Journey */}
           <button
             onClick={() => handleNavClick('/patient-journey')}
-            className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer ${
+            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/patient-journey'
-                ? 'text-amber-400 font-semibold bg-white/5'
-                : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                ? 'text-amber-400 font-semibold'
+                : 'text-slate-200 hover:text-amber-400'
             }`}
           >
             Patient Journey
           </button>
 
-          {/* Stories & Insights (Dropdown) */}
+          {/* Knowledge (Dropdown with Stories & Blog) */}
           <div
             className="relative"
             onMouseEnter={() => {
-              if (storiesTimeoutRef.current) clearTimeout(storiesTimeoutRef.current);
-              setStoriesDropdownOpen(true);
+              if (knowledgeTimeoutRef.current) clearTimeout(knowledgeTimeoutRef.current);
+              setKnowledgeDropdownOpen(true);
             }}
             onMouseLeave={() => {
-              storiesTimeoutRef.current = setTimeout(() => setStoriesDropdownOpen(false), 150);
+              knowledgeTimeoutRef.current = setTimeout(() => setKnowledgeDropdownOpen(false), 150);
             }}
           >
             <button
-              onClick={() => handleNavClick('/patient-stories')}
-              className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap flex items-center gap-1 cursor-pointer ${
-                isStoriesActive
-                  ? 'text-amber-400 font-semibold bg-white/5'
-                  : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+              onClick={() => handleNavClick('/blog')}
+              className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
+                isKnowledgeActive
+                  ? 'text-amber-400 font-semibold'
+                  : 'text-slate-200 hover:text-amber-400'
               }`}
             >
-              <span>Insights</span>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${storiesDropdownOpen ? 'rotate-180' : ''}`} />
+              <span>Knowledge</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${knowledgeDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {storiesDropdownOpen && (
-              <div className="absolute top-full left-0 mt-1 w-48 bg-[#0a111e]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-1.5 z-50 animate-[fadeIn_0.15s_ease-out_forwards]">
-                <button
-                  onClick={() => handleNavClick('/patient-stories')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
-                    location.pathname === '/patient-stories' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
-                  }`}
-                >
-                  Patient Stories
-                </button>
+            {knowledgeDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-52 bg-[#0a111e]/98 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-1.5 z-50 animate-[fadeIn_0.15s_ease-out_forwards]">
                 <button
                   onClick={() => handleNavClick('/blog')}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                  className={`w-full text-left px-3.5 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                     location.pathname === '/blog' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
                   }`}
                 >
-                  Health Blog
+                  Articles & Insights
+                </button>
+                <button
+                  onClick={() => handleNavClick('/patient-stories')}
+                  className={`w-full text-left px-3.5 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+                    location.pathname === '/patient-stories' ? 'text-amber-400 bg-white/10' : 'text-slate-200 hover:text-amber-400 hover:bg-white/5'
+                  }`}
+                >
+                  Patient Stories & Reviews
                 </button>
               </div>
             )}
@@ -236,36 +239,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Contact */}
           <button
             onClick={() => handleNavClick('/contact')}
-            className={`px-3 py-1.5 rounded-lg text-xs xl:text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer ${
+            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/contact'
-                ? 'text-amber-400 font-semibold bg-white/5'
-                : 'text-slate-300 hover:text-amber-400 hover:bg-white/5'
+                ? 'text-amber-400 font-semibold'
+                : 'text-slate-200 hover:text-amber-400'
             }`}
           >
             Contact
           </button>
         </nav>
 
-        {/* 3. Right: Phone & CTA (Clean, Single-line, No Wrapping) */}
-        <div className="hidden sm:flex items-center gap-3 xl:gap-4 shrink-0">
+        {/* 3. Right: Phone Icon Badge + Single-line Number + Gold Pill CTA */}
+        <div className="hidden sm:flex items-center gap-5 xl:gap-6 shrink-0">
           <a
             href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-            className="flex items-center gap-2 text-xs xl:text-sm text-slate-300 hover:text-white transition-colors whitespace-nowrap group"
+            className="flex items-center gap-3 text-sm text-slate-200 hover:text-white transition-colors whitespace-nowrap group"
           >
-            <div className="w-7 h-7 xl:w-8 xl:h-8 rounded-full bg-slate-800/90 border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:border-amber-400/50 transition-colors shrink-0">
-              <Phone className="w-3.5 h-3.5" />
+            <div className="w-9 h-9 rounded-full bg-[#08213D] border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:border-amber-400/50 shadow-sm transition-colors shrink-0">
+              <Phone className="w-4 h-4" />
             </div>
-            <span className="font-semibold text-slate-200 group-hover:text-white whitespace-nowrap">
+            <span className="font-semibold text-slate-200 group-hover:text-white whitespace-nowrap text-sm">
               {CLINIC_INFO.phone}
             </span>
           </a>
 
           <button
             onClick={onBookClick}
-            className="px-4 xl:px-5 py-2 xl:py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-xs xl:text-sm shadow-md shadow-amber-500/25 hover:shadow-amber-500/40 transition-all flex items-center gap-1.5 group cursor-pointer whitespace-nowrap shrink-0"
+            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-md shadow-amber-500/25 hover:shadow-amber-500/40 transition-all flex items-center gap-2 group cursor-pointer whitespace-nowrap shrink-0"
           >
             <span>Book Appointment</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -275,7 +278,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           className="lg:hidden p-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 hover:text-white cursor-pointer"
           aria-label="Toggle Navigation"
         >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -298,7 +301,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className={`text-left px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                className={`text-left px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-colors ${
                   location.pathname === link.href
                     ? 'text-amber-400 bg-white/10'
                     : 'text-slate-300 hover:text-white hover:bg-white/5'
@@ -322,7 +325,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                 setMobileMenuOpen(false);
                 onBookClick();
               }}
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs text-center flex items-center justify-center gap-1.5 shadow-lg shadow-amber-500/25"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs text-center flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25"
             >
               <span>Book Appointment</span>
               <ArrowRight className="w-3.5 h-3.5" />
