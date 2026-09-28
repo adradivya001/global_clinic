@@ -63,40 +63,40 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
         isScrolled
-          ? 'bg-[#060b13]/95 backdrop-blur-md py-2 border-b border-white/10 shadow-xl'
-          : 'bg-gradient-to-b from-[#060b13]/95 via-[#060b13]/60 to-transparent py-2.5 sm:py-3'
+          ? 'bg-[#060b13]/95 backdrop-blur-md py-3 border-b border-white/10 shadow-xl'
+          : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
         {/* 1. Left: Clinic Logo + 3-Line Gold Text Branding */}
         <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={clinicLogo}
             alt={CLINIC_INFO.name}
-            className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(212,175,55,0.25)]"
+            className="h-14 sm:h-16 md:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_0_15px_rgba(212,175,55,0.25)]"
           />
-          <div className="flex flex-col justify-center leading-[1.15] pl-1">
-            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+          <div className="flex flex-col justify-center leading-tight pl-1">
+            <span className="text-[12px] sm:text-[13px] md:text-[14px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
               GLOBAL
             </span>
-            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+            <span className="text-[12px] sm:text-[13px] md:text-[14px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
               PHYSIOTHERAPY
             </span>
-            <span className="text-[11px] sm:text-[12px] md:text-[13px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
+            <span className="text-[12px] sm:text-[13px] md:text-[14px] font-serif font-bold tracking-[0.14em] text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500 uppercase whitespace-nowrap">
               CLINIC
             </span>
           </div>
         </Link>
 
         {/* 2. Center: Clean Navigation Links matching Reference Image */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-8 2xl:gap-10">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
           {/* Home */}
           <button
             onClick={() => handleNavClick('/')}
-            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
+            className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/' && !location.hash
                 ? 'text-amber-400 font-semibold'
-                : 'text-slate-200 hover:text-amber-400'
+                : 'text-white/90 hover:text-amber-400'
             }`}
           >
             Home
@@ -115,10 +115,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           >
             <button
               onClick={() => handleNavClick('/about')}
-              className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
+              className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
                 isAboutActive
                   ? 'text-amber-400 font-semibold'
-                  : 'text-slate-200 hover:text-amber-400'
+                  : 'text-white/90 hover:text-amber-400'
               }`}
             >
               <span>About</span>
@@ -158,10 +158,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Treatments */}
           <button
             onClick={() => handleNavClick('/treatments')}
-            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
+            className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/treatments'
                 ? 'text-amber-400 font-semibold'
-                : 'text-slate-200 hover:text-amber-400'
+                : 'text-white/90 hover:text-amber-400'
             }`}
           >
             Treatments
@@ -170,10 +170,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Conditions */}
           <button
             onClick={() => handleNavClick('/conditions')}
-            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
+            className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/conditions'
                 ? 'text-amber-400 font-semibold'
-                : 'text-slate-200 hover:text-amber-400'
+                : 'text-white/90 hover:text-amber-400'
             }`}
           >
             Conditions
@@ -182,10 +182,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Patient Journey */}
           <button
             onClick={() => handleNavClick('/patient-journey')}
-            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
+            className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/patient-journey'
                 ? 'text-amber-400 font-semibold'
-                : 'text-slate-200 hover:text-amber-400'
+                : 'text-white/90 hover:text-amber-400'
             }`}
           >
             Patient Journey
@@ -204,10 +204,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           >
             <button
               onClick={() => handleNavClick('/blog')}
-              className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
+              className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap flex items-center gap-1 cursor-pointer ${
                 isKnowledgeActive
                   ? 'text-amber-400 font-semibold'
-                  : 'text-slate-200 hover:text-amber-400'
+                  : 'text-white/90 hover:text-amber-400'
               }`}
             >
               <span>Knowledge</span>
@@ -239,10 +239,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           {/* Contact */}
           <button
             onClick={() => handleNavClick('/contact')}
-            className={`text-sm md:text-[14.5px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
+            className={`text-sm lg:text-[15px] font-medium transition-colors relative py-1 whitespace-nowrap cursor-pointer ${
               location.pathname === '/contact'
                 ? 'text-amber-400 font-semibold'
-                : 'text-slate-200 hover:text-amber-400'
+                : 'text-white/90 hover:text-amber-400'
             }`}
           >
             Contact
@@ -253,19 +253,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
         <div className="hidden sm:flex items-center gap-5 xl:gap-6 shrink-0">
           <a
             href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-            className="flex items-center gap-3 text-sm text-slate-200 hover:text-white transition-colors whitespace-nowrap group"
+            className="flex items-center gap-3 text-sm text-white hover:text-amber-300 transition-colors whitespace-nowrap group"
           >
             <div className="w-9 h-9 rounded-full bg-[#08213D] border border-slate-700/80 flex items-center justify-center text-amber-400 group-hover:border-amber-400/50 shadow-sm transition-colors shrink-0">
               <Phone className="w-4 h-4" />
             </div>
-            <span className="font-semibold text-slate-200 group-hover:text-white whitespace-nowrap text-sm">
+            <span className="font-semibold text-white whitespace-nowrap text-sm">
               {CLINIC_INFO.phone}
             </span>
           </a>
 
           <button
             onClick={onBookClick}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-md shadow-amber-500/25 hover:shadow-amber-500/40 transition-all flex items-center gap-2 group cursor-pointer whitespace-nowrap shrink-0"
+            className="px-6 py-2.5 rounded-full bg-[#F5B400] hover:bg-[#E5A800] text-slate-950 font-bold text-sm shadow-md shadow-amber-500/20 hover:shadow-amber-500/35 transition-all flex items-center gap-2 group cursor-pointer whitespace-nowrap shrink-0"
           >
             <span>Book Appointment</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -325,7 +325,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
                 setMobileMenuOpen(false);
                 onBookClick();
               }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 font-bold text-xs text-center flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25"
+              className="w-full py-3 rounded-xl bg-[#F5B400] hover:bg-[#E5A800] text-slate-950 font-bold text-xs text-center flex items-center justify-center gap-2 shadow-lg shadow-amber-500/25"
             >
               <span>Book Appointment</span>
               <ArrowRight className="w-3.5 h-3.5" />
