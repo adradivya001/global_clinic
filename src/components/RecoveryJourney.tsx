@@ -1,41 +1,43 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 export const RecoveryJourney: React.FC = () => {
   const steps = [
     {
       number: "01",
-      title: "ASSESS",
-      subtitle: "Root Cause Diagnostics",
-      description: "Thorough biomechanical and anatomical evaluation to understand the exact root cause of your discomfort.",
+      title: "CONNECT",
+      subtitle: "Initial Inquiry",
+      description: "Reach out to discuss your symptoms, movement difficulties, or recovery goals.",
     },
     {
       number: "02",
-      title: "PLAN",
-      subtitle: "Personalised Roadmap",
-      description: "Crafting an evidence-based recovery pathway designed specifically for your goals, body, and schedule.",
+      title: "ASSESS",
+      subtitle: "Movement Diagnostics",
+      description: "Thorough biomechanical and anatomical evaluation to understand the root cause.",
     },
     {
       number: "03",
-      title: "TREAT",
-      subtitle: "Hands-on Clinical Therapy",
-      description: "Targeted joint mobilisations, soft-tissue therapy, and guided movements to immediately relieve pain.",
+      title: "PLAN",
+      subtitle: "Personalized Roadmap",
+      description: "Crafting an evidence-based pathway designed specifically for your body and schedule.",
     },
     {
       number: "04",
-      title: "REBUILD",
-      subtitle: "Strength & Conditioning",
-      description: "Progressive strengthening to reinforce joint stability, improve flexibility, and restore mobility.",
+      title: "PROGRESS",
+      subtitle: "Targeted Rehabilitation",
+      description: "Guided exercises, manual therapy, and progressive strengthening to rebuild mobility.",
     },
     {
       number: "05",
-      title: "RETURN",
+      title: "MOVE FORWARD",
       subtitle: "Active Independence",
-      description: "Get back to sports, work, and daily living with long-term injury prevention strategies and confidence.",
+      description: "Return to daily activities, work, and sports with long-term confidence and prevention.",
     },
   ];
 
   return (
-    <section id="journey" className="py-24 relative overflow-hidden">
+    <section id="journey" className="py-24 relative overflow-hidden font-sans">
       {/* Cinematic Photographic Background with Dark Navy Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -48,20 +50,28 @@ export const RecoveryJourney: React.FC = () => {
       </div>
 
       <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
-        
-        {/* Section Title */}
-        <div className="mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Your Recovery Journey
-          </h2>
-          <p className="text-slate-300 text-base mt-2 max-w-2xl">
-            A structured, evidence-based process designed around you.
-          </p>
-        </div>
-
-          <div className="text-xs text-amber-400 font-mono uppercase tracking-widest font-semibold">
-            5-Stage Clinical Roadmap
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <div className="text-xs text-amber-400 font-mono uppercase tracking-widest font-semibold mb-2">
+              CLINICAL PATHWAY PREVIEW
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              Your Recovery Journey
+            </h2>
+            <p className="text-slate-300 text-base mt-2 max-w-2xl">
+              A structured, evidence-based process designed to guide you from initial consultation to active independence.
+            </p>
           </div>
+
+          <Link
+            to="/patient-journey"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-sm transition-all group shrink-0"
+          >
+            <span>Understand Your Journey</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
 
         {/* Connected Journey Timeline Line */}
         <div className="relative">
@@ -75,16 +85,19 @@ export const RecoveryJourney: React.FC = () => {
                 className="relative z-10 flex flex-col"
               >
                 {/* Stage Number Badge */}
-                <div className="w-24 h-24 rounded-full bg-transparent border border-white/20 flex flex-col items-center justify-center text-white mb-6 backdrop-blur-sm group hover:border-amber-500 transition-colors cursor-default">
-                  <span className="text-sm text-amber-500 font-bold mb-1">STAGE</span>
-                  <span className="text-3xl font-black">{step.number}</span>
+                <div className="w-20 h-20 rounded-full bg-transparent border border-white/20 flex flex-col items-center justify-center text-white mb-6 backdrop-blur-sm group hover:border-amber-400 transition-colors cursor-default">
+                  <span className="text-[10px] text-amber-400 font-bold tracking-wider">STAGE</span>
+                  <span className="text-2xl font-black">{step.number}</span>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white">
+                <div className="space-y-1.5">
+                  <h3 className="text-lg font-bold text-white tracking-wide">
                     {step.title}
                   </h3>
-                  <p className="text-slate-300 text-sm leading-relaxed">
+                  <span className="text-xs font-semibold text-amber-400/90 block">
+                    {step.subtitle}
+                  </span>
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -92,9 +105,7 @@ export const RecoveryJourney: React.FC = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
 };
-

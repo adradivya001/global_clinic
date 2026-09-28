@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Clock, Navigation, Compass, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Clock, Navigation, Compass, ShieldCheck, ArrowRight } from 'lucide-react';
 import { CLINIC_INFO } from '../data/clinicData';
 
 interface ClinicSectionProps {
@@ -43,21 +44,31 @@ export const ClinicSection: React.FC<ClinicSectionProps> = ({ onBookClick }) => 
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-[32px] h-[2px] bg-[#F5B400]"></div>
-            <span className="text-[#0B5C8E] font-bold text-[12px] tracking-[0.20em] uppercase">
-              OUR LOCATION
-            </span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-[32px] h-[2px] bg-[#F5B400]"></div>
+              <span className="text-[#0B5C8E] font-bold text-[12px] tracking-[0.20em] uppercase">
+                OUR LOCATION
+              </span>
+            </div>
+            
+            <h2 className="text-[32px] sm:text-[38px] lg:text-[44px] font-extrabold text-[#08213D] tracking-tight leading-[1.1] mb-1.5">
+              Our Clinic
+            </h2>
+            
+            <p className="text-[#526A84] text-[14px] sm:text-[15px] leading-[1.5] max-w-[600px]">
+              Conveniently located in the heart of Anantapur.
+            </p>
           </div>
-          
-          <h2 className="text-[32px] sm:text-[38px] lg:text-[44px] font-extrabold text-[#08213D] tracking-tight leading-[1.1] mb-1.5">
-            Our Clinic
-          </h2>
-          
-          <p className="text-[#526A84] text-[14px] sm:text-[15px] leading-[1.5] max-w-[600px]">
-            Conveniently located in the heart of Anantapur.
-          </p>
+
+          <Link
+            to="/clinic"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-[#08213D]/10 hover:border-[#086B9F] text-[#08213D] hover:text-[#086B9F] font-bold text-xs sm:text-sm shadow-sm transition-all group shrink-0"
+          >
+            <span>Explore Our Clinic</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
         {/* 3-Column Main Panel */}

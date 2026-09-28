@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, CheckCircle2, Flame, Activity, ShieldCheck, Zap, Plus, ChevronRight
 } from 'lucide-react';
@@ -290,21 +291,29 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
             </div>
 
             {/* Actions & Doctor Profile */}
-            <div className="flex flex-col xl:flex-row items-center gap-6">
+            <div className="flex flex-col xl:flex-row items-center gap-4 sm:gap-6">
               <button 
                 onClick={onBookClick}
-                className="bg-[#F5B400] text-[#041326] px-8 py-4 rounded-[14px] font-bold text-sm tracking-wide shadow-[0_8px_20px_rgba(245,180,0,0.22)] hover:bg-[#FFD45A] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap w-full xl:w-auto group"
+                className="bg-[#F5B400] text-[#041326] px-8 py-4 rounded-[14px] font-bold text-sm tracking-wide shadow-[0_8px_20px_rgba(245,180,0,0.22)] hover:bg-[#FFD45A] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap w-full xl:w-auto group cursor-pointer"
               >
-                Book a Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>Book a Consultation</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
+              <Link
+                to="/conditions"
+                className="bg-white text-[#071A33] border border-[rgba(7,26,51,0.12)] hover:border-[#086B9F] hover:text-[#086B9F] px-6 py-4 rounded-[14px] font-bold text-sm tracking-wide shadow-sm hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 whitespace-nowrap w-full xl:w-auto cursor-pointer"
+              >
+                <span>Explore Conditions</span>
+                <ChevronRight className="w-4 h-4" />
+              </Link>
+
               {/* Doctor Card */}
-              <div className="flex items-center gap-5 bg-white pl-4 pr-8 py-3.5 rounded-full shadow-sm border border-[rgba(7,26,51,0.06)] w-full xl:w-auto justify-center xl:justify-start">
-                <img src={doctorPhoto} alt="Dr K Bhavendra" className="w-16 h-16 rounded-full object-cover object-top border-2 border-[#F7FAFD] shadow-sm shrink-0" />
+              <div className="flex items-center gap-4 bg-white pl-3 pr-6 py-2.5 rounded-full shadow-sm border border-[rgba(7,26,51,0.06)] w-full xl:w-auto justify-center xl:justify-start">
+                <img src={doctorPhoto} alt="Dr K Bhavendra" className="w-12 h-12 rounded-full object-cover object-top border-2 border-[#F7FAFD] shadow-sm shrink-0" />
                 <div className="flex flex-col justify-center text-left">
-                  <span className="text-[10px] text-[#61738C] uppercase tracking-widest font-black mb-0.5">Consult with</span>
-                  <span className="text-base font-extrabold text-[#071A33] leading-tight">Dr. K. Bhavendra</span>
-                  <span className="text-xs text-[#61738C] font-medium mt-0.5">BPT, MPT (Sports)</span>
+                  <span className="text-[9px] text-[#61738C] uppercase tracking-widest font-black mb-0.5">Consult with</span>
+                  <span className="text-sm font-extrabold text-[#071A33] leading-tight">Dr. K. Bhavendra</span>
                 </div>
               </div>
             </div>

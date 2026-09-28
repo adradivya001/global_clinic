@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, Activity, TrendingUp, ArrowRight, Star, Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data/clinicData';
 
@@ -41,7 +42,7 @@ export const PatientProgress: React.FC = () => {
       beforeText: 'Daily Headaches & Cervical Guarding',
       afterText: '95% Reduction in Tension & Pain',
       progressPercent: 96,
-      image: 'https://images.unsplash.com/photo-1581579438747-1dc8d1e05fec?auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
     },
     {
       id: 'rotator-cuff',
@@ -172,26 +173,36 @@ export const PatientProgress: React.FC = () => {
             </p>
           </div>
 
-          {/* Carousel Controls */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0 pb-1">
-            <span className="text-[#08213D] font-extrabold text-[13px] tracking-wider">
-              0{activeCardIndex + 1} <span className="text-[#7890A8] font-normal mx-1">/</span> 0{CASE_STUDIES.length}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrevCard}
-                className="w-[40px] h-[40px] rounded-full bg-white border border-[rgba(8,33,61,0.10)] text-[#08213D] hover:bg-[#08213D] hover:text-white transition-all duration-300 flex items-center justify-center shadow-[0_6px_16px_rgba(8,33,61,0.06)] cursor-pointer"
-                aria-label="Previous Story"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={handleNextCard}
-                className="w-[40px] h-[40px] rounded-full bg-white border border-[rgba(8,33,61,0.10)] text-[#08213D] hover:bg-[#08213D] hover:text-white transition-all duration-300 flex items-center justify-center shadow-[0_6px_16px_rgba(8,33,61,0.06)] cursor-pointer"
-                aria-label="Next Story"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
+          {/* Carousel Controls & Dedicated Page Link */}
+          <div className="flex items-center gap-4 shrink-0 pb-1">
+            <Link
+              to="/patient-stories"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-[rgba(8,33,61,0.10)] text-[#08213D] hover:text-[#086B9F] hover:border-[#086B9F] font-bold text-xs shadow-sm transition-all group"
+            >
+              <span>Read Patient Stories</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </Link>
+
+            <div className="hidden sm:flex items-center gap-3">
+              <span className="text-[#08213D] font-extrabold text-[13px] tracking-wider">
+                0{activeCardIndex + 1} <span className="text-[#7890A8] font-normal mx-1">/</span> 0{CASE_STUDIES.length}
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handlePrevCard}
+                  className="w-[38px] h-[38px] rounded-full bg-white border border-[rgba(8,33,61,0.10)] text-[#08213D] hover:bg-[#08213D] hover:text-white transition-all duration-300 flex items-center justify-center shadow-[0_6px_16px_rgba(8,33,61,0.06)] cursor-pointer"
+                  aria-label="Previous Story"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={handleNextCard}
+                  className="w-[38px] h-[38px] rounded-full bg-white border border-[rgba(8,33,61,0.10)] text-[#08213D] hover:bg-[#08213D] hover:text-white transition-all duration-300 flex items-center justify-center shadow-[0_6px_16px_rgba(8,33,61,0.06)] cursor-pointer"
+                  aria-label="Next Story"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

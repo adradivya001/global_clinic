@@ -211,7 +211,7 @@ export const TREATMENTS: Treatment[] = [
     title: "Elderly Mobility Care",
     subtitle: "Balance, Independence & Fall Prevention",
     description: "Gentle physical therapy aimed at boosting joint confidence, gait balance, and day-to-day functional independence.",
-    image: "https://images.unsplash.com/photo-1581579438747-1dc8d1e05fec?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
     tags: ["Balance", "Active Aging", "Independence"]
   }
 ];

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Quote, Heart, Activity, Award, Shield, UserCheck, Star, Medal, Target } from 'lucide-react';
 import { DOCTOR_INFO } from '../data/clinicData';
 import doctorPhoto from '../assets/doctor_photo.png';
@@ -114,10 +115,18 @@ export const DoctorSection: React.FC<DoctorSectionProps> = ({ onBookClick }) => 
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <button 
                 onClick={onBookClick}
-                className="w-full sm:w-auto h-[48px] px-6 bg-[#FFBF1A] text-[#061A31] rounded-[12px] font-bold text-[14px] shadow-[0_8px_20px_rgba(245,180,0,0.20)] hover:-translate-y-[2px] hover:shadow-[0_12px_25px_rgba(245,180,0,0.25)] hover:bg-[#FFC940] transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto h-[48px] px-6 bg-[#FFBF1A] text-[#061A31] rounded-[12px] font-bold text-[14px] shadow-[0_8px_20px_rgba(245,180,0,0.20)] hover:-translate-y-[2px] hover:shadow-[0_12px_25px_rgba(245,180,0,0.25)] hover:bg-[#FFC940] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
               >
-                Book a Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>Book a Consultation</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
+
+              <Link
+                to="/doctor"
+                className="w-full sm:w-auto h-[48px] px-6 bg-white border border-[#08213D]/15 text-[#08213D] rounded-[12px] font-bold text-[14px] hover:bg-[#F4F9FD] hover:border-[#086B9F] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Meet Dr. Bhavendra</span>
+              </Link>
             </div>
             
           </div>

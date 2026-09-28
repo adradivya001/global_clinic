@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Activity, Zap, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface TreatmentCarouselProps {
@@ -120,9 +121,18 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#09213A] tracking-tight leading-[1.1]">
               Our Treatment Areas
             </h2>
-            <p className="text-[#61738C] text-lg lg:text-xl mt-6 leading-relaxed">
+            <p className="text-[#61738C] text-lg lg:text-xl mt-4 leading-relaxed">
               Targeted physiotherapy for movement restoration, recovery acceleration, and long-term functional performance.
             </p>
+            <div className="mt-4">
+              <Link
+                to="/treatments"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#086B9F] hover:text-[#041326] transition-colors group"
+              >
+                <span>Explore All Treatments</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
 
           {/* Carousel Controls */}

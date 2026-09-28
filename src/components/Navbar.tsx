@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Menu, X, ArrowRight } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CLINIC_INFO } from '../data/clinicData';
 import clinicLogo from '../assets/clinic_logo.png';
 
@@ -10,6 +11,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,89 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false);
+
+    if (href === '/') {
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
+      return;
+    }
+
+    if (href === '/about') {
+      navigate('/about');
+      return;
+    }
+
+    if (href === '/doctor') {
+      navigate('/doctor');
+      return;
+    }
+
+    if (href === '/treatments') {
+      navigate('/treatments');
+      return;
+    }
+
+    if (href === '/conditions') {
+      navigate('/conditions');
+      return;
+    }
+
+    if (href === '/patient-journey') {
+      navigate('/patient-journey');
+      return;
+    }
+
+    if (href === '/patient-stories') {
+      navigate('/patient-stories');
+      return;
+    }
+
+    if (href === '/clinic') {
+      navigate('/clinic');
+      return;
+    }
+
+    if (href === '/blog') {
+      navigate('/blog');
+      return;
+    }
+
+    if (href === '/contact') {
+      navigate('/contact');
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      const targetId = href.replace('#', '');
+      if (location.pathname === '/') {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate('/' + href);
+      }
+    }
+  };
+
+  const navLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Doctor', href: '/doctor' },
+    { label: 'Treatments', href: '/treatments' },
+    { label: 'Conditions', href: '/conditions' },
+    { label: 'Patient Journey', href: '/patient-journey' },
+    { label: 'Patient Stories', href: '/patient-stories' },
+    { label: 'Our Clinic', href: '/clinic' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Contact', href: '/contact' },
+  ];
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,8 +118,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
       }`}
     >
       <div className="w-full px-6 sm:px-10 lg:px-16 flex items-center justify-between">
-        {/* Left: Actual Clinic Logo Branding */}
-        <a href="#" className="flex items-center gap-3 group shrink-0">
+        {/* Left: Clinic Logo Branding */}
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
             src={clinicLogo}
             alt={CLINIC_INFO.name}
@@ -50,28 +136,42 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
               Clinic
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Center: Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {[
-            { label: 'Home', href: '#' },
-            { label: 'About', href: '#doctor' },
-            { label: 'Treatments', href: '#treatments' },
-            { label: 'Conditions', href: '#explorer' },
-            { label: 'Patient Journey', href: '#journey' },
-            { label: 'Knowledge', href: '#knowledge' },
-            { label: 'Contact', href: '#clinic' },
-          ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-amber-400 transition-colors relative group py-1"
-            >
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+        <nav className="hidden md:flex items-center gap-3.5 lg:gap-4 xl:gap-5">
+          {navLinks.map((link) => {
+            const isAboutActive = link.href === '/about' && location.pathname === '/about';
+            const isDoctorActive = link.href === '/doctor' && location.pathname === '/doctor';
+            const isTreatmentsActive = link.href === '/treatments' && location.pathname === '/treatments';
+            const isConditionsActive = link.href === '/conditions' && location.pathname === '/conditions';
+            const isJourneyActive = link.href === '/patient-journey' && location.pathname === '/patient-journey';
+            const isStoriesActive = link.href === '/patient-stories' && location.pathname === '/patient-stories';
+            const isClinicActive = link.href === '/clinic' && location.pathname === '/clinic';
+            const isBlogActive = link.href === '/blog' && location.pathname === '/blog';
+            const isContactActive = link.href === '/contact' && location.pathname === '/contact';
+            const isHomeActive = link.href === '/' && location.pathname === '/';
+            const isActive = isAboutActive || isDoctorActive || isTreatmentsActive || isConditionsActive || isJourneyActive || isStoriesActive || isClinicActive || isBlogActive || isContactActive || (isHomeActive && !location.hash);
+
+            return (
+              <button
+                key={link.label}
+                onClick={() => handleNavClick(link.href)}
+                className={`text-sm font-medium transition-colors relative group py-1 cursor-pointer ${
+                  isActive
+                    ? 'text-amber-400 font-semibold'
+                    : 'text-slate-300 hover:text-amber-400'
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-amber-400 transition-all duration-300 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </button>
+            );
+          })}
         </nav>
 
         {/* Right: Phone & CTA */}
@@ -108,23 +208,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#0a111e]/98 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4 shadow-2xl">
-          {[
-            { label: 'Home', href: '#' },
-            { label: 'About', href: '#doctor' },
-            { label: 'Treatments', href: '#treatments' },
-            { label: 'Conditions', href: '#explorer' },
-            { label: 'Patient Journey', href: '#journey' },
-            { label: 'Knowledge', href: '#knowledge' },
-            { label: 'Contact', href: '#clinic' },
-          ].map((link) => (
-            <a
+          {navLinks.map((link) => (
+            <button
               key={link.label}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-medium text-slate-200 hover:text-amber-400 transition-colors py-2 border-b border-slate-800/60"
+              onClick={() => handleNavClick(link.href)}
+              className="block w-full text-left text-base font-medium text-slate-200 hover:text-amber-400 transition-colors py-2 border-b border-slate-800/60"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <div className="pt-4 space-y-3">
             <a
@@ -150,3 +241,4 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
     </header>
   );
 };
+
