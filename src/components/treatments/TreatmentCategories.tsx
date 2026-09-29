@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Activity, ShieldCheck, Zap, Heart, Compass, Sparkles } from 'lucide-react';
+import { TreatmentDetailModal } from './TreatmentDetailModal';
 
 interface TreatmentCategoriesProps {
   onBookClick: () => void;
 }
 
 export const TreatmentCategories: React.FC<TreatmentCategoriesProps> = ({ onBookClick }) => {
+  const [selectedTreatmentNumber, setSelectedTreatmentNumber] = useState<string | null>(null);
+
   const categories = [
     {
       number: '01',
@@ -57,8 +60,8 @@ export const TreatmentCategories: React.FC<TreatmentCategoriesProps> = ({ onBook
     },
   ];
 
-  const handleCardClick = () => {
-    onBookClick();
+  const handleCardClick = (num: string) => {
+    setSelectedTreatmentNumber(num);
   };
 
   return (
@@ -83,7 +86,7 @@ export const TreatmentCategories: React.FC<TreatmentCategoriesProps> = ({ onBook
           </h2>
 
           <p className="text-[#526A84] text-base sm:text-lg leading-relaxed">
-            Evidence-guided clinical physiotherapy programs targeting the mechanical root cause of discomfort and limitation.
+            Evidence-guided clinical physiotherapy programs targeting the mechanical root cause of discomfort and limitation. Click on any treatment to explore full details and clinical protocols.
           </p>
         </div>
 
@@ -92,7 +95,7 @@ export const TreatmentCategories: React.FC<TreatmentCategoriesProps> = ({ onBook
           {categories.map((cat) => (
             <div
               key={cat.number}
-              onClick={handleCardClick}
+              onClick={() => handleCardClick(cat.number)}
               className="bg-white rounded-[24px] border border-[#08213D]/8 shadow-[0_10px_30px_rgba(8,33,61,0.04)] hover:shadow-[0_20px_45px_rgba(8,33,61,0.12)] hover:border-[#168DD0]/40 transition-all duration-300 hover:-translate-y-1.5 flex flex-col overflow-hidden cursor-pointer group"
             >
               {/* Image Frame */}
@@ -147,6 +150,14 @@ export const TreatmentCategories: React.FC<TreatmentCategoriesProps> = ({ onBook
           ))}
         </div>
       </div>
+
+      {/* Interactive Treatment Detail Modal */}
+      <TreatmentDetailModal
+        selectedNumber={selectedTreatmentNumber}
+        onClose={() => setSelectedTreatmentNumber(null)}
+        onBookClick={onBookClick}
+        onSelectTreatment={(num) => setSelectedTreatmentNumber(num)}
+      />
     </section>
   );
 };
