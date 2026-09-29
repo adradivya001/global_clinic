@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onBookClick }) => {
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* 1. Left: Clinic Logo + 3-Line Gold Text Branding */}
         <Link to="/" className="flex items-center gap-3 group shrink-0">
           <img
