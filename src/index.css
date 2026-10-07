@@ -2,23 +2,22 @@
 
 @layer base {
   :root {
-    --color-navy-950: #050A12;
-    --color-navy-900: #070D16;
-    --color-navy-850: #0A111C;
-    --color-navy-800: #0D1622;
-    --color-navy-750: #111C29;
-    --color-navy-700: #142131;
+    --color-bg-main: #FBFBFA;
+    --color-bg-card: #FFFFFF;
+    --color-bg-subtle: #F3F6F4;
+    --color-bg-warm: #FAF8F5;
 
-    --color-gold-500: #F5B400;
-    --color-gold-400: #FFC21A;
-    --color-gold-600: #D9A400;
+    --color-brand-primary: #059669;
+    --color-brand-primary-dark: #064E3B;
+    --color-brand-primary-light: #10B981;
+    --color-brand-accent: #C2410C;
 
-    --color-text-primary: #F5F7FA;
-    --color-text-secondary: #AAB6C5;
-    --color-text-muted: #718096;
+    --color-text-title: #18181B;
+    --color-text-body: #3F3F46;
+    --color-text-muted: #71717A;
 
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-gold-subtle: rgba(245, 180, 0, 0.25);
+    --border-light: rgba(228, 228, 231, 0.9);
+    --border-focus: rgba(5, 150, 105, 0.35);
   }
 
   html {
@@ -26,66 +25,145 @@
   }
 
   body {
-    background-color: #050A12;
-    color: #F5F7FA;
+    background-color: #FBFBFA;
+    color: #3F3F46;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-/* Custom Editorial Utilities */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #FFE885 0%, #F5B400 50%, #D9A400 100%);
+/* Light Glass Utilities (Emerald & Warm Copper, Zero Blue/Gold) */
+.light-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px -5px rgba(5, 150, 105, 0.06), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+}
+
+.light-glass-warm {
+  background: rgba(255, 253, 250, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 65, 12, 0.15);
+  box-shadow: 0 10px 30px -5px rgba(194, 65, 12, 0.06);
+}
+
+.card-luxury {
+  background: #FFFFFF;
+  border: 1px solid rgba(228, 228, 231, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(24, 24, 27, 0.03), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  transform: translateY(-4px);
+  border-color: rgba(5, 150, 105, 0.4);
+  box-shadow: 0 20px 40px -8px rgba(5, 150, 105, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.03);
+}
+
+/* Text Gradient Accents (Emerald & Copper) */
+.text-emerald-gradient {
+  background: linear-gradient(135deg, #059669 0%, #047857 60%, #064E3B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-glow {
-  box-shadow: 0 0 30px -5px rgba(245, 180, 0, 0.22);
+.text-copper-gradient {
+  background: linear-gradient(135deg, #C2410C 0%, #EA580C 50%, #9A3412 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.dark-glass {
-  background: rgba(13, 22, 34, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.dark-glass-gold {
-  background: rgba(13, 22, 34, 0.85);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(245, 180, 0, 0.25);
-}
-
-/* Smooth Image Scale Utility */
-.image-zoom-container {
-  overflow: hidden;
-}
-
-.image-zoom-container img {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.image-zoom-container:hover img {
-  transform: scale(1.05);
-}
-
-/* Blinking CTA Animation */
-@keyframes blinkGlow {
+/* Keyframes & Page Animations */
+@keyframes floatSlow {
   0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(245, 180, 0, 0.4), 0 0 30px rgba(245, 180, 0, 0.2);
-    filter: brightness(1);
+    transform: translateY(0px);
   }
   50% {
-    transform: scale(1.04);
-    box-shadow: 0 0 35px rgba(245, 180, 0, 0.95), 0 0 60px rgba(245, 180, 0, 0.6), 0 0 0 4px rgba(245, 180, 0, 0.6);
-    filter: brightness(1.2);
+    transform: translateY(-8px);
   }
 }
 
-.animate-blink-cta {
-  animation: blinkGlow 1.3s ease-in-out infinite;
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
 }
 
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 7s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 6s ease-in-out infinite;
+}
+
+/* Scroll Reveal Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.stagger-children.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(3) { transition-delay: 0.19s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(4) { transition-delay: 0.26s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(5) { transition-delay: 0.33s; opacity: 1; transform: translateY(0); }
+.stagger-children.visible > *:nth-child(6) { transition-delay: 0.40s; opacity: 1; transform: translateY(0); }

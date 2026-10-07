@@ -8,45 +8,45 @@ export const TreatmentPhilosophy: React.FC = () => {
       icon: Target,
       title: 'Root-Cause Assessment',
       desc: 'Identifying underlying biomechanical and structural dysfunctions rather than merely masking temporary symptoms.',
-      accent: 'border-[#168DD0]/30 bg-[#168DD0]/10 text-sky-400',
+      accent: 'border-emerald-200 bg-emerald-50 text-emerald-800',
     },
     {
       icon: Activity,
       title: 'Active Functional Recovery',
       desc: 'Prioritizing guided exercise rehabilitation and targeted mobility drills to rebuild strength, range of motion, and stability.',
-      accent: 'border-[#F5B400]/30 bg-[#F5B400]/10 text-amber-400',
+      accent: 'border-orange-200 bg-orange-50 text-orange-800',
     },
     {
       icon: UserCheck,
       title: 'Patient-Centered Guidance',
       desc: 'Ensuring patients thoroughly understand their condition, movement mechanics, and self-management strategies for long-term health.',
-      accent: 'border-[#1769C2]/30 bg-[#1769C2]/10 text-blue-400',
+      accent: 'border-teal-200 bg-teal-50 text-teal-800',
     },
     {
       icon: ShieldCheck,
       title: 'Evidence-Backed Protocols',
       desc: 'Applying sports medicine principles and certified manual therapy techniques tailored to each individual patient.',
-      accent: 'border-white/20 bg-white/5 text-slate-200',
+      accent: 'border-stone-200 bg-stone-100 text-stone-800',
     },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#041326] relative overflow-hidden font-sans text-white">
+    <section className="py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden font-sans border-t border-stone-200/80">
       {/* Background Ambience */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#168DD0]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#F5B400]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-3 text-[#F5B400] font-bold text-xs tracking-[0.2em] uppercase">
-            CLINICAL PHILOSOPHY
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+            <span>CLINICAL PHILOSOPHY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-4">
             Professional Focus
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-            {DOCTOR_INFO.quote}
+          <p className="text-stone-600 text-sm sm:text-base leading-relaxed italic">
+            "{DOCTOR_INFO.quote}"
           </p>
         </div>
 
@@ -57,23 +57,23 @@ export const TreatmentPhilosophy: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/25 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)] flex flex-col justify-between group"
+                className="bg-white border border-stone-200 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between group shadow-sm"
               >
                 <div>
-                  <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${pillar.accent}`}>
-                    <IconComponent className="w-6 h-6 stroke-[2]" />
+                  <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center mb-6 group-hover:scale-105 transition-transform ${pillar.accent}`}>
+                    <IconComponent className="w-6 h-6 stroke-[2.2]" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-3">
+                  <h3 className="text-lg font-black text-stone-900 mb-2.5">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
                     {pillar.desc}
                   </p>
                 </div>
 
-                <div className="w-8 h-[2px] bg-white/20 group-hover:w-full group-hover:bg-[#F5B400] transition-all duration-500 mt-6" />
+                <div className="w-10 h-[3px] bg-stone-200 group-hover:w-full group-hover:bg-emerald-600 transition-all duration-500 mt-6 rounded-full" />
               </div>
             );
           })}

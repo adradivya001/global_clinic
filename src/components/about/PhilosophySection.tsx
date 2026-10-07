@@ -6,48 +6,45 @@ export const PhilosophySection: React.FC = () => {
     {
       number: '01',
       title: 'MOVEMENT',
-      desc: 'Restore mobility and improve functional movement.',
-      icon: <Activity className="w-6 h-6 text-[#168DD0]" />,
-      accentColor: '#168DD0',
+      desc: 'Restore joint kinematics and improve natural movement patterns.',
+      icon: <Activity className="w-6 h-6 text-emerald-700" />,
+      accent: 'border-emerald-200 bg-emerald-50/50',
     },
     {
       number: '02',
       title: 'RECOVERY',
-      desc: 'Reduce limitations and rebuild physical function.',
-      icon: <ShieldCheck className="w-6 h-6 text-[#F5B400]" />,
-      accentColor: '#F5B400',
+      desc: 'Alleviate mechanical limitations and rebuild physiological function.',
+      icon: <ShieldCheck className="w-6 h-6 text-orange-600" />,
+      accent: 'border-orange-200 bg-orange-50/50',
     },
     {
       number: '03',
       title: 'STRENGTH',
-      desc: 'Build physical capacity, confidence and resilience.',
-      icon: <Zap className="w-6 h-6 text-[#FFD45A]" />,
-      accentColor: '#FFD45A',
+      desc: 'Develop kinetic capacity, muscular stability, and long-term resilience.',
+      icon: <Zap className="w-6 h-6 text-teal-700" />,
+      accent: 'border-teal-200 bg-teal-50/50',
     },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#041326] relative overflow-hidden font-sans text-white">
+    <section className="py-20 lg:py-28 bg-[#FBFBFA] relative overflow-hidden font-sans border-t border-stone-200/80">
       {/* Background Lighting */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#168DD0]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F5B400]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-[2px] bg-[#F5B400]" />
-            <span className="text-[#F5B400] font-bold text-xs tracking-[0.2em] uppercase">
-              OUR PHILOSOPHY
-            </span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+            <span>OUR PHILOSOPHY</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-4">
             Recovery Is More Than Relief.
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
-            Reducing pain is only one part of rehabilitation. Meaningful recovery also means restoring movement, rebuilding strength and helping patients regain confidence.
+          <p className="text-stone-600 text-base sm:text-lg leading-relaxed font-normal">
+            Reducing pain is only one component of rehabilitation. Meaningful recovery also means restoring joint mobility, rebuilding foundational strength, and helping patients regain permanent confidence.
           </p>
         </div>
 
@@ -56,32 +53,32 @@ export const PhilosophySection: React.FC = () => {
           {pillars.map((pillar) => (
             <div
               key={pillar.number}
-              className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/25 rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)] flex flex-col justify-between group"
+              className={`bg-white border ${pillar.accent} rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between group shadow-sm`}
             >
               <div>
                 {/* Top Row: Number & Icon */}
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-3xl font-black text-white/30 group-hover:text-[#F5B400] transition-colors duration-300 tracking-tight font-sans">
+                  <span className="text-3xl font-black text-stone-300 group-hover:text-emerald-700 transition-colors duration-300 tracking-tight font-sans">
                     {pillar.number}
                   </span>
-                  <div className="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-stone-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xs">
                     {pillar.icon}
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white tracking-wider mb-3 group-hover:text-white transition-colors">
+                <h3 className="text-xl font-black text-stone-900 tracking-wider mb-3">
                   {pillar.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>
 
               {/* Bottom Subtle Accent Bar */}
-              <div className="w-10 h-[2px] bg-white/20 group-hover:w-full group-hover:bg-[#F5B400] transition-all duration-500 mt-8" />
+              <div className="w-10 h-[3px] bg-stone-200 group-hover:w-full group-hover:bg-emerald-600 transition-all duration-500 mt-8 rounded-full" />
             </div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCheck, Activity, BookOpen, Target, Heart } from 'lucide-react';
+import { UserCheck, Activity, BookOpen, Target } from 'lucide-react';
 
 export const WhatWeBelieve: React.FC = () => {
   const beliefs = [
@@ -26,26 +26,23 @@ export const WhatWeBelieve: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#041326] relative overflow-hidden font-sans text-white">
+    <section className="py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden font-sans border-t border-stone-200/80">
       {/* Background Lighting */}
-      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#168DD0]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#F5B400]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-[2px] bg-[#F5B400]" />
-            <span className="text-[#F5B400] font-bold text-xs tracking-[0.2em] uppercase">
-              OUR BELIEF
-            </span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+            <span>OUR BELIEF</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-4">
             Care Built Around the Individual.
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+          <p className="text-stone-600 text-base sm:text-lg leading-relaxed font-normal">
             Physiotherapy is most effective when it addresses the person, not just the symptom. We believe recovery is rooted in personalized attention, functional movement, and empowering patients with practical understanding.
           </p>
         </div>
@@ -57,23 +54,23 @@ export const WhatWeBelieve: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-white/[0.04] backdrop-blur-md border border-white/10 hover:border-white/25 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.35)] flex flex-col justify-between group"
+                className="bg-white border border-stone-200 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between group shadow-sm"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-6 h-6 stroke-[2]" />
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-6 group-hover:scale-105 transition-transform">
+                    <IconComponent className="w-6 h-6 stroke-[2.2]" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-3">
+                  <h3 className="text-lg font-black text-stone-900 mb-2.5">
                     {belief.title}
                   </h3>
 
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
                     {belief.desc}
                   </p>
                 </div>
 
-                <div className="w-8 h-[2px] bg-white/20 group-hover:w-full group-hover:bg-[#F5B400] transition-all duration-500 mt-6" />
+                <div className="w-10 h-[3px] bg-stone-200 group-hover:w-full group-hover:bg-emerald-600 transition-all duration-500 mt-6 rounded-full" />
               </div>
             );
           })}

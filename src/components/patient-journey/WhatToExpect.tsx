@@ -8,45 +8,45 @@ export const WhatToExpect: React.FC = () => {
       title: 'Share Your Concerns',
       desc: 'Discuss your symptoms, medical history, daily routines, and specific movement difficulties with the clinician.',
       icon: MessageSquare,
-      accent: 'border-[#168DD0]/20 bg-[#168DD0]/5 text-[#086B9F]',
+      accent: 'border-emerald-200 bg-emerald-50 text-emerald-800',
     },
     {
       number: '02',
       title: 'Movement Assessment',
       desc: 'Undergo targeted orthopedic, postural, and functional movement testing to evaluate joint range and mechanics.',
       icon: Activity,
-      accent: 'border-[#F5B400]/25 bg-[#F5B400]/5 text-[#D9A400]',
+      accent: 'border-orange-200 bg-orange-50 text-orange-800',
     },
     {
       number: '03',
       title: 'Discuss Findings',
       desc: 'Receive clear, understandable explanations regarding the underlying mechanical factors contributing to your pain.',
       icon: FileText,
-      accent: 'border-[#1769C2]/20 bg-[#1769C2]/5 text-[#1769C2]',
+      accent: 'border-teal-200 bg-teal-50 text-teal-800',
     },
     {
       number: '04',
       title: 'Understand Care Plan',
       desc: 'Review a customized rehabilitation approach outlining exercise therapy, manual care, and recovery milestones.',
       icon: CheckCircle2,
-      accent: 'border-[#102A43]/20 bg-[#102A43]/5 text-[#102A43]',
+      accent: 'border-stone-300 bg-stone-100 text-stone-800',
     },
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#F7FAFD] relative overflow-hidden font-sans border-t border-[#08213D]/6">
+    <section className="py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden font-sans border-t border-stone-200/80">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EAF4FC] text-[#086B9F] font-bold text-xs tracking-[0.2em] uppercase mb-4">
-            INITIAL CONSULTATION
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+            <span>INITIAL CONSULTATION</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#07182D] tracking-tight leading-[1.15] mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-3">
             What Happens During Your First Visit?
           </h2>
 
-          <p className="text-[#526A84] text-base leading-relaxed">
+          <p className="text-stone-600 text-base leading-relaxed">
             A structured, comfortable consultation designed to give you clarity and confidence from day one.
           </p>
         </div>
@@ -58,32 +58,32 @@ export const WhatToExpect: React.FC = () => {
             return (
               <div
                 key={step.number}
-                className="bg-white rounded-2xl p-7 border border-[#08213D]/6 shadow-[0_4px_20px_rgba(8,33,61,0.03)] hover:shadow-lg hover:border-[#168DD0]/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
+                className="bg-white rounded-3xl p-7 border border-stone-200 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
               >
                 <div>
                   {/* Top Row */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className={`w-11 h-11 rounded-xl border flex items-center justify-center ${step.accent}`}>
-                      <IconComponent className="w-5 h-5 stroke-[2]" />
+                    <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center ${step.accent}`}>
+                      <IconComponent className="w-6 h-6 stroke-[2.2]" />
                     </div>
-                    <span className="text-2xl font-black text-[#08213D]/15 group-hover:text-[#F5B400] transition-colors">
+                    <span className="text-2xl font-black text-stone-300 group-hover:text-emerald-700 transition-colors">
                       {step.number}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-base font-extrabold text-[#07182D] mb-2 group-hover:text-[#086B9F] transition-colors">
+                  <h3 className="text-lg font-black text-stone-900 mb-2 group-hover:text-emerald-800 transition-colors">
                     {step.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-[#526A84] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
 
                 {/* Bottom Accent Bar */}
-                <div className="w-8 h-[2px] bg-[#08213D]/10 group-hover:w-full group-hover:bg-[#F5B400] transition-all duration-500 mt-6" />
+                <div className="w-10 h-[3px] bg-stone-200 group-hover:w-full group-hover:bg-emerald-600 transition-all duration-500 mt-6 rounded-full" />
               </div>
             );
           })}

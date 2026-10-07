@@ -15,6 +15,12 @@ import { ClinicPage } from './pages/ClinicPage';
 import { BlogPage } from './pages/BlogPage';
 import { ContactPage } from './pages/ContactPage';
 
+import { TreatmentDetailPageWrapper } from './pages/TreatmentDetailPageWrapper';
+import { ServiceDetailPageWrapper } from './pages/ServiceDetailPageWrapper';
+import { ConditionDetailPageWrapper } from './pages/ConditionDetailPageWrapper';
+
+import { MobileBottomBar } from './components/MobileBottomBar';
+
 export function App() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
@@ -24,7 +30,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-[#102A43] selection:bg-amber-400 selection:text-white font-sans flex flex-col">
+      <div className="min-h-screen bg-white text-stone-800 selection:bg-emerald-600 selection:text-white font-sans flex flex-col pb-16 md:pb-0">
         {/* Persistent Global Navbar */}
         <Navbar onBookClick={handleOpenAppointment} />
 
@@ -48,8 +54,28 @@ export function App() {
               element={<TreatmentsPage onBookClick={handleOpenAppointment} />}
             />
             <Route
+              path="/treatments/:id"
+              element={<TreatmentDetailPageWrapper onBookClick={handleOpenAppointment} />}
+            />
+            <Route
               path="/conditions"
               element={<ConditionsPage onBookClick={handleOpenAppointment} />}
+            />
+            <Route
+              path="/services/:id"
+              element={<ServiceDetailPageWrapper onBookClick={handleOpenAppointment} />}
+            />
+            <Route
+              path="/conditions/:id"
+              element={<ServiceDetailPageWrapper onBookClick={handleOpenAppointment} />}
+            />
+            <Route
+              path="/services/:serviceId/:conditionId"
+              element={<ConditionDetailPageWrapper onBookClick={handleOpenAppointment} />}
+            />
+            <Route
+              path="/conditions/:serviceId/:conditionId"
+              element={<ConditionDetailPageWrapper onBookClick={handleOpenAppointment} />}
             />
             <Route
               path="/patient-journey"
@@ -81,6 +107,9 @@ export function App() {
 
         {/* Persistent Global Footer */}
         <Footer />
+
+        {/* Mobile Sticky Quick-Action Bar */}
+        <MobileBottomBar onBookClick={handleOpenAppointment} />
 
         {/* Global Appointment Booking Modal */}
         <AppointmentModal

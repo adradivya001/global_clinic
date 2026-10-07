@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Quote, Heart, Activity, Award, Shield, UserCheck, Star, Medal, Target } from 'lucide-react';
+import { ArrowRight, Quote, Heart, Activity, Award, Shield, UserCheck, Star, Sparkles } from 'lucide-react';
 import { DOCTOR_INFO } from '../data/clinicData';
 import doctorPhoto from '../assets/doctor_photo.png';
 
@@ -9,234 +9,162 @@ interface DoctorSectionProps {
 }
 
 export const DoctorSection: React.FC<DoctorSectionProps> = ({ onBookClick }) => {
-
   const EXPERTISE = [
-    { title: "Experienced & Approachable", desc: "Personalised attention and clear guidance", icon: <UserCheck className="w-[22px] h-[22px] text-[#08213D]" /> },
-    { title: "Focused on Your Recovery", desc: "Goal-oriented rehabilitation plans", icon: <Target className="w-[22px] h-[22px] text-[#08213D]" /> },
-    { title: "Personalised Treatment Approach", desc: "Tailored to your lifestyle and activity level", icon: <Heart className="w-[22px] h-[22px] text-[#08213D]" /> },
-    { title: "Evidence Based Techniques", desc: "Latest clinical methods and research", icon: <Activity className="w-[22px] h-[22px] text-[#08213D]" /> },
-    { title: "Focus on Long Term Results", desc: "Sustainable recovery and injury prevention", icon: <Shield className="w-[22px] h-[22px] text-[#08213D]" /> },
-    { title: "Patient Centred Care", desc: "Your health, goals and comfort come first", icon: <Star className="w-[22px] h-[22px] text-[#08213D]" /> }
+    { title: "Experienced & Approachable", desc: "1:1 personalized care with clear clinical guidance", icon: UserCheck },
+    { title: "Focused on Your Recovery", desc: "Goal-oriented, phased rehabilitation roadmaps", icon: Activity },
+    { title: "Personalised Treatment Approach", desc: "Calibrated to your exact condition and activity level", icon: Heart },
+    { title: "Evidence Based Techniques", desc: "Advanced physical therapy research & verified protocols", icon: Award },
+    { title: "Focus on Long Term Results", desc: "Sustainable recovery and re-injury prevention", icon: Shield },
+    { title: "Patient Centred Care", desc: "Your safety, functional comfort, and goals come first", icon: Star }
   ];
 
   return (
-    <section id="doctor" className="py-12 lg:py-16 bg-[#F8FBFF] relative overflow-hidden font-sans">
+    <section id="doctor" className="py-16 lg:py-24 bg-white relative overflow-hidden font-sans border-t border-stone-200/80">
       
-      {/* Abstract Background Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Soft corner atmospheric lighting */}
-        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[60%] rounded-full blur-[120px] opacity-40" style={{ background: 'radial-gradient(circle, rgba(23,105,194,0.12), transparent 70%)' }}></div>
-        <div className="absolute top-[20%] -right-[10%] w-[45%] h-[60%] rounded-full blur-[120px] opacity-30" style={{ background: 'radial-gradient(circle, rgba(11,92,142,0.08), transparent 70%)' }}></div>
-        <div className="absolute -bottom-[15%] left-[20%] w-[50%] h-[50%] rounded-full blur-[130px] opacity-25" style={{ background: 'radial-gradient(circle, rgba(245,180,0,0.06), transparent 70%)' }}></div>
-
-        {/* Faint Dotted Grid Pattern at far edges */}
-        <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#0B5C8E_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,transparent_40%,#000_100%)]"></div>
-
-        {/* Ultra-low opacity SVG accents (delicate gold & blue curves + faint medical crosses at edges) */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.12]" preserveAspectRatio="none" viewBox="0 0 1440 800" fill="none">
-          {/* Subtle curved wave */}
-          <path d="M-100 200 C300 120, 700 350, 1540 150" stroke="#0B5C8E" strokeWidth="1.5" opacity="0.4" />
-          <path d="M-100 650 C400 500, 900 720, 1540 580" stroke="#F5B400" strokeWidth="1" opacity="0.3" />
-          
-          {/* Faint medical crosses at far corners */}
-          <g opacity="0.3" transform="translate(60, 120)">
-            <line x1="0" y1="10" x2="20" y2="10" stroke="#0B5C8E" strokeWidth="2" strokeLinecap="round" />
-            <line x1="10" y1="0" x2="10" y2="20" stroke="#0B5C8E" strokeWidth="2" strokeLinecap="round" />
-          </g>
-          <g opacity="0.25" transform="translate(1360, 680)">
-            <line x1="0" y1="10" x2="20" y2="10" stroke="#0B5C8E" strokeWidth="2" strokeLinecap="round" />
-            <line x1="10" y1="0" x2="10" y2="20" stroke="#0B5C8E" strokeWidth="2" strokeLinecap="round" />
-          </g>
-        </svg>
+      {/* Background Atmosphere */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] rounded-full bg-emerald-100/30 blur-[140px]" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] rounded-full bg-orange-50/40 blur-[150px]" />
       </div>
 
-      <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1640px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
-        {/* Main 3-Column Desktop Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12 items-center">
+        {/* Main 2-Column Light Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* ========================================================
-              LEFT COLUMN (30%) - DOCTOR IMAGE ONLY
-          ======================================================== */}
-          <div className="lg:w-[30%] shrink-0 relative animate-[slideRight_0.8s_ease-out_forwards]">
+          {/* LEFT: DOCTOR PORTRAIT CARD WITH LIGHT FRAMING (5 COLS) */}
+          <div className="lg:col-span-5 relative">
             
-            {/* Clean Rounded Frame */}
-            <div className="relative rounded-[20px] overflow-hidden bg-white border border-[rgba(8,33,61,0.08)] shadow-[0_12px_30px_rgba(20,65,100,0.08)] p-1.5">
-              <img
-                src={doctorPhoto}
-                alt={DOCTOR_INFO.name}
-                className="w-full h-[360px] lg:h-[420px] object-cover rounded-[16px] object-top"
-              />
-            </div>
-          </div>
+            <div className="relative rounded-3xl bg-stone-50 border border-stone-200 p-2.5 shadow-xl overflow-hidden group">
+              
+              {/* Image Frame */}
+              <div className="relative rounded-2xl overflow-hidden bg-stone-200 h-[460px] sm:h-[500px]">
+                <img
+                  src={doctorPhoto}
+                  alt={DOCTOR_INFO.name}
+                  className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent" />
+                
+                {/* Floating Accreditation Badge */}
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-stone-200 text-emerald-800 text-xs font-black uppercase tracking-wider shadow-sm">
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                    MPT (Sports Medicine)
+                  </span>
+                </div>
 
-          {/* ========================================================
-              CENTER COLUMN (42%) - CONTENT & EXPERTISE
-          ======================================================== */}
-          <div className="lg:w-[42%] flex flex-col justify-center animate-[slideUp_0.8s_ease-out_forwards] z-10" style={{ animationDelay: '150ms', opacity: 0 }}>
-            
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-[32px] h-[2px] bg-[#F5B400]"></div>
-              <span className="text-[#0B5C8E] font-bold text-[12px] tracking-[0.2em] uppercase">
-                Meet Our Specialist
-              </span>
-            </div>
-            
-            <h2 className="text-[34px] md:text-[40px] lg:text-[44px] font-extrabold text-[#08213D] tracking-tight leading-[1.1] mb-2">
-              Dr. K. Bhavendra
-            </h2>
-            
-            <div className="text-[#294764] text-[15px] font-semibold mb-4">
-              BPT, MPT (Sports Medicine), CMT, COCMT
-            </div>
-            
-            <p className="text-[#526A84] text-[15px] leading-[1.6] max-w-[580px] mb-6">
-              Dr. Bhavendra is a highly specialized physiotherapist dedicated to restoring biomechanical function and enhancing athletic performance. Through evidence-based manual therapy and targeted exercise protocols, he helps patients transition from acute pain to complete physical independence.
-            </p>
-            
-            {/* Expertise Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 mb-6">
-              {EXPERTISE.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 group">
-                  <div className="w-[38px] h-[38px] rounded-full bg-[#FFF8E6] border border-[rgba(245,180,0,0.16)] flex items-center justify-center shrink-0 group-hover:bg-[#EAF4FC] transition-colors duration-300">
-                    <div className="text-[#08213D] group-hover:-translate-y-[1px] transition-transform duration-300 scale-90">
-                      {item.icon}
-                    </div>
-                  </div>
-                  <div className="group-hover:translate-x-[2px] transition-transform duration-300 pt-0.5">
-                    <h4 className="text-[#08213D] text-[13px] font-bold mb-0.5 leading-tight">{item.title}</h4>
-                    <p className="text-[#526A84] text-[12px] leading-snug group-hover:text-[#294764] transition-colors">{item.desc}</p>
+                {/* Floating Rating Badge */}
+                <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-stone-200 text-stone-900 text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                  <Star className="w-3.5 h-3.5 text-emerald-600 fill-emerald-600" />
+                  <span>Lead Consultant</span>
+                </div>
+
+                {/* Bottom Overlay Nameplate */}
+                <div className="absolute bottom-4 left-4 right-4 z-20 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-lg">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-700 block mb-1">
+                    Clinical Director & Lead Consultant
+                  </span>
+                  <h3 className="text-xl font-black text-stone-900 tracking-wide">
+                    {DOCTOR_INFO.name}
+                  </h3>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {DOCTOR_INFO.credentials.map((cred, cIdx) => (
+                      <span key={cIdx} className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-mono font-bold border border-emerald-200">
+                        {cred}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              ))}
+
+              </div>
+
             </div>
+
+          </div>
+
+          {/* RIGHT: CLINICAL PHILOSOPHY & EXPERTISE PILLARS (7 COLS) */}
+          <div className="lg:col-span-7 space-y-6">
             
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 items-center">
-              <button 
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-extrabold uppercase tracking-widest shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+                <span>CLINICAL DIRECTOR &amp; SPECIALIST</span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+                Dedicated to Your Pain-Free Future
+              </h2>
+              
+              <p className="text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
+                Dr. K. Bhavendra combines specialized sports medicine expertise, advanced orthopedic manual therapy, and evidence-guided exercise rehabilitation to restore joint kinematics, relieve chronic nerve entrapment, and return patients to optimal daily mobility.
+              </p>
+            </div>
+
+            {/* Doctor Quote Card */}
+            <div className="relative p-5 rounded-2xl bg-[#FBFBFA] border border-stone-200 border-l-4 border-l-emerald-600 shadow-xs">
+              <Quote className="w-6 h-6 text-emerald-600/30 absolute top-4 right-4" />
+              <p className="text-sm sm:text-base italic text-stone-700 leading-relaxed max-w-xl">
+                "{DOCTOR_INFO.quote}"
+              </p>
+              <div className="mt-2.5 flex items-center gap-2 text-xs font-bold text-emerald-800">
+                <span>— Dr. K. Bhavendra PT</span>
+                <span className="text-stone-300">•</span>
+                <span className="text-stone-500">Anantapur Clinic</span>
+              </div>
+            </div>
+
+            {/* 6 Core Pillars Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              {EXPERTISE.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 hover:border-emerald-500/40 hover:bg-emerald-50/40 transition-colors flex items-start gap-3"
+                  >
+                    <div className="w-8 h-8 rounded-xl bg-white border border-stone-200 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-xs sm:text-sm font-bold text-stone-900 tracking-wide mb-0.5">
+                        {item.title}
+                      </h4>
+                      <p className="text-[11px] sm:text-xs text-stone-500 leading-snug">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* CTA Trigger Row */}
+            <div className="pt-3 flex flex-col sm:flex-row items-center gap-3.5">
+              <button
                 onClick={onBookClick}
-                className="w-full sm:w-auto h-[48px] px-6 bg-[#FFBF1A] text-[#061A31] rounded-[12px] font-bold text-[14px] shadow-[0_8px_20px_rgba(245,180,0,0.20)] hover:-translate-y-[2px] hover:shadow-[0_12px_25px_rgba(245,180,0,0.25)] hover:bg-[#FFC940] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs uppercase tracking-wider shadow-lg shadow-emerald-700/20 hover:shadow-emerald-700/35 transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Book a Consultation</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>Book Consultation with Dr. Bhavendra</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
 
               <Link
                 to="/doctor"
-                className="w-full sm:w-auto h-[48px] px-6 bg-white border border-[#08213D]/15 text-[#08213D] rounded-[12px] font-bold text-[14px] hover:bg-[#F4F9FD] hover:border-[#086B9F] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white hover:bg-stone-50 text-stone-900 hover:text-emerald-700 border border-stone-200 font-bold text-xs uppercase tracking-wider shadow-xs transition-all flex items-center justify-center gap-2"
               >
-                <span>Meet Dr. Bhavendra</span>
+                <span>View Full Profile</span>
+                <ArrowRight className="w-3.5 h-3.5 text-emerald-600" />
               </Link>
             </div>
-            
+
           </div>
 
-          {/* ========================================================
-              RIGHT COLUMN (28%) - QUOTE CARD
-          ======================================================== */}
-          <div className="lg:w-[28%] flex flex-col justify-center animate-[slideLeft_0.8s_ease-out_forwards]" style={{ animationDelay: '250ms', opacity: 0 }}>
-            
-            <div className="relative w-full bg-[rgba(255,255,255,0.78)] backdrop-blur-[16px] border border-[rgba(8,33,61,0.10)] rounded-[22px] shadow-[0_15px_35px_rgba(20,65,100,0.06)] p-7 h-[360px] lg:h-[420px] flex flex-col justify-between overflow-hidden group">
-              
-              {/* Subtle Decorative Landscape Silhouette */}
-              <div className="absolute bottom-0 right-[-10%] w-[160%] h-[60%] opacity-[0.06] pointer-events-none -z-10 group-hover:translate-x-3 transition-transform duration-[12s] ease-out">
-                <svg viewBox="0 0 200 100" preserveAspectRatio="none" className="w-full h-full fill-[#0B5C8E]">
-                  <path d="M0,100 L0,50 Q20,30 40,50 T80,40 T120,60 T160,30 T200,50 L200,100 Z" />
-                  <circle cx="160" cy="30" r="12" fill="#1769C2" />
-                </svg>
-              </div>
-
-              <div>
-                <Quote className="w-10 h-10 text-[#F5B400] mb-5 opacity-80 animate-[pulse_4s_ease-in-out_infinite]" strokeWidth={1} fill="currentColor" />
-                <p className="text-[#061A31] text-[22px] font-bold leading-[1.35] tracking-tight mb-5">
-                  "Helping you move, recover and build a stronger, healthier you."
-                </p>
-                <div className="text-[#0B5C8E] text-[14px] font-bold">
-                  — Dr. K. Bhavendra
-                </div>
-              </div>
-              
-              <div className="mt-auto border-t border-[rgba(8,33,61,0.06)] pt-4">
-                <div className="text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#7890A8]">
-                  MOVE • <span className="text-[#08213D]">RECOVER</span> • GET STRONGER
-                </div>
-              </div>
-              
-            </div>
-            
-          </div>
-          
-        </div>
-
-        {/* ========================================================
-            BOTTOM STATISTICS BAR
-        ======================================================== */}
-        <div className="mt-10 lg:mt-12 w-full bg-white/80 backdrop-blur-md border border-[rgba(8,33,61,0.08)] rounded-[18px] shadow-[0_10px_30px_rgba(20,65,100,0.05)] py-5 px-4 lg:px-8 animate-[slideUp_0.8s_ease-out_forwards]" style={{ animationDelay: '350ms', opacity: 0 }}>
-          <div className="flex flex-col md:flex-row justify-between divide-y md:divide-y-0 md:divide-x divide-[rgba(8,33,61,0.08)]">
-            
-            <div className="flex-1 flex items-center justify-center md:justify-start gap-4 px-4 py-3 md:py-0">
-              <div className="w-[44px] h-[44px] rounded-full bg-[#EAF4FC] flex items-center justify-center shrink-0 text-[#0B5C8E]">
-                <Medal className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[#08213D] text-[17px] font-extrabold leading-none mb-1">Lead Consultant</div>
-                <div className="text-[#7890A8] text-[11px] uppercase tracking-widest font-bold">Physiotherapist</div>
-              </div>
-            </div>
-
-            <div className="flex-1 flex items-center justify-center md:justify-center gap-4 px-4 py-3 md:py-0">
-              <div className="w-[44px] h-[44px] rounded-full bg-[#EAF4FC] flex items-center justify-center shrink-0 text-[#0B5C8E]">
-                <Award className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[#08213D] text-[17px] font-extrabold leading-none mb-1">BPT, MPT</div>
-                <div className="text-[#7890A8] text-[11px] uppercase tracking-widest font-bold">Credentials</div>
-              </div>
-            </div>
-
-            <div className="flex-1 flex items-center justify-center md:justify-center gap-4 px-4 py-3 md:py-0">
-              <div className="w-[44px] h-[44px] rounded-full bg-[#FFF4D6] flex items-center justify-center shrink-0 text-[#F5B400]">
-                <Activity className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[#08213D] text-[17px] font-extrabold leading-none mb-1">Sports Medicine</div>
-                <div className="text-[#7890A8] text-[11px] uppercase tracking-widest font-bold">Specialist</div>
-              </div>
-            </div>
-
-            <div className="flex-1 flex items-center justify-center md:justify-end gap-4 px-4 py-3 md:py-0">
-              <div className="w-[44px] h-[44px] rounded-full bg-[#EAF4FC] flex items-center justify-center shrink-0 text-[#0B5C8E]">
-                <Shield className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-[#08213D] text-[17px] font-extrabold leading-none mb-1">Evidence Based</div>
-                <div className="text-[#7890A8] text-[11px] uppercase tracking-widest font-bold">Care Protocols</div>
-              </div>
-            </div>
-            
-          </div>
         </div>
 
       </div>
-
-      <style>{`
-        @keyframes slideRight {
-          0% { opacity: 0; transform: translateX(-30px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideLeft {
-          0% { opacity: 0; transform: translateX(30px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideUp {
-          0% { opacity: 0; transform: translateY(25px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-4px); }
-        }
-      `}</style>
     </section>
   );
 };
+
+export default DoctorSection;

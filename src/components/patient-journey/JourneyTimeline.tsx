@@ -8,50 +8,53 @@ export const JourneyTimeline: React.FC = () => {
     {
       number: '01',
       title: 'CONNECT',
-      desc: 'Begin by discussing your concerns, symptoms and personal recovery goals.',
+      desc: 'Begin by discussing your symptoms, medical history, and functional goals.',
       icon: <MessageSquare className="w-5 h-5" />,
     },
     {
       number: '02',
       title: 'ASSESS',
-      desc: 'Understand your movement patterns, physical limitations and functional needs.',
+      desc: 'Evaluate joint mobility, muscular balance, and kinetic limitations.',
       icon: <Search className="w-5 h-5" />,
     },
     {
       number: '03',
       title: 'PLAN',
-      desc: 'Create a tailored rehabilitation approach structured around your individual needs.',
+      desc: 'Structure a customized rehabilitation plan utilizing clinical equipment and home drills.',
       icon: <Compass className="w-5 h-5" />,
     },
     {
       number: '04',
       title: 'PROGRESS',
-      desc: 'Work through guided clinical treatment, therapeutic movement and progressive strengthening.',
+      desc: 'Advance through guided therapy, decompression, and progressive load reconditioning.',
       icon: <Activity className="w-5 h-5" />,
     },
     {
       number: '05',
-      title: 'MOVE FORWARD',
-      desc: 'Build confidence and work toward returning to your everyday activities, exercise or sport.',
+      title: 'INDEPENDENCE',
+      desc: 'Achieve lasting recovery, ergonomic stability, and confident return to daily activities.',
       icon: <CheckCircle2 className="w-5 h-5" />,
     },
   ];
 
   return (
-    <section id="journey-timeline" className="py-20 lg:py-28 bg-[#041326] relative overflow-hidden font-sans text-white scroll-mt-20">
+    <section id="journey-timeline" className="py-20 lg:py-28 bg-[#FBFBFA] relative overflow-hidden font-sans scroll-mt-20 border-t border-stone-200/80">
       {/* Background Ambience */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#168DD0]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-[#F5B400]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-orange-100/40 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-3 text-[#F5B400] font-bold text-xs tracking-[0.2em] uppercase">
-            STRUCTURED REHABILITATION
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+            <span>STRUCTURED REHABILITATION</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15]">
             Your Journey, Step by Step.
           </h2>
+          <p className="text-stone-600 text-sm sm:text-base mt-2">
+            Clear, transparent rehabilitation milestones from your first consultation to full active independence.
+          </p>
         </div>
 
         {/* ========================================================
@@ -59,11 +62,11 @@ export const JourneyTimeline: React.FC = () => {
         ======================================================== */}
         <div className="hidden lg:block relative max-w-6xl mx-auto">
           {/* Base Inactive Progress Line */}
-          <div className="absolute top-7 left-[6%] right-[6%] h-[2px] bg-white/10 -z-0" />
+          <div className="absolute top-7 left-[6%] right-[6%] h-[2px] bg-stone-200 -z-0" />
 
-          {/* Active Cyan to Gold Progress Line */}
+          {/* Active Emerald to Teal Progress Line */}
           <div
-            className="absolute top-7 left-[6%] h-[2px] bg-gradient-to-r from-[#168DD0] to-[#F5B400] transition-all duration-500 ease-out -z-0"
+            className="absolute top-7 left-[6%] h-[2px] bg-gradient-to-r from-emerald-600 to-teal-600 transition-all duration-500 ease-out -z-0"
             style={{ width: `${(activeStep / (steps.length - 1)) * 88}%` }}
           />
 
@@ -80,12 +83,12 @@ export const JourneyTimeline: React.FC = () => {
                 >
                   {/* Step Circle Indicator */}
                   <div
-                    className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 transition-all duration-300 border-2 ${
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 border-2 ${
                       isActive
-                        ? 'bg-[#060b13] border-[#F5B400] text-[#F5B400] scale-110 shadow-[0_0_25px_rgba(245,180,0,0.4)]'
+                        ? 'bg-emerald-700 border-emerald-600 text-white scale-110 shadow-lg shadow-emerald-700/25'
                         : isPast
-                        ? 'bg-[#086B9F] border-[#168DD0] text-white'
-                        : 'bg-white/[0.05] border-white/15 text-[#7890A8] group-hover:border-[#168DD0] group-hover:text-white'
+                        ? 'bg-emerald-50 border-emerald-300 text-emerald-800'
+                        : 'bg-white border-stone-200 text-stone-400 group-hover:border-emerald-300 group-hover:text-emerald-800'
                     }`}
                   >
                     {step.icon}
@@ -94,19 +97,19 @@ export const JourneyTimeline: React.FC = () => {
                   {/* Step Number */}
                   <span
                     className={`text-[11px] font-black uppercase tracking-[0.2em] mb-1.5 transition-colors ${
-                      isActive ? 'text-[#F5B400]' : 'text-slate-400'
+                      isActive ? 'text-emerald-800' : 'text-stone-400'
                     }`}
                   >
                     STEP {step.number}
                   </span>
 
                   {/* Step Title */}
-                  <h3 className="text-base font-extrabold text-white mb-2 tracking-wide">
+                  <h3 className="text-base font-black text-stone-900 mb-2 tracking-wide">
                     {step.title}
                   </h3>
 
                   {/* Step Description */}
-                  <p className="text-xs text-slate-300 leading-relaxed max-w-[190px]">
+                  <p className="text-xs text-stone-600 leading-relaxed max-w-[190px]">
                     {step.desc}
                   </p>
                 </div>
@@ -118,21 +121,21 @@ export const JourneyTimeline: React.FC = () => {
         {/* ========================================================
             TABLET & MOBILE VERTICAL JOURNEY TIMELINE
         ======================================================== */}
-        <div className="lg:hidden relative pl-6 border-l-2 border-[#168DD0]/40 space-y-8 max-w-md mx-auto">
+        <div className="lg:hidden relative pl-6 border-l-2 border-emerald-600/40 space-y-8 max-w-md mx-auto">
           {steps.map((step) => (
             <div key={step.number} className="relative">
-              <div className="absolute -left-[33px] top-0 w-8 h-8 rounded-full bg-[#060b13] border-2 border-[#F5B400] flex items-center justify-center text-[#F5B400]">
-                <span className="text-[11px] font-bold">{step.number}</span>
+              <div className="absolute -left-[33px] top-0 w-8 h-8 rounded-full bg-emerald-700 border-2 border-emerald-500 flex items-center justify-center text-white">
+                <span className="text-[11px] font-black">{step.number}</span>
               </div>
 
-              <div className="bg-white/[0.05] rounded-2xl p-5 border border-white/10 backdrop-blur-md shadow-sm">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#F5B400] block mb-1">
+              <div className="bg-white rounded-3xl p-5 border border-stone-200 shadow-sm">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800 block mb-1">
                   STEP {step.number}
                 </span>
-                <h3 className="text-base font-extrabold text-white mb-2">
+                <h3 className="text-base font-black text-stone-900 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="text-xs text-stone-600 leading-relaxed">
                   {step.desc}
                 </p>
               </div>

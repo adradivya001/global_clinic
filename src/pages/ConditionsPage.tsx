@@ -11,7 +11,7 @@ interface ConditionsPageProps {
 
 export const ConditionsPage: React.FC<ConditionsPageProps> = ({ onBookClick }) => {
   return (
-    <main className="min-h-screen bg-white text-[#102A43]">
+    <main className="min-h-screen bg-white text-stone-900">
       {/* 01. Conditions Hero */}
       <ConditionsHero onBookClick={onBookClick} />
 
@@ -21,7 +21,7 @@ export const ConditionsPage: React.FC<ConditionsPageProps> = ({ onBookClick }) =
       {/* 03. From Symptoms To Assessment */}
       <SymptomsToAssessment />
 
-      {/* 04. Common Conditions Summary */}
+      {/* 04. Six Core Clinical Services (Level 1 Discovery) */}
       <CommonConditions onBookClick={onBookClick} />
 
       {/* 05. Final CTA */}

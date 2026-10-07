@@ -11,10 +11,10 @@ export const TopicFilters: React.FC<TopicFiltersProps> = ({ selectedTopic, onSel
     <div className="mb-10">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <span className="text-[#086B9F] font-bold text-xs tracking-[0.2em] uppercase block mb-1">
+          <span className="text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase block mb-1">
             CATEGORIES
           </span>
-          <h3 className="text-xl sm:text-2xl font-extrabold text-[#07182D] tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
             Explore By Topic
           </h3>
         </div>
@@ -28,10 +28,10 @@ export const TopicFilters: React.FC<TopicFiltersProps> = ({ selectedTopic, onSel
             <button
               key={topic}
               onClick={() => onSelectTopic(topic)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
+              className={`px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all whitespace-nowrap cursor-pointer ${
                 isSelected
-                  ? 'bg-[#08213D] text-white shadow-md shadow-[#08213D]/20 scale-105 border border-[#08213D]'
-                  : 'bg-white text-[#526A84] border border-[#08213D]/8 hover:border-[#086B9F] hover:text-[#086B9F] hover:bg-[#F7FAFD]'
+                  ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20 scale-105 border border-emerald-700'
+                  : 'bg-white text-stone-600 border border-stone-200 hover:border-emerald-300 hover:text-emerald-800 hover:bg-emerald-50/40'
               }`}
             >
               {topic}
