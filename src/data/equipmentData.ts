@@ -181,7 +181,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '11',
     name: 'Parallel Bar Training',
     category: 'Rehabilitation Equipment',
-    image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80',
+    image: '/parallel_bar_training.png',
     shortDescription: 'Supported standing and walking practice for safer movement.',
     paragraphs: [
       "Parallel bars provide a secure, bilateral support structure for patients who require maximum stability while learning or relearning standing, weight shifting, and walking skills. The solid handrails create a reassuring environment for early mobility practice.",
@@ -196,7 +196,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '12',
     name: 'Swiss Ball Training',
     category: 'Exercise & Strength',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80',
+    image: '/swiss_ball_training.png',
     shortDescription: 'Exercise-ball training for core strength, balance, flexibility, and coordination.',
     paragraphs: [
       "Swiss ball training uses large therapeutic exercise balls to create dynamic instability during guided core, balance, and mobility exercises. The ball encourages continuous engagement of deep postural and stabilizing muscles while supporting functional movement.",
@@ -211,7 +211,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '13',
     name: 'Electrotherapy',
     category: 'Pain & Comfort',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    image: '/electrotherapy.png',
     shortDescription: 'Controlled electrical stimulation used in selected physiotherapy programs.',
     paragraphs: [
       "Electrotherapy delivers controlled, therapeutic electrical stimulation through surface electrodes placed on the skin. Depending on the specific frequency and waveform chosen, it can support pain-management pathways or encourage muscle activation during rehabilitation.",
@@ -226,7 +226,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '14',
     name: 'Thermotherapy',
     category: 'Pain & Comfort',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
+    image: '/thermotherapy.png',
     shortDescription: 'Controlled warmth used to support comfort, relaxation, and movement.',
     paragraphs: [
       "Thermotherapy uses controlled, therapeutic heat application to promote localized circulation, encourage muscle relaxation, and ease stiffness in joint and soft tissue structures. It is commonly applied before exercise or manual therapy to prepare the body for movement.",
@@ -241,7 +241,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '15',
     name: 'Cryotherapy',
     category: 'Pain & Comfort',
-    image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=800&q=80',
+    image: '/cryotherapy.png',
     shortDescription: 'Controlled cold treatment used for temporary pain relief and swelling management.',
     paragraphs: [
       "Cryotherapy involves the targeted application of controlled cold to help manage localized pain, ease inflammation, and support tissue recovery following acute injuries or intensive rehabilitation exercises.",
@@ -256,7 +256,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '16',
     name: 'Dry Needling',
     category: 'Supportive Techniques',
-    image: 'https://images.unsplash.com/photo-1512290900672-1f023922df37?auto=format&fit=crop&w=800&q=80',
+    image: '/dry_needling.png',
     shortDescription: 'A targeted technique using thin sterile needles for selected muscle-related pain and tightness.',
     paragraphs: [
       "Dry needling is a targeted clinical technique that uses very fine, sterile filiform needles inserted into specific muscular trigger points and tight bands of tissue. It is designed to stimulate muscular release, reduce localized tension, and support comfortable movement.",
@@ -271,7 +271,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '17',
     name: 'Traction Therapy',
     category: 'Supportive Techniques',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: '/traction_therapy.png',
     shortDescription: 'Controlled spinal stretching used for selected neck and back conditions.',
     paragraphs: [
       "Traction therapy utilizes computerized, controlled pulling forces to gently decompress and unload specific segments of the cervical (neck) or lumbar (lower back) spine. It is designed to reduce compressive pressure on spinal discs, joints, and irritated nerve roots.",
@@ -286,7 +286,7 @@ export const CLINIC_EQUIPMENT: EquipmentItem[] = [
     number: '18',
     name: 'Vibration Plate',
     category: 'Exercise & Strength',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80',
+    image: '/vibration_plate.png',
     shortDescription: 'Controlled vibration used during selected strengthening and balance exercises.',
     paragraphs: [
       "Vibration plate training utilizes a platform that generates controlled mechanical oscillations to stimulate rapid muscle contractions, enhance sensory input, and challenge postural stability. It can be integrated into exercise programs to boost muscle activation and body awareness.",
