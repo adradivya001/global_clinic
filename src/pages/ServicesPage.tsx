@@ -7,23 +7,23 @@ import { ClinicEquipment } from '../components/clinic/ClinicEquipment';
 import { FindingRightApproach } from '../components/treatments/FindingRightApproach';
 import { TreatmentsCTA } from '../components/treatments/TreatmentsCTA';
 
-interface TreatmentsPageProps {
+interface ServicesPageProps {
   onBookClick: () => void;
 }
 
-export const TreatmentsPage: React.FC<TreatmentsPageProps> = ({ onBookClick }) => {
+export const ServicesPage: React.FC<ServicesPageProps> = ({ onBookClick }) => {
   return (
-    <main className="min-h-screen bg-white text-stone-900">
-      {/* 01. Treatments Hero */}
+    <main className="min-h-screen bg-[#FFFDF8] text-[#24190F]">
+      {/* 01. Services Hero */}
       <TreatmentsHero onBookClick={onBookClick} />
 
-      {/* 02. Areas of Care (Categories) */}
+      {/* 02. Clinical Services & Areas of Care */}
       <TreatmentCategories onBookClick={onBookClick} />
 
-      {/* 03. Focused Treatment Areas */}
+      {/* 03. Focused Treatment & Care Areas */}
       <FeaturedTreatments onBookClick={onBookClick} />
 
-      {/* 04. Treatment Methods */}
+      {/* 04. Treatment Methods & Protocols */}
       <TreatmentMethods />
 
       {/* 05. 18 Machines & Modalities */}
@@ -42,4 +42,4 @@ export const TreatmentsPage: React.FC<TreatmentsPageProps> = ({ onBookClick }) =
   );
 };
 
-export default TreatmentsPage;
+export default ServicesPage;

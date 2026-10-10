@@ -96,62 +96,62 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
   const getCategoryBadgeClass = (category: string) => {
     switch (category) {
       case 'Rehabilitation Equipment':
-        return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+        return 'bg-[#FAF4E8] text-[#B87908] border-[#EAD9B7]';
       case 'Exercise & Strength':
-        return 'bg-orange-50 text-orange-800 border-orange-200';
+        return 'bg-[#FAF4E8] text-[#B87908] border-[#EAD9B7]';
       case 'Pain & Comfort':
-        return 'bg-teal-50 text-teal-800 border-teal-200';
+        return 'bg-[#FAF4E8] text-[#B87908] border-[#EAD9B7]';
       case 'Supportive Techniques':
-        return 'bg-stone-100 text-stone-800 border-stone-300';
+        return 'bg-[#FAF4E8] text-[#B87908] border-[#EAD9B7]';
       default:
-        return 'bg-emerald-50 text-emerald-800 border-emerald-200';
+        return 'bg-[#FAF4E8] text-[#B87908] border-[#EAD9B7]';
     }
   };
 
   return (
-    <section id="clinic-equipment" className="py-20 lg:py-28 bg-[#FBFBFA] relative overflow-hidden font-sans border-t border-stone-200/80 scroll-mt-20">
+    <section id="clinic-equipment" className="py-20 lg:py-28 bg-[#FFFDF8] relative overflow-hidden font-sans border-t border-[#EAD9B7]/60 scroll-mt-20">
       {/* Subtle Ambient Background */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-100/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#F8EAC9]/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#FAF4E8]/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-xs border border-emerald-200">
-            <Cpu className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F8EAC9] text-[#B87908] font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-xs border border-[#EAD9B7]">
+            <Cpu className="w-3.5 h-3.5 text-[#B87908]" />
             <span>CLINICAL TECHNOLOGY & MODALITIES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#24190F] tracking-tight leading-[1.15] mb-4">
             {title}
           </h2>
 
-          <p className="text-stone-800 text-base sm:text-lg leading-relaxed font-semibold mb-3">
+          <p className="text-[#24190F] text-base sm:text-lg leading-relaxed font-semibold mb-3">
             {subtitle}
           </p>
 
-          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-normal max-w-2xl mx-auto">
+          <p className="text-[#65594B] text-xs sm:text-sm leading-relaxed font-normal max-w-2xl mx-auto">
             Our clinic combines guided exercise, rehabilitation equipment, and selected treatment techniques based on each patient's individual needs. Your physiotherapist chooses the most appropriate approach after assessing your condition, movement, strength, and treatment goals.
           </p>
 
           {/* Quick Stats Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-6 border-t border-stone-200/80 max-w-2xl mx-auto">
-            <div className="bg-white p-3 rounded-xl border border-stone-200/80 shadow-2xs text-center">
-              <span className="block text-2xl font-black text-stone-900">18</span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">Modalities</span>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-6 border-t border-[#EAD9B7]/80 max-w-2xl mx-auto">
+            <div className="bg-white p-3 rounded-xl border border-[#EAD9B7] shadow-xs text-center">
+              <span className="block text-2xl font-serif font-bold text-[#24190F]">18</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#65594B]">Modalities</span>
             </div>
-            <div className="bg-white p-3 rounded-xl border border-stone-200/80 shadow-2xs text-center">
-              <span className="block text-2xl font-black text-orange-700">100%</span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">Supervised</span>
+            <div className="bg-white p-3 rounded-xl border border-[#EAD9B7] shadow-xs text-center">
+              <span className="block text-2xl font-serif font-bold text-[#B87908]">100%</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#65594B]">Supervised</span>
             </div>
-            <div className="bg-white p-3 rounded-xl border border-stone-200/80 shadow-2xs text-center">
-              <span className="block text-2xl font-black text-emerald-700">4</span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">Categories</span>
+            <div className="bg-white p-3 rounded-xl border border-[#EAD9B7] shadow-xs text-center">
+              <span className="block text-2xl font-serif font-bold text-[#B87908]">4</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#65594B]">Categories</span>
             </div>
-            <div className="bg-white p-3 rounded-xl border border-stone-200/80 shadow-2xs text-center">
-              <span className="block text-2xl font-black text-stone-900">1:1</span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">Personalized</span>
+            <div className="bg-white p-3 rounded-xl border border-[#EAD9B7] shadow-xs text-center">
+              <span className="block text-2xl font-serif font-bold text-[#24190F]">1:1</span>
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#65594B]">Personalized</span>
             </div>
           </div>
         </div>
@@ -172,13 +172,13 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-200 flex items-center gap-2 cursor-pointer border ${
                     isActive
-                      ? 'bg-stone-900 text-white border-stone-900 shadow-md shadow-stone-900/20 scale-102'
-                      : 'bg-white text-stone-600 border-stone-200 hover:border-stone-300 hover:text-stone-900 shadow-2xs'
+                      ? 'bg-[#B87908] text-white border-[#B87908] shadow-md shadow-[#B87908]/20 scale-102'
+                      : 'bg-white text-[#65594B] border-[#EAD9B7] hover:border-[#B87908] hover:text-[#24190F] shadow-xs'
                   }`}
                 >
                   <span>{cat}</span>
-                  <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-black ${
-                    isActive ? 'bg-emerald-600 text-white' : 'bg-stone-100 text-stone-600'
+                  <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
+                    isActive ? 'bg-[#D99B24] text-white' : 'bg-[#FAF4E8] text-[#65594B]'
                   }`}>
                     {count}
                   </span>
@@ -189,18 +189,18 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
 
           {/* Search Box */}
           <div className="max-w-md mx-auto relative">
-            <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#65594B]/60 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               placeholder="Search equipment or technique (e.g. Treadmill, CPM, Cupping, Traction)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-9 py-2.5 bg-white border border-stone-200 rounded-xl text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600/30 focus:border-emerald-600 transition-all shadow-xs"
+              className="w-full pl-10 pr-9 py-2.5 bg-white border border-[#EAD9B7] rounded-xl text-xs sm:text-sm text-[#24190F] placeholder:text-[#65594B]/60 focus:outline-none focus:ring-2 focus:ring-[#B87908]/30 focus:border-[#B87908] transition-all shadow-xs"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-0.5"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#65594B] hover:text-[#24190F] p-0.5"
                 aria-label="Clear Search"
               >
                 <X className="w-3.5 h-3.5" />
@@ -209,17 +209,17 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
           </div>
         </div>
 
-        {/* Dynamic Equipment Grid (Desktop: 3 / Tablet: 2 / Mobile: 1) */}
+        {/* Dynamic Equipment Grid */}
         {filteredEquipment.length === 0 ? (
-          <div className="bg-white rounded-2xl p-12 text-center border border-stone-200 max-w-lg mx-auto shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto mb-3">
+          <div className="bg-white rounded-2xl p-12 text-center border border-[#EAD9B7] max-w-lg mx-auto shadow-sm">
+            <div className="w-12 h-12 rounded-full bg-[#FAF4E8] text-[#B87908] flex items-center justify-center mx-auto mb-3">
               <Search className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-stone-900 mb-1">No equipment found</h3>
-            <p className="text-xs text-stone-500 mb-4">No item matches "{searchQuery}". Try selecting "All" or a different category.</p>
+            <h3 className="text-base font-serif font-bold text-[#24190F] mb-1">No equipment found</h3>
+            <p className="text-xs text-[#65594B] mb-4">No item matches "{searchQuery}". Try selecting "All" or a different category.</p>
             <button
               onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
-              className="px-4 py-2 bg-stone-900 text-white rounded-lg text-xs font-bold hover:bg-stone-800 transition-colors cursor-pointer"
+              className="px-4 py-2 bg-[#B87908] text-white rounded-lg text-xs font-bold hover:bg-[#a06806] transition-colors cursor-pointer"
             >
               Reset Filters
             </button>
@@ -234,10 +234,10 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
                   <div
                     key={item.id}
                     onClick={() => setActiveModalItem(item)}
-                    className="bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_20px_rgba(24,24,27,0.03)] hover:shadow-[0_16px_36px_rgba(24,24,27,0.08)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer group"
+                    className="bg-white rounded-3xl border border-[#EAD9B7] shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer group"
                   >
-                    {/* Top Image Banner with Hover Zoom */}
-                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-stone-100">
+                    {/* Top Image Banner */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#FAF4E8]">
                       <img 
                         src={item.image} 
                         alt={item.name}
@@ -248,13 +248,13 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
                       
                       {/* Top overlay badges */}
                       <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
-                        <span className="text-xs font-black tracking-widest text-white bg-stone-900/85 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/20 shadow-xs">
+                        <span className="text-xs font-serif font-bold tracking-widest text-white bg-[#24190F]/85 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-white/20 shadow-xs">
                           #{item.number}
                         </span>
                       </div>
 
                       <div className="absolute top-3.5 right-3.5">
-                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider backdrop-blur-md shadow-xs border ${badgeStyle}`}>
+                        <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md shadow-xs border ${badgeStyle}`}>
                           {item.category}
                         </span>
                       </div>
@@ -264,30 +264,30 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
                     <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                       <div>
                         {/* Small Category Label & Icon */}
-                        <div className="flex items-center gap-2 mb-2 text-stone-500">
-                          <div className="w-6 h-6 rounded-md bg-stone-100 flex items-center justify-center text-stone-700">
+                        <div className="flex items-center gap-2 mb-2 text-[#65594B]">
+                          <div className="w-6 h-6 rounded-md bg-[#FAF4E8] flex items-center justify-center text-[#B87908]">
                             {renderIcon(item.iconType)}
                           </div>
-                          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-800">
+                          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#B87908]">
                             {item.category}
                           </span>
                         </div>
 
                         {/* Equipment Name */}
-                        <h3 className="text-xl font-black text-stone-900 group-hover:text-emerald-700 transition-colors tracking-tight leading-snug mb-2">
+                        <h3 className="text-xl font-serif font-bold text-[#24190F] group-hover:text-[#B87908] transition-colors tracking-tight leading-snug mb-2">
                           {item.name}
                         </h3>
 
                         {/* Short Description */}
-                        <p className="text-xs sm:text-sm text-stone-600 leading-relaxed line-clamp-3">
+                        <p className="text-xs sm:text-sm text-[#65594B] leading-relaxed line-clamp-3">
                           {item.shortDescription}
                         </p>
                       </div>
 
                       {/* Explore Action Button */}
-                      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-emerald-700 group-hover:text-emerald-800">
+                      <div className="pt-3 border-t border-[#EAD9B7]/60 flex items-center justify-between text-xs font-bold text-[#B87908] group-hover:text-[#a06806]">
                         <span className="tracking-wide">Explore</span>
-                        <div className="w-7 h-7 rounded-full bg-emerald-50 group-hover:bg-emerald-700 group-hover:text-white flex items-center justify-center transition-all duration-200">
+                        <div className="w-7 h-7 rounded-full bg-[#F8EAC9] group-hover:bg-[#B87908] group-hover:text-white flex items-center justify-center transition-all duration-200">
                           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                         </div>
                       </div>
@@ -301,11 +301,11 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
             {showViewAllButton && (
               <div className="text-center pt-2">
                 <Link
-                  to="/treatments"
-                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-stone-900 hover:bg-emerald-700 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer group"
+                  to="/services"
+                  className="inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl bg-[#B87908] hover:bg-[#a06806] text-white font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer group"
                 >
-                  <span>Explore All 18 Clinical Modalities &amp; Machines</span>
-                  <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+                  <span>Explore All Clinical Services &amp; Modalities</span>
+                  <ArrowRight className="w-4 h-4 text-[#F8EAC9] group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             )}
@@ -313,16 +313,16 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
         )}
 
         {/* Bottom Verification Note & Doctor Supervision Tag */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-emerald-50/70 via-white to-stone-50 border border-stone-200/90 text-stone-900 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-stone-200/50">
+        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#FAF4E8] via-white to-[#F8EAC9]/40 border border-[#EAD9B7] text-[#24190F] flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg shadow-[#B87908]/5">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-700 to-teal-800 text-white flex items-center justify-center shrink-0 font-bold shadow-md shadow-emerald-700/20">
+            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#B87908] to-[#D99B24] text-white flex items-center justify-center shrink-0 font-bold shadow-md shadow-[#B87908]/20">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base sm:text-lg font-black leading-snug text-stone-900">
+              <h4 className="text-base sm:text-lg font-serif font-bold leading-snug text-[#24190F]">
                 Prescribed & Calibrated by Dr. K. Bhavendra PT
               </h4>
-              <p className="text-xs sm:text-sm text-stone-600 mt-1 max-w-2xl leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#65594B] mt-1 max-w-2xl leading-relaxed">
                 No machine is applied in isolation. Equipment parameters, resistance loads, and treatment durations are personalized after rigorous physical evaluation at {CLINIC_INFO.name}.
               </p>
             </div>
@@ -331,14 +331,14 @@ export const ClinicEquipment: React.FC<ClinicEquipmentProps> = ({
           <div className="flex items-center gap-3 shrink-0 w-full md:w-auto">
             <a
               href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-              className="flex-1 md:flex-none px-4 py-3 rounded-2xl bg-white hover:bg-stone-50 border border-stone-200 text-stone-900 font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-xs"
+              className="flex-1 md:flex-none px-4 py-3 rounded-2xl bg-white hover:bg-[#FAF4E8] border border-[#EAD9B7] text-[#24190F] font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-xs"
             >
-              <Phone className="w-3.5 h-3.5 text-emerald-700" />
+              <Phone className="w-3.5 h-3.5 text-[#B87908]" />
               <span>{CLINIC_INFO.phone}</span>
             </a>
             <button
               onClick={onBookClick}
-              className="flex-1 md:flex-none px-5 py-3 rounded-2xl bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-700/20 cursor-pointer"
+              className="flex-1 md:flex-none px-5 py-3 rounded-2xl bg-[#B87908] hover:bg-[#a06806] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-[#B87908]/20 cursor-pointer"
             >
               <span>Consult Doctor</span>
               <ArrowRight className="w-3.5 h-3.5" />

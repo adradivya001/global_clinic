@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-stone-50 text-stone-600 relative overflow-hidden font-sans border-t border-stone-200">
+    <footer className="bg-[#FAF4E8] text-[#65594B] relative overflow-hidden font-sans border-t border-[#EAD9B7]">
       
       {/* Sequential Section Flow banner */}
       <NextSectionFlow />
@@ -31,19 +31,19 @@ export const Footer: React.FC = () => {
               />
             </Link>
 
-            <p className="text-xs text-stone-600 leading-relaxed">
-              <strong className="text-stone-900 font-semibold">{CLINIC_INFO.name}</strong> — Premier physical therapy, spinal decompression, sports medicine, and kinetic rehabilitation under Clinical Director Dr. K. Bhavendra PT.
+            <p className="text-xs text-[#65594B] leading-relaxed">
+              <strong className="text-[#24190F] font-semibold">{CLINIC_INFO.name}</strong> — Premier physical therapy, spinal decompression, sports medicine, and kinetic rehabilitation under Clinical Director Dr. K. Bhavendra PT.
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-stone-200 text-xs text-emerald-800 font-semibold shadow-xs">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-[#EAD9B7] text-xs text-[#B87908] font-semibold shadow-xs">
+              <ShieldCheck className="w-4 h-4 text-[#B87908]" />
               <span>Certified Sports & Spine Care</span>
             </div>
           </div>
 
           {/* Column 2: Clinical Directory */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-stone-900 tracking-widest uppercase pb-2 border-b border-stone-200">
+            <h4 className="text-xs font-black text-[#24190F] tracking-widest uppercase pb-2 border-b border-[#EAD9B7]">
               Clinical Directory
             </h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
@@ -52,13 +52,12 @@ export const Footer: React.FC = () => {
                   { label: 'Home', to: '/' },
                   { label: 'About Clinic', to: '/about' },
                   { label: 'Doctor Profile', to: '/doctor' },
-                  { label: 'Treatments (18)', to: '/treatments' },
-                  { label: 'Conditions', to: '/conditions' },
+                  { label: 'Clinical Services', to: '/services' },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-stone-600 hover:text-emerald-700 hover:translate-x-1 transition-all inline-block py-0.5"
+                      className="text-[#65594B] hover:text-[#B87908] hover:translate-x-1 transition-all inline-block py-0.5"
                     >
                       {link.label}
                     </Link>
@@ -77,7 +76,7 @@ export const Footer: React.FC = () => {
                   <li key={link.label}>
                     <Link
                       to={link.to}
-                      className="text-stone-600 hover:text-emerald-700 hover:translate-x-1 transition-all inline-block py-0.5"
+                      className="text-[#65594B] hover:text-[#B87908] hover:translate-x-1 transition-all inline-block py-0.5"
                     >
                       {link.label}
                     </Link>
@@ -89,72 +88,72 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Location & Hours */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-stone-900 tracking-widest uppercase pb-2 border-b border-stone-200">
+            <h4 className="text-xs font-black text-[#24190F] tracking-widest uppercase pb-2 border-b border-[#EAD9B7]">
               Location & Hours
             </h4>
             <div className="space-y-3 text-xs">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                <span className="text-stone-600 leading-snug">
+                <MapPin className="w-4 h-4 text-[#B87908] shrink-0 mt-0.5" />
+                <span className="text-[#65594B] leading-snug">
                   {CLINIC_INFO.address}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-orange-700 shrink-0" />
+                <Phone className="w-4 h-4 text-[#D99B24] shrink-0" />
                 <a
                   href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-                  className="text-stone-900 font-bold hover:text-emerald-700 transition-colors"
+                  className="text-[#24190F] font-bold hover:text-[#B87908] transition-colors"
                 >
                   {CLINIC_INFO.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span className="text-stone-600">{CLINIC_INFO.hours}</span>
+                <Clock className="w-4 h-4 text-[#B87908] shrink-0" />
+                <span className="text-[#65594B]">{CLINIC_INFO.hours}</span>
               </div>
             </div>
           </div>
 
           {/* Column 4: Immediate Appointment */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-stone-900 tracking-widest uppercase pb-2 border-b border-stone-200">
+            <h4 className="text-xs font-black text-[#24190F] tracking-widest uppercase pb-2 border-b border-[#EAD9B7]">
               Immediate Care
             </h4>
             
-            <p className="text-xs text-stone-600 leading-relaxed">
+            <p className="text-xs text-[#65594B] leading-relaxed">
               Need immediate advice or have questions about an acute sports strain or spinal pain? Call our front desk directly.
             </p>
 
             <a
               href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-white hover:bg-emerald-50/60 border border-stone-200 hover:border-emerald-600 text-stone-900 hover:text-emerald-800 font-bold text-xs transition-all shadow-xs"
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-white hover:bg-[#F8EAC9]/60 border border-[#EAD9B7] hover:border-[#B87908] text-[#24190F] hover:text-[#B87908] font-bold text-xs transition-all shadow-xs"
             >
-              <Phone className="w-3.5 h-3.5 text-emerald-700" />
+              <Phone className="w-3.5 h-3.5 text-[#B87908]" />
               <span>Direct Hotline: {CLINIC_INFO.phone}</span>
             </a>
 
             <div className="pt-2 flex items-center gap-2">
-              <span className="text-[11px] text-stone-500">Committed to patient-first recovery.</span>
+              <span className="text-[11px] text-[#65594B]/80">Committed to patient-first recovery.</span>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Legal Bar + Scroll to Top */}
-        <div className="pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div className="pt-8 border-t border-[#EAD9B7] flex flex-col sm:flex-row items-center justify-between text-xs text-[#65594B] gap-4">
           <p>© 2026 Global Physiotherapy Clinic, Anantapur. All Rights Reserved.</p>
 
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3 text-xs">
-              <Link to="/contact" className="hover:text-emerald-700 transition-colors">
+              <Link to="/contact" className="hover:text-[#B87908] transition-colors">
                 Privacy Policy
               </Link>
-              <span className="text-stone-300">|</span>
-              <Link to="/contact" className="hover:text-emerald-700 transition-colors">
+              <span className="text-[#EAD9B7]">|</span>
+              <Link to="/contact" className="hover:text-[#B87908] transition-colors">
                 Terms of Care
               </Link>
-              <span className="text-stone-300">|</span>
-              <Link to="/contact" className="hover:text-emerald-700 transition-colors">
+              <span className="text-[#EAD9B7]">|</span>
+              <Link to="/contact" className="hover:text-[#B87908] transition-colors">
                 Clinic Location
               </Link>
             </div>
@@ -162,7 +161,7 @@ export const Footer: React.FC = () => {
             {/* Scroll to Top Button */}
             <button
               onClick={scrollToTop}
-              className="w-8 h-8 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center shadow-md shadow-emerald-700/20 transition-all hover:scale-105 cursor-pointer"
+              className="w-8 h-8 rounded-xl bg-[#B87908] hover:bg-[#966205] text-white flex items-center justify-center shadow-md shadow-[#B87908]/20 transition-all hover:scale-105 cursor-pointer"
               aria-label="Scroll to top"
               title="Scroll to top"
             >

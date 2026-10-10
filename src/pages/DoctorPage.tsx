@@ -11,7 +11,7 @@ interface DoctorPageProps {
 
 export const DoctorPage: React.FC<DoctorPageProps> = ({ onBookClick }) => {
   return (
-    <main className="min-h-screen bg-white text-stone-900">
+    <main className="min-h-screen bg-[#FFFDF8] text-[#24190F]">
       {/* 01. Doctor Hero */}
       <DoctorHero onBookClick={onBookClick} />
 

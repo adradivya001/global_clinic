@@ -7,8 +7,7 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { DoctorPage } from './pages/DoctorPage';
-import { TreatmentsPage } from './pages/TreatmentsPage';
-import { ConditionsPage } from './pages/ConditionsPage';
+import { ServicesPage } from './pages/ServicesPage';
 import { PatientJourneyPage } from './pages/PatientJourneyPage';
 import { PatientStoriesPage } from './pages/PatientStoriesPage';
 import { ClinicPage } from './pages/ClinicPage';
@@ -30,7 +29,7 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-screen bg-white text-stone-800 selection:bg-emerald-600 selection:text-white font-sans flex flex-col pb-16 md:pb-0">
+      <div className="min-h-screen bg-[#FFFDF8] text-[#24190F] selection:bg-[#B87908] selection:text-white font-sans flex flex-col pb-16 md:pb-0">
         {/* Persistent Global Navbar */}
         <Navbar onBookClick={handleOpenAppointment} />
 
@@ -50,16 +49,16 @@ export function App() {
               element={<DoctorPage onBookClick={handleOpenAppointment} />}
             />
             <Route
-              path="/treatments"
-              element={<TreatmentsPage onBookClick={handleOpenAppointment} />}
+              path="/services"
+              element={<ServicesPage onBookClick={handleOpenAppointment} />}
             />
             <Route
-              path="/treatments/:id"
-              element={<TreatmentDetailPageWrapper onBookClick={handleOpenAppointment} />}
+              path="/treatments"
+              element={<ServicesPage onBookClick={handleOpenAppointment} />}
             />
             <Route
               path="/conditions"
-              element={<ConditionsPage onBookClick={handleOpenAppointment} />}
+              element={<ServicesPage onBookClick={handleOpenAppointment} />}
             />
             <Route
               path="/services/:id"

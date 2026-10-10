@@ -1,8 +1,5 @@
 import React from 'react';
-import { ArrowRight, Star, Clock, MapPin, ShieldCheck, Sparkles, Phone, Award, CheckCircle2, Activity } from 'lucide-react';
-import { CLINIC_INFO, DOCTOR_INFO } from '../data/clinicData';
-import facilityImg from '../assets/clinic_facility_treatment.jpg';
-import doctorPhoto from '../assets/doctor_photo.png';
+import { Calendar, ArrowRight, Play, Activity, Zap, TrendingUp, Heart, Users, Award, ShieldCheck, UserCheck } from 'lucide-react';
 
 interface HeroProps {
   onBookClick: () => void;
@@ -11,173 +8,206 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onBookClick, onExploreClick }) => {
   return (
-    <section
+    <section 
       data-hero
-      className="relative w-full min-h-[92vh] lg:min-h-screen overflow-hidden bg-gradient-to-b from-[#F3F7F4] via-[#F8F9FA] to-[#FAF8F5] flex items-center justify-center pt-28 pb-16 lg:pt-32 lg:pb-20 font-sans"
+      className="relative w-full bg-[#FAF7F2] overflow-hidden font-sans pt-3 pb-6 sm:pt-6 sm:pb-8 lg:pt-5 lg:pb-8"
     >
-      {/* 1. LUXURY LIGHT ATMOSPHERE WITH EMERALD & COPPER GLOWS */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-10 left-10 w-[600px] h-[600px] bg-emerald-100/50 rounded-full blur-[140px] animate-pulse-subtle" />
-        <div className="absolute top-1/4 right-5 w-[650px] h-[650px] bg-orange-100/40 rounded-full blur-[160px]" />
-        <div className="absolute -bottom-10 left-1/3 w-[550px] h-[550px] bg-teal-100/40 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 left-5 w-[300px] h-[300px] bg-emerald-50/70 rounded-full blur-[120px]" />
-        
-        {/* Subtle geometric dot grid pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#059669_0.8px,transparent_0.8px)] [background-size:28px_28px] opacity-[0.035]" />
+      {/* ── BACKGROUND RADIANT SPINE IMAGE (LIMITED TO TOP HERO AREA) ── */}
+      <div className="absolute top-0 right-0 w-full lg:w-[68%] h-[460px] lg:h-[520px] pointer-events-none overflow-hidden z-0">
+        {/* Radiant Spine Image Positioned on the Right */}
+        <img
+          src="/radiant-spine.png"
+          alt="Radiant Spine Medical Illustration"
+          className="w-full h-full object-cover object-right-top select-none"
+        />
+
+        {/* Soft Golden Background Overlay Gradient from Left */}
+        <div 
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background: 'linear-gradient(90deg, #FAF7F2 0%, #FAF7F2 35%, rgba(250, 247, 242, 0.95) 48%, rgba(250, 247, 242, 0.3) 65%, transparent 100%)'
+          }}
+        />
+
+        {/* Mobile / Tablet Full Soft Overlay for 100% Contrast */}
+        <div 
+          className="absolute inset-0 lg:hidden"
+          style={{
+            background: 'linear-gradient(180deg, rgba(250, 247, 242, 0.96) 0%, rgba(250, 247, 242, 0.88) 60%, #FAF7F2 100%)'
+          }}
+        />
+
+        {/* Smooth Bottom Fade to Solid #FAF7F2 before Stats Box */}
+        <div 
+          className="absolute bottom-0 inset-x-0 h-36 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(250, 247, 242, 0.7) 40%, #FAF7F2 100%)'
+          }}
+        />
       </div>
 
-      {/* 2. MAIN HERO CONTAINER */}
-      <div className="relative z-10 w-full max-w-[1640px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+      {/* Subtle Ambient Golden Radial Glow in Top-Left */}
+      <div 
+        className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full opacity-40 blur-3xl pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, #F5E6C4 0%, #EBD5A2 40%, transparent 70%)' }}
+      />
+
+      {/* ── MAIN HERO CONTAINER ── */}
+      <div className="relative w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 z-10">
+        
+        {/* Top Content Row */}
+        <div className="max-w-[640px] space-y-4 sm:space-y-5 text-left">
           
-          {/* LEFT COLUMN: HERO HEADLINE & CALL TO ACTIONS */}
-          <div className="lg:col-span-6 space-y-6 text-left">
-            
-            {/* Live Availability Pill */}
-            <div className="inline-flex flex-wrap items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md border border-emerald-200/80 shadow-xs">
-              <span className="flex h-2.5 w-2.5 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
-              </span>
-              <span className="text-emerald-800 font-extrabold text-xs uppercase tracking-widest">
-                Accepting Patients Today
-              </span>
-              <span className="text-zinc-300">•</span>
-              <span className="text-emerald-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5" />
-                {CLINIC_INFO.city} Center
-              </span>
-            </div>
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D9A74A]/40 bg-[#FFFDF9]/90 shadow-sm backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-[#B87A0C] border border-[#D9A74A] flex items-center justify-center shrink-0">
+              <span className="w-1 h-1 rounded-full bg-white" />
+            </span>
+            <span className="text-[#996204] font-bold text-xs tracking-wider uppercase">
+              EXPERT PHYSIOTHERAPY CARE
+            </span>
+          </div>
 
-            {/* Main Headline */}
-            <div className="space-y-2">
-              <span className="text-xs sm:text-sm font-black uppercase tracking-[0.25em] text-emerald-700 block">
-                {CLINIC_INFO.name}
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-zinc-900 tracking-tight leading-[1.08]">
-                Precision Physical Healing.{' '}
-                <span className="bg-gradient-to-r from-emerald-600 via-emerald-800 to-zinc-900 bg-clip-text text-transparent block mt-1">
-                  Lifelong Active Mobility.
-                </span>
-              </h1>
-            </div>
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl lg:text-[3.25rem] font-black tracking-tight leading-[1.1]">
+            <span className="block text-[#1F170D]">Move Better.</span>
+            <span 
+              className="block mt-0.5 text-[#B87A0C]"
+              style={{
+                textShadow: '0 2px 20px rgba(184, 122, 12, 0.15)'
+              }}
+            >
+              Live Stronger.
+            </span>
+          </h1>
 
-            {/* Description Subtitle */}
-            <p className="text-base sm:text-lg text-zinc-600 font-normal leading-relaxed max-w-xl">
-              Anantapur's premier advanced rehabilitation center led by <strong className="text-zinc-900 font-bold">{DOCTOR_INFO.name}</strong>. Combining 18 evidence-based electrotherapy modalities, spinal decompression, and targeted movement re-education for lasting recovery.
-            </p>
+          {/* Description */}
+          <p className="text-[#4A3E31] text-sm sm:text-base leading-relaxed font-medium max-w-lg">
+            Personalized physiotherapy treatments to reduce pain, restore movement, and help you get back to the life you love.
+          </p>
 
-            {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <button
-                onClick={onBookClick}
-                className="px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-500 hover:to-emerald-700 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-emerald-700/25 hover:shadow-emerald-700/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 cursor-pointer group"
-              >
-                <span>Book Clinical Consultation</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <button
-                onClick={onExploreClick}
-                className="px-7 py-4 rounded-2xl bg-white hover:bg-emerald-50/50 text-zinc-900 hover:text-emerald-800 border border-zinc-200 hover:border-emerald-300 font-bold text-sm uppercase tracking-wider shadow-xs transition-all flex items-center justify-center gap-2.5 cursor-pointer backdrop-blur-md"
-              >
-                <span>Explore 18 Modalities</span>
-                <ArrowRight className="w-4 h-4 text-emerald-700" />
-              </button>
-            </div>
-
-            {/* Consolidated Clinical Trust Ribbon */}
-            <div className="grid grid-cols-3 gap-2.5 pt-6 border-t border-zinc-200/90 max-w-lg">
-              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 border border-zinc-200/90 backdrop-blur-xs shadow-2xs">
-                <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-100">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
-                <div>
-                  <span className="block text-xs font-black text-zinc-900 leading-none">100% Supervised</span>
-                  <span className="text-[10px] text-zinc-500 font-medium">1:1 Clinical Care</span>
-                </div>
-              </div>
+          {/* Benefits Row */}
+          <div className="pt-0.5 pb-0.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 items-center">
               
-              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 border border-zinc-200/90 backdrop-blur-xs shadow-2xs">
-                <div className="w-7 h-7 rounded-lg bg-orange-50 text-orange-700 flex items-center justify-center shrink-0 border border-orange-100">
-                  <Award className="w-3.5 h-3.5" />
+              {/* Benefit 1: Pain Relief */}
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center shrink-0 text-[#996204]">
+                  <Activity className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <span className="block text-xs font-black text-zinc-900 leading-none">MPT Sports Med</span>
-                  <span className="text-[10px] text-zinc-500 font-medium">Lead Specialist</span>
-                </div>
+                <span className="text-[#2C1E0A] text-xs font-bold whitespace-nowrap">
+                  Pain Relief
+                </span>
               </div>
 
-              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white/90 border border-zinc-200/90 backdrop-blur-xs shadow-2xs">
-                <div className="w-7 h-7 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center shrink-0 border border-teal-100">
-                  <Clock className="w-3.5 h-3.5" />
+              {/* Benefit 2: Faster Recovery */}
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center shrink-0 text-[#996204]">
+                  <Zap className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <span className="block text-xs font-black text-zinc-900 leading-none">9 AM – 9 PM</span>
-                  <span className="text-[10px] text-zinc-500 font-medium">Open Mon – Sun</span>
-                </div>
+                <span className="text-[#2C1E0A] text-xs font-bold whitespace-nowrap">
+                  Faster Recovery
+                </span>
               </div>
+
+              {/* Benefit 3: Improved Mobility */}
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center shrink-0 text-[#996204]">
+                  <TrendingUp className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[#2C1E0A] text-xs font-bold whitespace-nowrap">
+                  Improved Mobility
+                </span>
+              </div>
+
+              {/* Benefit 4: Better Quality of Life */}
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center shrink-0 text-[#996204]">
+                  <Heart className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[#2C1E0A] text-xs font-bold whitespace-nowrap">
+                  Better Quality of Life
+                </span>
+              </div>
+
             </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+            
+            {/* Primary CTA */}
+            <button
+              onClick={onBookClick}
+              className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-white transition-all duration-300 shadow-md shadow-[#B87A0C]/25 hover:shadow-[#B87A0C]/40 hover:-translate-y-0.5 cursor-pointer"
+              style={{
+                background: 'linear-gradient(135deg, #B87A0C 0%, #996204 100%)'
+              }}
+            >
+              <span>Book Appointment</span>
+              <ArrowRight className="w-3.5 h-3.5 text-white shrink-0 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            {/* Secondary CTA */}
+            <button
+              onClick={onExploreClick}
+              className="group inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-bold text-xs sm:text-sm text-[#996204] border-2 border-[#D9A74A]/60 bg-white hover:bg-[#FFFDF9] hover:border-[#B87A0C] transition-all duration-300 hover:-translate-y-0.5 shadow-xs cursor-pointer"
+            >
+              <span className="w-5 h-5 rounded-full bg-[#B87A0C] flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+                <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
+              </span>
+              <span>Watch Our Approach</span>
+            </button>
 
           </div>
 
-          {/* RIGHT COLUMN: ATTRACTIVE COMPOSITE HERO IMAGE */}
-          <div className="lg:col-span-6 relative">
-            
-            {/* Main Layered Visual Frame */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-zinc-100 group">
+        </div>
+
+        {/* ── BOTTOM FLOATING STATS CARD (COMPACT FOR SINGLE PAGE FIT) ── */}
+        <div className="mt-6 sm:mt-8 lg:mt-8">
+          <div className="bg-white rounded-2xl shadow-lg shadow-amber-950/5 border border-amber-200/70 p-4 sm:p-5 relative z-20">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 divide-y lg:divide-y-0 lg:divide-x divide-amber-100">
               
-              {/* Primary High-Resolution Clinical Photography */}
-              <div className="relative h-[420px] sm:h-[480px] w-full overflow-hidden">
-                <img
-                  src={facilityImg}
-                  alt="Global Physiotherapy Clinic Facility & Treatment"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                
-                {/* Gentle Gradient Scrim for crisp text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-zinc-950/20" />
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center text-center p-1.5">
+                <div className="w-9 h-9 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center text-[#996204] mb-2 shadow-xs">
+                  <UserCheck className="w-4 h-4" />
+                </div>
+                <div className="text-xl sm:text-2xl font-black text-[#1F170D]">1000+</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-[#665643] mt-0.5">Happy Patients</div>
               </div>
 
-              {/* Bottom Image Caption Glass Bar */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-xl flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={doctorPhoto}
-                    alt={DOCTOR_INFO.name}
-                    className="w-12 h-12 rounded-xl object-cover object-top border-2 border-white shadow-md shrink-0"
-                  />
-                  <div>
-                    <div className="text-xs font-black text-zinc-900">
-                      {DOCTOR_INFO.name}
-                    </div>
-                    <div className="text-[10px] text-emerald-700 font-bold">
-                      Clinical Director • MPT Sports Medicine
-                    </div>
-                  </div>
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center text-center p-1.5 pt-4 lg:pt-1.5">
+                <div className="w-9 h-9 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center text-[#996204] mb-2 shadow-xs">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
+                <div className="text-xl sm:text-2xl font-black text-[#1F170D]">95%</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-[#665643] mt-0.5">Recovery Rate</div>
+              </div>
 
-                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200">
-                  <Star className="w-3.5 h-3.5 fill-orange-600 text-orange-600" />
-                  <span className="text-xs font-black text-zinc-900">4.9 / 5.0</span>
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center text-center p-1.5 pt-4 lg:pt-1.5">
+                <div className="w-9 h-9 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center text-[#996204] mb-2 shadow-xs">
+                  <Award className="w-4 h-4" />
                 </div>
+                <div className="text-xl sm:text-2xl font-black text-[#1F170D]">5+ Years</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-[#665643] mt-0.5">of Excellence</div>
+              </div>
+
+              {/* Stat 4 */}
+              <div className="flex flex-col items-center text-center p-1.5 pt-4 lg:pt-1.5">
+                <div className="w-9 h-9 rounded-full bg-[#F5E6C4] border border-[#E8D4A2] flex items-center justify-center text-[#996204] mb-2 shadow-xs">
+                  <Users className="w-4 h-4" />
+                </div>
+                <div className="text-xl sm:text-2xl font-black text-[#1F170D]">Personalized</div>
+                <div className="text-[11px] sm:text-xs font-semibold text-[#665643] mt-0.5">Care Plans</div>
               </div>
 
             </div>
-
-            {/* FLOATING TOP-RIGHT BADGE: 18+ Verified Modalities */}
-            <div className="absolute -top-3.5 -right-3.5 bg-white/95 backdrop-blur-md border border-emerald-200 rounded-2xl p-3 shadow-xl hidden sm:flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-700 text-white flex items-center justify-center shrink-0 shadow-sm">
-                <Activity className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-black text-zinc-900 leading-tight">18 Modalities</div>
-                <div className="text-[10px] text-emerald-800 font-bold">100% Supervised Care</div>
-              </div>
-            </div>
-
           </div>
         </div>
+
       </div>
     </section>
   );

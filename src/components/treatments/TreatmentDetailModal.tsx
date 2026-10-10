@@ -1,9 +1,8 @@
 import React from 'react';
-import { X, ArrowRight, CheckCircle2, Phone, Calendar, Sparkles, Activity, ShieldCheck, Cpu } from 'lucide-react';
+import { X, CheckCircle2, Phone, Calendar, Sparkles, Activity, ShieldCheck, Cpu } from 'lucide-react';
 import { CLINIC_INFO } from '../../data/clinicData';
 import tritonTableImg from '../../assets/triton_dts_table.png';
 import bosuBallImg from '../../assets/bosu_ball.png';
-import kinetecCpmImg from '../../assets/kinetec_cpm.png';
 import ultracareProImg from '../../assets/ultracare_pro.png';
 import biodexGaitTrainerImg from '../../assets/biodex_gait_trainer.png';
 import medicalLegPressImg from '../../assets/medical_leg_press.png';
@@ -162,7 +161,7 @@ export const TREATMENT_DETAILS: Record<string, TreatmentDetailData> = {
     tagline: 'Developmental Milestone Facilitation & Pediatric Neuromuscular Coordination',
     overview:
       'Gentle, play-based physical rehabilitation addressing congenital, developmental, and acquired physical challenges in infants, children, and adolescents, fostering independent mobility and postural symmetry.',
-    image: kinetecCpmImg,
+    image: '/developmental_delay.png',
     keyEquipment: 'Swiss Ball Dynamic Training & Pediatric Parallel Bars',
     equipmentDesc:
       'Specialized pediatric unstable dynamic gym balls, balance platforms, and safe low-height parallel bars designed to encourage natural movement exploration.',
@@ -319,11 +318,11 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-stone-950/60 backdrop-blur-md overflow-y-auto animate-fadeIn">
-      <div className="relative w-full max-w-4xl bg-[#FAF8F5] border border-stone-200 rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#24190F]/60 backdrop-blur-md overflow-y-auto animate-fadeIn">
+      <div className="relative w-full max-w-4xl bg-[#FFFDF8] border border-[#EAD9B7] rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col font-sans">
         
         {/* Sticky Header with Treatment Switcher Tabs */}
-        <div className="p-4 sm:p-5 border-b border-stone-200/80 bg-white/90 backdrop-blur-xl shrink-0 flex items-center justify-between gap-4">
+        <div className="p-4 sm:p-5 border-b border-[#EAD9B7] bg-white/95 backdrop-blur-xl shrink-0 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 overflow-x-auto py-1 scrollbar-none">
             {allNumbers.map((num) => {
               const item = TREATMENT_DETAILS[num];
@@ -334,8 +333,8 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
                   onClick={() => onSelectTreatment(num)}
                   className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${
                     isActive
-                      ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/20'
-                      : 'bg-stone-100 text-stone-700 hover:bg-emerald-50 hover:text-emerald-800'
+                      ? 'bg-gradient-to-r from-[#B87908] to-[#D99B24] text-white shadow-md shadow-[#B87908]/20'
+                      : 'bg-[#FAF4E8] text-[#65594B] hover:bg-[#F8EAC9] hover:text-[#24190F]'
                   }`}
                 >
                   <span>{num}</span>
@@ -347,7 +346,7 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-2.5 rounded-full bg-stone-100 text-stone-500 hover:text-stone-900 hover:bg-stone-200 transition-colors shrink-0 cursor-pointer"
+            className="p-2.5 rounded-full bg-[#FAF4E8] text-[#65594B] hover:text-[#24190F] hover:bg-[#EAD9B7] transition-colors shrink-0 cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -355,33 +354,33 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
         </div>
 
         {/* Scrollable Content Body */}
-        <div className="overflow-y-auto p-5 sm:p-8 space-y-7 text-stone-800">
+        <div className="overflow-y-auto p-5 sm:p-8 space-y-7 text-[#24190F]">
           {/* Top Hero Banner with High-Resolution Medical Image */}
-          <div className="relative rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm">
-            <div className="relative h-60 sm:h-72 w-full overflow-hidden flex items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-stone-50 to-emerald-50/30">
+          <div className="relative rounded-3xl overflow-hidden border border-[#EAD9B7] bg-white shadow-sm">
+            <div className="relative h-60 sm:h-72 w-full overflow-hidden flex items-center justify-center p-4 sm:p-6 bg-gradient-to-b from-[#FFFDF8] to-[#FAF4E8]">
               <img
                 src={treatment.image}
                 alt={treatment.title}
                 className="w-full h-full object-contain filter drop-shadow-md"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-900/85 via-stone-900/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#24190F]/85 via-[#24190F]/30 to-transparent" />
 
               {/* Floating Badges */}
               <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2 z-10">
-                <span className="px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md border border-white/20 text-white text-xs font-black tracking-wider shadow-sm">
+                <span className="px-3 py-1 rounded-full bg-[#24190F]/80 backdrop-blur-md border border-[#EAD9B7]/30 text-white text-xs font-black tracking-wider shadow-sm">
                   DOMAIN {treatment.number}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                <span className="px-3 py-1 rounded-full bg-[#B87908] text-white text-[11px] font-bold uppercase tracking-wider shadow-sm">
                   {treatment.category}
                 </span>
               </div>
 
               {/* Title on Image */}
               <div className="absolute bottom-5 left-5 right-5 z-10">
-                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight drop-shadow-md">
+                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight drop-shadow-md font-serif">
                   {treatment.title}
                 </h2>
-                <p className="text-emerald-100 text-xs sm:text-sm font-medium mt-1 drop-shadow-sm">
+                <p className="text-[#F8EAC9] text-xs sm:text-sm font-medium mt-1 drop-shadow-sm">
                   {treatment.tagline}
                 </p>
               </div>
@@ -389,33 +388,33 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
           </div>
 
           {/* Clinical Overview Paragraph */}
-          <div className="bg-white border border-stone-200/80 rounded-2xl p-5 sm:p-6 space-y-2 shadow-sm">
-            <h3 className="text-xs font-black text-emerald-800 uppercase tracking-widest flex items-center gap-2">
-              <Activity className="w-4 h-4 text-emerald-700" />
+          <div className="bg-white border border-[#EAD9B7] rounded-2xl p-5 sm:p-6 space-y-2 shadow-xs">
+            <h3 className="text-xs font-black text-[#B87908] uppercase tracking-widest flex items-center gap-2">
+              <Activity className="w-4 h-4 text-[#B87908]" />
               <span>Clinical Scope & Assessment Focus</span>
             </h3>
-            <p className="text-stone-700 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#65594B] text-sm sm:text-base leading-relaxed">
               {treatment.overview}
             </p>
           </div>
 
           {/* Key Technology / Equipment Highlight */}
           {treatment.keyEquipment && (
-            <div className="bg-gradient-to-br from-emerald-50/80 via-white to-teal-50/50 border border-emerald-200/80 rounded-2xl p-5 sm:p-6 space-y-2.5 shadow-sm">
+            <div className="bg-gradient-to-br from-[#FAF4E8] via-white to-[#F8EAC9]/40 border border-[#EAD9B7] rounded-2xl p-5 sm:p-6 space-y-2.5 shadow-xs">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                  <Cpu className="w-4 h-4 text-emerald-700" />
+                <div className="w-8 h-8 rounded-full bg-[#FAF4E8] border border-[#EAD9B7] text-[#B87908] flex items-center justify-center">
+                  <Cpu className="w-4 h-4 text-[#B87908]" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-700">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#B87908]">
                     ADVANCED CLINICAL TECHNOLOGY
                   </span>
-                  <h4 className="text-base sm:text-lg font-bold text-stone-900">
+                  <h4 className="text-base sm:text-lg font-bold text-[#24190F] font-serif">
                     {treatment.keyEquipment}
                   </h4>
                 </div>
               </div>
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#65594B] leading-relaxed">
                 {treatment.equipmentDesc}
               </p>
             </div>
@@ -423,20 +422,20 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
 
           {/* Conditions Treated Grid */}
           <div className="space-y-3.5">
-            <h3 className="text-xs font-black text-stone-900 uppercase tracking-widest flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+            <h3 className="text-xs font-black text-[#24190F] uppercase tracking-widest flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-[#B87908]" />
               <span>Key Conditions Treated</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {treatment.conditionsTreated.map((cond, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80 hover:border-emerald-300 transition-colors shadow-sm"
+                  className="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-[#EAD9B7] hover:border-[#B87908]/50 transition-colors shadow-xs"
                 >
-                  <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-[#FAF4E8] text-[#B87908] flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-xs sm:text-sm text-stone-700 font-semibold">
+                  <span className="text-xs sm:text-sm text-[#24190F] font-semibold">
                     {cond}
                   </span>
                 </div>
@@ -446,23 +445,23 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
 
           {/* 4-Step Clinical Protocol */}
           <div className="space-y-3.5">
-            <h3 className="text-xs font-black text-stone-900 uppercase tracking-widest flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-emerald-700" />
+            <h3 className="text-xs font-black text-[#24190F] uppercase tracking-widest flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#B87908]" />
               <span>4-Phase Recovery Protocol</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               {treatment.protocolSteps.map((step, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl bg-white border border-stone-200/80 hover:border-emerald-300 transition-all space-y-1.5 shadow-sm"
+                  className="p-4 rounded-2xl bg-white border border-[#EAD9B7] hover:border-[#B87908]/50 transition-all space-y-1.5 shadow-xs"
                 >
-                  <div className="text-xs font-bold text-emerald-800">
+                  <div className="text-xs font-bold text-[#B87908]">
                     Phase 0{idx + 1}
                   </div>
-                  <h4 className="text-sm font-bold text-stone-900">
+                  <h4 className="text-sm font-bold text-[#24190F] font-serif">
                     {step.title}
                   </h4>
-                  <p className="text-xs text-stone-600 leading-relaxed">
+                  <p className="text-xs text-[#65594B] leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -471,15 +470,15 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
           </div>
 
           {/* Expected Clinical Outcomes */}
-          <div className="bg-emerald-50/60 border border-emerald-200/70 rounded-2xl p-5 sm:p-6 space-y-2.5">
-            <h3 className="text-xs font-black text-emerald-900 uppercase tracking-widest flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-700" />
+          <div className="bg-[#FAF4E8] border border-[#EAD9B7] rounded-2xl p-5 sm:p-6 space-y-2.5">
+            <h3 className="text-xs font-black text-[#B87908] uppercase tracking-widest flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#B87908]" />
               <span>Expected Clinical Outcomes & Milestones</span>
             </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-stone-700">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-[#65594B]">
               {treatment.clinicalOutcomes.map((outcome, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-emerald-700 font-black">•</span>
+                  <span className="text-[#B87908] font-black">•</span>
                   <span>{outcome}</span>
                 </li>
               ))}
@@ -488,17 +487,17 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
         </div>
 
         {/* Action Footer */}
-        <div className="p-4 sm:p-5 border-t border-stone-200/80 bg-white shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="p-4 sm:p-5 border-t border-[#EAD9B7] bg-white shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <button
               onClick={handlePrev}
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-colors cursor-pointer"
+              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-[#FAF4E8] hover:bg-[#EAD9B7] text-[#24190F] text-xs font-bold transition-colors cursor-pointer"
             >
               ← Previous
             </button>
             <button
               onClick={handleNext}
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold transition-colors cursor-pointer"
+              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-[#FAF4E8] hover:bg-[#EAD9B7] text-[#24190F] text-xs font-bold transition-colors cursor-pointer"
             >
               Next Treatment →
             </button>
@@ -507,9 +506,9 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
           <div className="flex items-center gap-2.5 w-full sm:w-auto">
             <a
               href={`tel:${CLINIC_INFO.phone.replace(/\s+/g, '')}`}
-              className="flex-1 sm:flex-none px-5 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold flex items-center justify-center gap-2 transition-colors"
+              className="flex-1 sm:flex-none px-5 py-3 rounded-xl bg-[#FAF4E8] hover:bg-[#EAD9B7] text-[#24190F] text-xs font-bold flex items-center justify-center gap-2 transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-emerald-700" />
+              <Phone className="w-3.5 h-3.5 text-[#B87908]" />
               <span>{CLINIC_INFO.phone}</span>
             </a>
 
@@ -518,7 +517,7 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
                 onClose();
                 onBookClick();
               }}
-              className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all cursor-pointer whitespace-nowrap hover:scale-[1.02]"
+              className="flex-1 sm:flex-none px-6 py-3 rounded-xl bg-gradient-to-r from-[#B87908] to-[#D99B24] hover:from-[#A06806] hover:to-[#C48A1D] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-[#B87908]/20 transition-all cursor-pointer whitespace-nowrap hover:scale-[1.02]"
             >
               <Calendar className="w-3.5 h-3.5" />
               <span>Book Appointment</span>
@@ -529,3 +528,4 @@ export const TreatmentDetailModal: React.FC<TreatmentDetailModalProps> = ({
     </div>
   );
 };
+

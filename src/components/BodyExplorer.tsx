@@ -145,24 +145,24 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
   }, [isHoveringStepper, journeySteps.length]);
 
   return (
-    <section id="explorer" className="py-16 lg:py-24 bg-[#F8F9FA] relative font-sans overflow-hidden border-t border-zinc-200">
+    <section id="explorer" className="py-16 lg:py-24 bg-[#FFFDF8] relative font-sans overflow-hidden border-t border-[#EAD9B7]">
       
       {/* Global Background Atmospheric Gradients */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-emerald-100/40 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#F8EAC9]/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[500px] h-[500px] bg-[#FAF4E8]/60 rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-[1640px] w-full mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs font-extrabold uppercase tracking-widest mb-4 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#EAD9B7] text-[#B87908] text-xs font-bold uppercase tracking-widest mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#B87908]" />
             <span>Interactive Body Condition Explorer</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight leading-tight">
-            Where Are You Experiencing <span className="bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent">Pain or Discomfort?</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#24190F] tracking-tight leading-tight">
+            Where Are You Experiencing <span className="bg-gradient-to-r from-[#B87908] to-[#D99B24] bg-clip-text text-transparent">Pain or Discomfort?</span>
           </h2>
-          <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
+          <p className="text-[#65594B] text-sm sm:text-base mt-3 leading-relaxed">
             Select any anatomical region to discover targeted clinical protocols, verified recovery pathways, and evidence-based solutions.
           </p>
         </div>
@@ -171,13 +171,13 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-16">
           
           {/* LEFT: Anatomy Regions List */}
-          <div className="lg:col-span-3 bg-white rounded-3xl p-5 border border-zinc-200 shadow-md shadow-zinc-200/40 flex flex-col justify-between">
+          <div className="lg:col-span-3 bg-white rounded-3xl p-5 border border-[#EAD9B7] shadow-sm flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-100">
-                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-emerald-800">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#EAD9B7]/50">
+                <span className="text-[11px] font-black uppercase tracking-[0.2em] text-[#B87908]">
                   Anatomical Regions
                 </span>
-                <span className="text-[11px] font-bold text-zinc-400">8 Areas</span>
+                <span className="text-[11px] font-bold text-[#65594B]/70">8 Areas</span>
               </div>
               <div className="flex flex-col space-y-1.5">
                 {bodyAreasList.map((area) => {
@@ -188,20 +188,20 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
                       onClick={() => { setSelectedArea(area.id); setExpandedFaq(0); }}
                       className={`text-left px-4 py-3 rounded-2xl transition-all duration-300 flex items-center gap-3.5 group cursor-pointer ${
                         isActive
-                          ? 'bg-emerald-50 text-emerald-800 font-bold border border-emerald-200 shadow-2xs'
-                          : 'bg-transparent text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900'
+                          ? 'bg-[#FAF4E8] text-[#B87908] font-bold border border-[#EAD9B7] shadow-xs'
+                          : 'bg-transparent text-[#65594B] hover:bg-[#FAF4E8]/60 hover:text-[#24190F]'
                       }`}
                     >
-                      <div className={`w-2 h-2 rounded-full transition-all ${isActive ? 'bg-emerald-600 scale-125 ring-4 ring-emerald-100' : 'bg-zinc-300 group-hover:bg-emerald-600'}`} />
+                      <div className={`w-2 h-2 rounded-full transition-all ${isActive ? 'bg-[#B87908] scale-125 ring-4 ring-[#F8EAC9]' : 'bg-[#EAD9B7] group-hover:bg-[#B87908]'}`} />
                       <span className="text-[14px] flex-1">
                         {area.name}
                       </span>
                       {isActive ? (
-                        <div className="w-6 h-6 rounded-full bg-emerald-700 flex items-center justify-center shrink-0 shadow-2xs">
+                        <div className="w-6 h-6 rounded-full bg-[#B87908] flex items-center justify-center shrink-0 shadow-xs">
                           <ArrowRight className="w-3.5 h-3.5 text-white" />
                         </div>
                       ) : (
-                        <ChevronRight className="w-4 h-4 text-zinc-300 group-hover:text-zinc-500 transition-colors" />
+                        <ChevronRight className="w-4 h-4 text-[#65594B]/50 group-hover:text-[#24190F] transition-colors" />
                       )}
                     </button>
                   );
@@ -209,18 +209,18 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
               </div>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-zinc-100">
-              <div className="flex items-center gap-2.5 text-xs text-zinc-500 font-medium">
-                <ShieldCheck className="w-4 h-4 text-emerald-700" />
+            <div className="pt-4 mt-4 border-t border-[#EAD9B7]/50">
+              <div className="flex items-center gap-2.5 text-xs text-[#65594B] font-medium">
+                <ShieldCheck className="w-4 h-4 text-[#B87908]" />
                 <span>Doctor-Led Clinical Guidance</span>
               </div>
             </div>
           </div>
 
           {/* CENTER: Anatomical Illustration & Interactive Target */}
-          <div className="lg:col-span-4 flex justify-center items-center relative min-h-[460px] lg:min-h-[520px] rounded-3xl bg-gradient-to-b from-zinc-900 to-zinc-950 overflow-hidden shadow-xl border border-zinc-200 group">
+          <div className="lg:col-span-4 flex justify-center items-center relative min-h-[460px] lg:min-h-[520px] rounded-3xl bg-gradient-to-b from-[#24190F] to-[#3D2B1A] overflow-hidden shadow-xl border border-[#B87908]/40 group">
             
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(5,150,105,0.3),transparent_70%)] pointer-events-none mix-blend-screen" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(184,121,8,0.3),transparent_70%)] pointer-events-none mix-blend-screen" />
 
             <div 
               className="w-full h-full relative flex items-center justify-center transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.02]"
@@ -240,69 +240,69 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
                 className="absolute -translate-x-1/2 -translate-y-1/2 w-32 h-32 pointer-events-none transition-all duration-1000 ease-in-out"
                 style={{ top: currentData.markerPos.top, left: currentData.markerPos.left }}
               >
-                <div className="absolute inset-0 rounded-full border border-orange-500/40 animate-[ping_3s_ease-out_infinite]" />
-                <div className="absolute inset-4 rounded-full border-2 border-orange-500/70 animate-[ping_3s_ease-out_infinite_0.6s]" />
-                <div className="absolute inset-10 rounded-full bg-orange-600 blur-xl opacity-50" />
+                <div className="absolute inset-0 rounded-full border border-[#D99B24]/40 animate-[ping_3s_ease-out_infinite]" />
+                <div className="absolute inset-4 rounded-full border-2 border-[#D99B24]/70 animate-[ping_3s_ease-out_infinite_0.6s]" />
+                <div className="absolute inset-10 rounded-full bg-[#B87908] blur-xl opacity-50" />
                 
                 {/* Floating Region Target Badge */}
-                <div className="absolute top-1/2 left-[calc(100%+8px)] -translate-y-1/2 bg-white/95 border border-zinc-200 px-3 py-1.5 rounded-xl backdrop-blur-md shadow-xl flex items-center gap-2 whitespace-nowrap scale-90 origin-left">
-                  <div className="w-2 h-2 rounded-full bg-orange-600 animate-pulse" />
-                  <span className="text-zinc-900 text-[11px] font-black tracking-wider uppercase">{currentData.name}</span>
+                <div className="absolute top-1/2 left-[calc(100%+8px)] -translate-y-1/2 bg-white/95 border border-[#EAD9B7] px-3 py-1.5 rounded-xl backdrop-blur-md shadow-xl flex items-center gap-2 whitespace-nowrap scale-90 origin-left">
+                  <div className="w-2 h-2 rounded-full bg-[#B87908] animate-pulse" />
+                  <span className="text-[#24190F] text-[11px] font-black tracking-wider uppercase">{currentData.name}</span>
                 </div>
               </div>
             </div>
 
             {/* Bottom Overlay Label */}
-            <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xl border border-white/60 px-4 py-2.5 rounded-2xl shadow-lg flex items-center justify-between">
+            <div className="absolute bottom-5 left-5 right-5 bg-white/95 backdrop-blur-xl border border-[#EAD9B7] px-4 py-2.5 rounded-2xl shadow-lg flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
-                <span className="text-zinc-900 font-black text-xs tracking-wider uppercase">{currentData.name} Focused</span>
+                <div className="w-2 h-2 rounded-full bg-[#B87908] animate-ping" />
+                <span className="text-[#24190F] font-serif font-bold text-xs tracking-wider uppercase">{currentData.name} Focused</span>
               </div>
-              <span className="text-[11px] text-emerald-800 font-bold">Active Region</span>
+              <span className="text-[11px] text-[#B87908] font-bold">Active Region</span>
             </div>
           </div>
 
           {/* RIGHT: Condition Details & Quick Action Panel */}
-          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200 shadow-md shadow-zinc-200/40 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-[#EAD9B7] shadow-sm flex flex-col justify-between">
             <div>
               {/* Eyebrow */}
               <div className="flex items-center gap-2 mb-2.5">
-                <span className="px-2.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-orange-800 text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5 shadow-2xs">
-                  <Flame className="w-3 h-3 text-orange-700" />
+                <span className="px-2.5 py-1 rounded-full bg-[#FAF4E8] border border-[#EAD9B7] text-[#B87908] text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-2xs">
+                  <Flame className="w-3 h-3 text-[#B87908]" />
                   Condition Focus
                 </span>
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tight leading-snug mb-3">
+              <h3 className="text-2xl sm:text-3xl font-serif font-bold text-[#24190F] tracking-tight leading-snug mb-3">
                 {currentData.title}
               </h3>
               
-              <p className="text-zinc-600 text-[14px] sm:text-[15px] leading-relaxed mb-6">
+              <p className="text-[#65594B] text-[14px] sm:text-[15px] leading-relaxed mb-6">
                 {currentData.desc}
               </p>
 
               {/* 4 Micro-Pillars */}
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {benefits.map((b, i) => (
-                  <div key={i} className="bg-zinc-50 hover:bg-emerald-50/40 p-3.5 rounded-2xl border border-zinc-200 transition-all duration-300 group">
+                  <div key={i} className="bg-[#FAF4E8] hover:bg-[#F8EAC9]/60 p-3.5 rounded-2xl border border-[#EAD9B7] transition-all duration-300 group">
                     <div className="flex items-center justify-between mb-2">
                       <div className="p-1.5 rounded-lg bg-white shadow-2xs">{b.icon}</div>
-                      <span className="text-[10px] font-bold text-zinc-400">{b.num}</span>
+                      <span className="text-[10px] font-bold text-[#65594B]/60">{b.num}</span>
                     </div>
-                    <h5 className="text-[12px] font-bold text-zinc-900 leading-snug mb-1">{b.title}</h5>
-                    <p className="text-[11px] text-zinc-500 leading-tight">{b.desc}</p>
+                    <h5 className="text-[12px] font-serif font-bold text-[#24190F] leading-snug mb-1">{b.title}</h5>
+                    <p className="text-[11px] text-[#65594B] leading-tight">{b.desc}</p>
                   </div>
                 ))}
               </div>
 
               {/* Common Conditions Treated */}
               <div className="mb-6">
-                <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400 block mb-2.5">
+                <span className="text-[10px] font-black uppercase tracking-widest text-[#65594B]/70 block mb-2.5">
                   Frequently Treated Diagnoses
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {currentData.conditions.map((c: string, i: number) => (
-                    <span key={i} className="px-3 py-1.5 rounded-xl bg-zinc-100 hover:bg-emerald-700 hover:text-white text-zinc-700 text-xs font-semibold border border-zinc-200 transition-colors cursor-default">
+                    <span key={i} className="px-3 py-1.5 rounded-xl bg-[#FAF4E8] hover:bg-[#B87908] hover:text-white text-[#24190F] text-xs font-semibold border border-[#EAD9B7] transition-colors cursor-default">
                       {c}
                     </span>
                   ))}
@@ -311,20 +311,20 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-5 border-t border-zinc-100 flex flex-col sm:flex-row items-center gap-3">
+            <div className="pt-5 border-t border-[#EAD9B7]/50 flex flex-col sm:flex-row items-center gap-3">
               <button 
                 onClick={onBookClick}
-                className="w-full sm:flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-emerald-800 hover:from-emerald-500 hover:to-emerald-700 text-white font-black text-sm tracking-wide shadow-md shadow-emerald-700/20 hover:shadow-emerald-700/35 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full sm:flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#B87908] to-[#D99B24] hover:opacity-95 text-white font-bold text-sm tracking-wide shadow-md shadow-[#B87908]/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <span>Book Clinical Consultation</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <Link
-                to="/conditions"
-                className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-white border border-zinc-200 text-zinc-900 hover:border-emerald-700 hover:text-emerald-700 font-bold text-sm transition-all flex items-center justify-center gap-1.5 shadow-2xs"
+                to="/services"
+                className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-white border border-[#EAD9B7] text-[#24190F] hover:border-[#B87908] hover:text-[#B87908] font-bold text-sm transition-all flex items-center justify-center gap-1.5 shadow-2xs"
               >
-                <span>All Conditions</span>
+                <span>All Services</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -335,14 +335,14 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
         {/* ========================================================
             LOWER MASTER SECTION: 4 LIGHT EDITORIAL CARDS
         ======================================================== */}
-        <div className="pt-8 border-t border-zinc-200">
+        <div className="pt-8 border-t border-[#EAD9B7]">
           
           {/* Section Sub-Eyebrow */}
           <div className="text-center mb-8">
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-emerald-800">
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-[#B87908]">
               5-Phase Evidence-Based Pathway
             </span>
-            <h4 className="text-xl sm:text-2xl font-black text-zinc-900 tracking-tight mt-1">
+            <h4 className="text-xl sm:text-2xl font-serif font-bold text-[#24190F] tracking-tight mt-1">
               How We Guide Your Full Recovery
             </h4>
           </div>
@@ -354,11 +354,11 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
             onMouseLeave={() => setIsHoveringStepper(false)}
           >
             {/* Connecting Base Line */}
-            <div className="absolute top-[32px] left-[8%] right-[8%] h-[2px] bg-zinc-200 -z-10" />
+            <div className="absolute top-[32px] left-[8%] right-[8%] h-[2px] bg-[#EAD9B7] -z-10" />
             
             {/* Active Line */}
             <div 
-              className="absolute top-[32px] left-[8%] h-[2px] bg-emerald-700 -z-10 transition-all duration-700 ease-out"
+              className="absolute top-[32px] left-[8%] h-[2px] bg-[#B87908] -z-10 transition-all duration-700 ease-out"
               style={{ width: `${(activeStep / (journeySteps.length - 1)) * 84}%` }}
             />
             
@@ -374,17 +374,17 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
                   >
                     <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 ${
                       isActive 
-                        ? 'bg-emerald-700 text-white shadow-lg shadow-emerald-800/25 scale-105 ring-4 ring-emerald-100' 
+                        ? 'bg-[#B87908] text-white shadow-lg shadow-[#B87908]/25 scale-105 ring-4 ring-[#F8EAC9]' 
                         : isPast
-                        ? 'bg-white text-emerald-700 border-2 border-emerald-700 shadow-2xs'
-                        : 'bg-white text-zinc-400 border border-zinc-200 hover:border-emerald-700 shadow-2xs'
+                        ? 'bg-white text-[#B87908] border-2 border-[#B87908] shadow-2xs'
+                        : 'bg-white text-[#65594B]/50 border border-[#EAD9B7] hover:border-[#B87908] shadow-2xs'
                     }`}>
                       <span className="font-extrabold text-base sm:text-lg">{step.num}</span>
                     </div>
-                    <h5 className={`text-[12px] sm:text-[13px] font-bold leading-tight mb-1 transition-colors ${isActive ? 'text-zinc-900' : 'text-zinc-600'}`}>
+                    <h5 className={`text-[12px] sm:text-[13px] font-bold leading-tight mb-1 transition-colors ${isActive ? 'text-[#24190F]' : 'text-[#65594B]'}`}>
                       {step.title}
                     </h5>
-                    <p className="hidden md:block text-[11px] text-zinc-400 leading-snug max-w-[150px]">
+                    <p className="hidden md:block text-[11px] text-[#65594B]/70 leading-snug max-w-[150px]">
                       {step.desc}
                     </p>
                   </button>
@@ -397,86 +397,86 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             
             {/* 1. Presenting Symptoms */}
-            <div className="bg-white rounded-3xl p-6 border border-zinc-200 shadow-md shadow-zinc-200/40 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+            <div className="bg-white rounded-3xl p-6 border border-[#EAD9B7] shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-all">
               <div>
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100">
-                  <div className="w-2 h-2 rounded-full bg-orange-600" />
-                  <span className="text-[11px] font-black uppercase tracking-widest text-zinc-900">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#EAD9B7]/50">
+                  <div className="w-2 h-2 rounded-full bg-[#B87908]" />
+                  <span className="text-[11px] font-serif font-bold uppercase tracking-widest text-[#24190F]">
                     Common Symptoms
                   </span>
                 </div>
                 <ul className="space-y-3">
                   {currentData.symptoms.map((sym: string, i: number) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-zinc-600 font-medium leading-relaxed">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#65594B] font-medium leading-relaxed">
+                      <CheckCircle2 className="w-4 h-4 text-[#B87908] shrink-0 mt-0.5" />
                       <span>{sym}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="pt-4 mt-4 border-t border-zinc-100 text-[11px] text-zinc-400">
+              <div className="pt-4 mt-4 border-t border-[#EAD9B7]/50 text-[11px] text-[#65594B]/70">
                 Evaluation during first clinical visit
               </div>
             </div>
 
             {/* 2. Real Verified Clinical Outcomes */}
-            <div className="bg-white rounded-3xl p-6 border border-zinc-200 shadow-md shadow-zinc-200/40 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+            <div className="bg-white rounded-3xl p-6 border border-[#EAD9B7] shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-all">
               <div>
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-zinc-100">
-                  <div className="w-2 h-2 rounded-full bg-emerald-700" />
-                  <span className="text-[11px] font-black uppercase tracking-widest text-zinc-900">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#EAD9B7]/50">
+                  <div className="w-2 h-2 rounded-full bg-[#B87908]" />
+                  <span className="text-[11px] font-serif font-bold uppercase tracking-widest text-[#24190F]">
                     Documented Outcomes
                   </span>
                 </div>
                 <div className="space-y-3">
                   {currentData.results.map((res: any, i: number) => (
-                    <div key={i} className="bg-emerald-50/60 rounded-2xl p-4 border border-emerald-100">
-                      <span className="text-[10px] font-black text-emerald-800 uppercase tracking-wider block mb-1">
+                    <div key={i} className="bg-[#FAF4E8] rounded-2xl p-4 border border-[#EAD9B7]">
+                      <span className="text-[10px] font-bold text-[#B87908] uppercase tracking-wider block mb-1">
                         {res.label}
                       </span>
-                      <p className="text-sm font-black text-zinc-900">
+                      <p className="text-sm font-bold text-[#24190F]">
                         {res.value}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="pt-4 mt-4 border-t border-zinc-100 flex items-center justify-between text-[11px] text-zinc-400">
+              <div className="pt-4 mt-4 border-t border-[#EAD9B7]/50 flex items-center justify-between text-[11px] text-[#65594B]/70">
                 <span>Personalized Progress Metrics</span>
-                <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+                <Sparkles className="w-3.5 h-3.5 text-[#B87908]" />
               </div>
             </div>
 
             {/* 3. Patient Voice Quote */}
-            <div className="bg-gradient-to-br from-emerald-50/50 to-white rounded-3xl p-6 border border-emerald-200 shadow-md shadow-emerald-600/5 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+            <div className="bg-gradient-to-br from-[#FAF4E8] to-white rounded-3xl p-6 border border-[#EAD9B7] shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-all">
               <div>
-                <div className="flex items-center justify-between mb-4 pb-3 border-b border-emerald-100">
-                  <span className="text-[11px] font-black uppercase tracking-widest text-emerald-800">
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#EAD9B7]/50">
+                  <span className="text-[11px] font-serif font-bold uppercase tracking-widest text-[#B87908]">
                     Patient Testimonial
                   </span>
-                  <div className="flex text-orange-600 text-xs">★★★★★</div>
+                  <div className="flex text-[#B87908] text-xs">★★★★★</div>
                 </div>
-                <blockquote className="text-sm sm:text-[15px] font-medium leading-relaxed italic text-zinc-700 mb-4">
+                <blockquote className="text-sm sm:text-[15px] font-medium leading-relaxed italic text-[#65594B] mb-4">
                   "{currentData.testimonial.quote}"
                 </blockquote>
               </div>
-              <div className="pt-4 border-t border-emerald-100 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-emerald-700 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-2xs">
+              <div className="pt-4 border-t border-[#EAD9B7]/50 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-[#B87908] text-white font-black text-xs flex items-center justify-center shrink-0 shadow-2xs">
                   {currentData.testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-zinc-900">{currentData.testimonial.name}</div>
-                  <div className="text-[10px] text-zinc-500">Verified Recovery Patient</div>
+                  <div className="text-xs font-bold text-[#24190F]">{currentData.testimonial.name}</div>
+                  <div className="text-[10px] text-[#65594B]">Verified Recovery Patient</div>
                 </div>
               </div>
             </div>
 
             {/* 4. Frequently Asked Questions */}
-            <div className="bg-white rounded-3xl p-6 border border-zinc-200 shadow-md shadow-zinc-200/40 flex flex-col justify-between group hover:-translate-y-1 transition-all">
+            <div className="bg-white rounded-3xl p-6 border border-[#EAD9B7] shadow-sm flex flex-col justify-between group hover:-translate-y-1 transition-all">
               <div>
-                <div className="flex items-center gap-2 mb-3 pb-3 border-b border-zinc-100">
-                  <div className="w-2 h-2 rounded-full bg-orange-600" />
-                  <span className="text-[11px] font-black uppercase tracking-widest text-zinc-900">
+                <div className="flex items-center gap-2 mb-3 pb-3 border-b border-[#EAD9B7]/50">
+                  <div className="w-2 h-2 rounded-full bg-[#B87908]" />
+                  <span className="text-[11px] font-serif font-bold uppercase tracking-widest text-[#24190F]">
                     Common Inquiries
                   </span>
                 </div>
@@ -484,18 +484,18 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
                   {currentData.faqs.map((faq: string, i: number) => {
                     const isOpen = expandedFaq === i;
                     return (
-                      <div key={i} className="border-b border-zinc-100 last:border-0 pb-1.5">
+                      <div key={i} className="border-b border-[#EAD9B7]/50 last:border-0 pb-1.5">
                         <button 
                           onClick={() => setExpandedFaq(isOpen ? null : i)}
                           className="w-full flex items-center justify-between text-left py-2 group/faq cursor-pointer"
                         >
-                          <span className={`text-[12px] font-bold transition-colors ${isOpen ? 'text-emerald-700' : 'text-zinc-700 group-hover/faq:text-emerald-700'}`}>
+                          <span className={`text-[12px] font-bold transition-colors ${isOpen ? 'text-[#B87908]' : 'text-[#65594B] group-hover/faq:text-[#B87908]'}`}>
                             {faq}
                           </span>
-                          <Plus className={`w-3.5 h-3.5 shrink-0 transition-transform ${isOpen ? 'rotate-45 text-emerald-700' : 'text-zinc-400'}`} />
+                          <Plus className={`w-3.5 h-3.5 shrink-0 transition-transform ${isOpen ? 'rotate-45 text-[#B87908]' : 'text-[#65594B]/50'}`} />
                         </button>
                         {isOpen && (
-                          <p className="text-[11px] text-zinc-500 leading-relaxed pt-1 pb-2">
+                          <p className="text-[11px] text-[#65594B] leading-relaxed pt-1 pb-2">
                             Recovery schedules vary by individual anatomy and severity. Our doctor creates targeted step-by-step milestones to ensure safe return to full activity.
                           </p>
                         )}
@@ -504,7 +504,7 @@ export const BodyExplorer: React.FC<BodyExplorerProps> = ({ onBookClick }) => {
                   })}
                 </div>
               </div>
-              <div className="pt-3 mt-2 border-t border-zinc-100 text-[11px] text-zinc-400 text-center">
+              <div className="pt-3 mt-2 border-t border-[#EAD9B7]/50 text-[11px] text-[#65594B]/70 text-center">
                 Have specific questions? Call our clinic directly.
               </div>
             </div>

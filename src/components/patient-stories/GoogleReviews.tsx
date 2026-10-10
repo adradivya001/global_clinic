@@ -68,19 +68,19 @@ export const GoogleReviews: React.FC = () => {
   )}`;
 
   return (
-    <section id="google-reviews" className="py-16 lg:py-24 bg-[#F4F7F4] relative overflow-hidden font-sans scroll-mt-20 border-t border-stone-200/80">
+    <section id="google-reviews" className="py-16 lg:py-24 bg-[#FAF4E8] relative overflow-hidden font-sans scroll-mt-20 border-t border-[#EAD9B7]/60">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F8EAC9] border border-[#EAD9B7] text-[#B87908] font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-xs">
             <span>GOOGLE REVIEWS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15] mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#24190F] tracking-tight leading-[1.15] mb-3">
             What Our Patients Say
           </h2>
 
-          <p className="text-stone-600 text-base leading-relaxed">
+          <p className="text-[#65594B] text-base leading-relaxed">
             Authentic experiences shared by patients through our Google Business Profile in Anantapur.
           </p>
         </div>
@@ -93,46 +93,46 @@ export const GoogleReviews: React.FC = () => {
             return (
               <div
                 key={review.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+                className="bg-white rounded-3xl p-6 sm:p-7 border border-[#EAD9B7] shadow-sm hover:shadow-xl hover:border-[#B87908] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Row: Reviewer Avatar + Name + Google Badge */}
                   <div className="flex items-center justify-between gap-3 mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-800 font-black text-sm flex items-center justify-center border border-emerald-200 shrink-0">
+                      <div className="w-10 h-10 rounded-2xl bg-[#F8EAC9] text-[#B87908] font-bold text-sm flex items-center justify-center border border-[#EAD9B7] shrink-0">
                         {initial}
                       </div>
                       <div>
-                        <h3 className="text-sm sm:text-base font-black text-stone-900 leading-snug">
+                        <h3 className="text-sm sm:text-base font-serif font-bold text-[#24190F] leading-snug">
                           {review.name}
                         </h3>
-                        <span className="text-[11px] font-semibold text-stone-400 block">
+                        <span className="text-[11px] font-semibold text-[#65594B]/70 block">
                           {review.date}
                         </span>
                       </div>
                     </div>
 
                     {/* Google Attribution Tag */}
-                    <div className="px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+                    <div className="px-2.5 py-1 rounded-lg bg-[#FAF4E8] border border-[#EAD9B7] text-[10px] font-bold uppercase tracking-wider text-[#B87908]">
                       Google
                     </div>
                   </div>
 
-                  {/* 5 Emerald Stars */}
-                  <div className="flex items-center gap-1 mb-4 text-emerald-600">
+                  {/* 5 Stars */}
+                  <div className="flex items-center gap-1 mb-4 text-[#D99B24]">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-emerald-600 stroke-none" />
+                      <Star key={i} className="w-4 h-4 fill-[#D99B24] stroke-none" />
                     ))}
                   </div>
 
                   {/* Review Text or Verified Rating Placeholder */}
                   {review.text ? (
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed whitespace-pre-line">
+                    <p className="text-xs sm:text-sm text-[#65594B] leading-relaxed whitespace-pre-line">
                       "{review.text}"
                     </p>
                   ) : (
-                    <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-dashed border-stone-200 text-center">
-                      <span className="text-xs font-semibold text-stone-500 italic">
+                    <div className="p-3 rounded-2xl bg-[#FAF4E8] border border-dashed border-[#EAD9B7] text-center">
+                      <span className="text-xs font-semibold text-[#65594B] italic">
                         Verified 5-Star Google Review
                       </span>
                     </div>
@@ -140,9 +140,9 @@ export const GoogleReviews: React.FC = () => {
                 </div>
 
                 {/* Bottom Source Tag */}
-                <div className="pt-4 mt-4 border-t border-stone-100 flex items-center justify-between text-[11px] font-semibold text-stone-400">
+                <div className="pt-4 mt-4 border-t border-[#EAD9B7]/50 flex items-center justify-between text-[11px] font-semibold text-[#65594B]">
                   <span>Verified Patient</span>
-                  <span className="text-emerald-800 font-bold">Google Business Profile</span>
+                  <span className="text-[#B87908] font-bold">Google Business Profile</span>
                 </div>
               </div>
             );
@@ -155,10 +155,10 @@ export const GoogleReviews: React.FC = () => {
             href={googleMapsReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-stone-300 hover:border-emerald-600 text-stone-900 font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all cursor-pointer group"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-[#EAD9B7] hover:border-[#B87908] text-[#24190F] font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all cursor-pointer group"
           >
             <span>View All Reviews on Google</span>
-            <ExternalLink className="w-3.5 h-3.5 text-emerald-700 group-hover:translate-x-0.5 transition-transform" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#B87908] group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
       </div>

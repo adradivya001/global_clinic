@@ -10,7 +10,7 @@ interface PatientStoriesPageProps {
 
 export const PatientStoriesPage: React.FC<PatientStoriesPageProps> = ({ onBookClick }) => {
   return (
-    <main className="min-h-screen bg-[#F7FAFD] text-[#07182D]">
+    <main className="min-h-screen bg-[#FFFDF8] text-[#24190F]">
       {/* 01. Patient Stories Hero */}
       <PatientStoriesHero onBookClick={onBookClick} />
 

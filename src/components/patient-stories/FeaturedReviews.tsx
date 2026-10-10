@@ -24,15 +24,15 @@ export const FeaturedReviews: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white relative overflow-hidden font-sans border-t border-stone-200/80">
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden font-sans border-t border-[#EAD9B7]/60">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-18">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F8EAC9] border border-[#EAD9B7] text-[#B87908] font-bold text-xs tracking-[0.2em] uppercase mb-4 shadow-xs">
             <span>FEATURED VOICES</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#24190F] tracking-tight leading-[1.15]">
             Experiences That Stand Out
           </h2>
         </div>
@@ -42,39 +42,39 @@ export const FeaturedReviews: React.FC = () => {
           {featured.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#FAF8F5] rounded-3xl p-8 border border-stone-200 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
+              className="bg-[#FAF4E8] rounded-3xl p-8 border border-[#EAD9B7] hover:border-[#B87908] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group"
             >
               <div>
                 {/* Top Row: Quote Icon & Stars */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 shadow-2xs">
+                  <div className="w-12 h-12 rounded-2xl bg-[#F8EAC9] border border-[#EAD9B7] flex items-center justify-center text-[#B87908] shadow-xs">
                     <Quote className="w-5 h-5" />
                   </div>
-                  <div className="flex items-center gap-1 text-emerald-600">
+                  <div className="flex items-center gap-1 text-[#D99B24]">
                     {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-emerald-600 stroke-none" />
+                      <Star key={i} className="w-4 h-4 fill-[#D99B24] stroke-none" />
                     ))}
                   </div>
                 </div>
 
                 {/* Review Text */}
-                <p className="text-stone-800 font-medium text-sm sm:text-base leading-relaxed mb-6 whitespace-pre-line">
+                <p className="text-[#24190F] font-medium text-sm sm:text-base leading-relaxed mb-6 whitespace-pre-line">
                   "{item.text}"
                 </p>
               </div>
 
               {/* Bottom Reviewer Info */}
-              <div className="pt-5 border-t border-stone-200 flex items-center justify-between">
+              <div className="pt-5 border-t border-[#EAD9B7] flex items-center justify-between">
                 <div>
-                  <h4 className="text-sm font-black text-stone-900">
+                  <h4 className="text-sm font-serif font-bold text-[#24190F]">
                     {item.name}
                   </h4>
-                  <span className="text-xs text-stone-500 font-medium">
+                  <span className="text-xs text-[#65594B] font-medium">
                     Google Review &bull; {item.date}
                   </span>
                 </div>
 
-                <span className="px-2.5 py-1 rounded-xl bg-white border border-stone-200 text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+                <span className="px-2.5 py-1 rounded-xl bg-white border border-[#EAD9B7] text-[10px] font-bold uppercase tracking-wider text-[#B87908]">
                   5.0 ★
                 </span>
               </div>
@@ -85,3 +85,4 @@ export const FeaturedReviews: React.FC = () => {
     </section>
   );
 };
+

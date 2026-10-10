@@ -35,16 +35,10 @@ export const NAV_FLOW_SECTIONS: NavSection[] = [
     badge: 'Facilities',
   },
   {
-    path: '/treatments',
-    title: 'Treatments & Modalities',
-    subtitle: 'Evidence-Based Therapies & Rehabilitation',
-    badge: 'Clinical Services',
-  },
-  {
-    path: '/conditions',
-    title: 'Conditions We Treat',
-    subtitle: 'Interactive Body Area Care & Common Ailments',
-    badge: 'Specialties',
+    path: '/services',
+    title: 'Clinical Services & Care',
+    subtitle: 'Evidence-Based Therapies, Modalities & Condition Care',
+    badge: 'Services',
   },
   {
     path: '/patient-journey',
@@ -151,36 +145,36 @@ export const NextSectionFlow: React.FC = () => {
   };
 
   return (
-    <div ref={containerRef} className="w-full bg-stone-900 text-white py-10 px-4 sm:px-8 border-t border-stone-800 relative overflow-hidden">
+    <div ref={containerRef} className="w-full bg-[#FAF4E8] text-[#24190F] py-10 px-4 sm:px-8 border-t border-[#EAD9B7] relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#F8EAC9]/60 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#FAF4E8]/80 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-8 relative z-10">
-        <div className="bg-stone-950/90 border border-stone-800 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div className="bg-[#FFFDF8] border border-[#EAD9B7] rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           {/* Left section: Guided Tour info */}
           <div className="space-y-2 max-w-xl">
             <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-700/40 text-emerald-300 font-bold uppercase tracking-wider">
-                <Compass className="w-3.5 h-3.5 text-emerald-400 animate-spin-slow" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF4E8] border border-[#EAD9B7] text-[#B87908] font-bold uppercase tracking-wider">
+                <Compass className="w-3.5 h-3.5 text-[#B87908] animate-spin-slow" />
                 Automatic Navbar Tour • Step {activeIndex + 1} of {NAV_FLOW_SECTIONS.length}
               </span>
-              <span className="text-stone-400 text-xs hidden sm:inline">
+              <span className="text-[#65594B] text-xs hidden sm:inline">
                 Scroll flow auto-navigates you through every section
               </span>
             </div>
 
             <div>
-              <div className="text-stone-300 text-xs font-semibold uppercase tracking-wider">
+              <div className="text-[#65594B] text-xs font-semibold uppercase tracking-wider">
                 Next Section in Flow:
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2 mt-0.5">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#24190F] flex items-center gap-2 mt-0.5">
                 <span>{nextSection.title}</span>
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-white/10 text-stone-300 font-normal">
+                <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#F8EAC9] text-[#B87908] font-medium border border-[#EAD9B7]">
                   {nextSection.badge}
                 </span>
               </h3>
-              <p className="text-stone-300 text-sm mt-1">
+              <p className="text-[#65594B] text-sm mt-1">
                 {nextSection.subtitle}
               </p>
             </div>
@@ -190,14 +184,14 @@ export const NextSectionFlow: React.FC = () => {
           <div className="w-full lg:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 shrink-0">
             {/* Countdown / Auto-Redirect Indicator */}
             <div className="flex flex-col gap-1.5 min-w-[200px]">
-              <div className="flex items-center justify-between text-xs text-stone-300 font-medium">
+              <div className="flex items-center justify-between text-xs text-[#65594B] font-medium">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#B87908]" />
                   {isPaused ? 'Auto-redirect paused' : `Redirecting in ${Math.max(0, Math.ceil((100 - progress) / (100 / COUNTDOWN_SECONDS)))}s...`}
                 </span>
                 <button
                   onClick={togglePause}
-                  className="text-xs text-emerald-400 hover:text-emerald-300 underline font-semibold flex items-center gap-1 cursor-pointer"
+                  className="text-xs text-[#B87908] hover:text-[#966205] underline font-semibold flex items-center gap-1 cursor-pointer"
                   title={isPaused ? 'Resume auto-redirect' : 'Pause auto-redirect'}
                 >
                   {isPaused ? (
@@ -213,12 +207,12 @@ export const NextSectionFlow: React.FC = () => {
               </div>
 
               {/* Progress bar */}
-              <div className="w-full h-2 rounded-full bg-stone-800 overflow-hidden border border-stone-700">
+              <div className="w-full h-2 rounded-full bg-[#FAF4E8] overflow-hidden border border-[#EAD9B7]">
                 <div
                   className={`h-full transition-all duration-75 rounded-full ${
                     isPaused
-                      ? 'bg-stone-600'
-                      : 'bg-gradient-to-r from-emerald-600 to-teal-500'
+                      ? 'bg-[#EAD9B7]'
+                      : 'bg-gradient-to-r from-[#B87908] to-[#D99B24]'
                   }`}
                   style={{ width: `${progress}%` }}
                 />
@@ -228,7 +222,7 @@ export const NextSectionFlow: React.FC = () => {
             {/* Jump button */}
             <button
               onClick={handleNavigateNow}
-              className="animate-blink-cta px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm tracking-wide flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap active:scale-95 transition-all shadow-lg shadow-emerald-900/30"
+              className="animate-blink-cta px-6 py-3.5 rounded-2xl bg-[#B87908] hover:bg-[#966205] text-white font-black text-sm tracking-wide flex items-center justify-center gap-3 cursor-pointer whitespace-nowrap active:scale-95 transition-all shadow-lg shadow-[#B87908]/20"
             >
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>

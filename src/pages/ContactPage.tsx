@@ -11,7 +11,7 @@ interface ContactPageProps {
 
 export const ContactPage: React.FC<ContactPageProps> = ({ onBookClick }) => {
   return (
-    <div className="w-full bg-[#F7FAFD] text-[#07182D] min-h-screen">
+    <div className="w-full bg-[#FFFDF8] text-[#24190F] min-h-screen">
       {/* 1. Contact Hero */}
       <ContactHero onBookClick={onBookClick} />
 

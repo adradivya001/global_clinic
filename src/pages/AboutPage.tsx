@@ -12,7 +12,7 @@ interface AboutPageProps {
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onBookClick }) => {
   return (
-    <main className="min-h-screen bg-white text-stone-900">
+    <main className="min-h-screen bg-[#FFFDF8] text-[#24190F]">
       {/* 01. About Hero */}
       <AboutHero onBookClick={onBookClick} />
 

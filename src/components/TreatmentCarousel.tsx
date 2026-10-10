@@ -14,8 +14,8 @@ const CAROUSEL_DATA = [
     title: 'Ortho Conditions',
     desc: 'Targeted joint mobilisations, spine decompression, disc herniation recovery, and post-fracture kinetic rehabilitation.',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
-    icon: <Activity className="w-5 h-5 text-emerald-600" />,
-    borderHover: 'hover:border-emerald-300 hover:shadow-emerald-500/15',
+    icon: <Activity className="w-5 h-5 text-[#B87908]" />,
+    borderHover: 'hover:border-[#B87908] hover:shadow-[#B87908]/15',
   },
   {
     id: '02',
@@ -24,8 +24,8 @@ const CAROUSEL_DATA = [
     title: 'Neuro Conditions',
     desc: 'Motor re-education, neuromuscular stimulation, stroke balance recovery, Parkinson’s support, and nerve pathway training.',
     image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
-    icon: <Zap className="w-5 h-5 text-teal-600" />,
-    borderHover: 'hover:border-teal-300 hover:shadow-teal-500/15',
+    icon: <Zap className="w-5 h-5 text-[#D99B24]" />,
+    borderHover: 'hover:border-[#D99B24] hover:shadow-[#D99B24]/15',
   },
   {
     id: '03',
@@ -34,8 +34,8 @@ const CAROUSEL_DATA = [
     title: 'Sports Injuries',
     desc: 'Ligament rehabilitation, rotator cuff therapy, tendon reconditioning, and progressive athletic return-to-sport programs.',
     image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80',
-    icon: <ShieldCheck className="w-5 h-5 text-orange-600" />,
-    borderHover: 'hover:border-orange-300 hover:shadow-orange-500/15',
+    icon: <ShieldCheck className="w-5 h-5 text-[#B87908]" />,
+    borderHover: 'hover:border-[#B87908] hover:shadow-[#B87908]/15',
   },
   {
     id: '04',
@@ -43,9 +43,9 @@ const CAROUSEL_DATA = [
     category: 'PEDIATRIC CARE',
     title: 'Pediatric Conditions',
     desc: 'Developmental milestone progression, neuromuscular motor training, torticollis support, and childhood gait optimization.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
-    icon: <Heart className="w-5 h-5 text-rose-600" />,
-    borderHover: 'hover:border-rose-300 hover:shadow-rose-500/15',
+    image: '/developmental_delay.png',
+    icon: <Heart className="w-5 h-5 text-[#D99B24]" />,
+    borderHover: 'hover:border-[#D99B24] hover:shadow-[#D99B24]/15',
   },
   {
     id: '05',
@@ -53,9 +53,9 @@ const CAROUSEL_DATA = [
     category: 'GERIATRIC CARE',
     title: 'Geriatric Conditions',
     desc: 'Fall prevention training, sarcopenia therapy, bone density support, and safe independent mobility for seniors.',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80',
-    icon: <Compass className="w-5 h-5 text-emerald-700" />,
-    borderHover: 'hover:border-emerald-300 hover:shadow-emerald-500/15',
+    image: '/balance_difficulties_fall_prevention.png',
+    icon: <Compass className="w-5 h-5 text-[#B87908]" />,
+    borderHover: 'hover:border-[#B87908] hover:shadow-[#B87908]/15',
   },
   {
     id: '06',
@@ -64,8 +64,8 @@ const CAROUSEL_DATA = [
     title: 'Neuro Rehabilitation',
     desc: 'Body-weight supported harness ambulation, spinal kinetic retraining, and comprehensive functional independence protocols.',
     image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800&q=80',
-    icon: <Sparkles className="w-5 h-5 text-stone-700" />,
-    borderHover: 'hover:border-stone-300 hover:shadow-stone-500/15',
+    icon: <Sparkles className="w-5 h-5 text-[#D99B24]" />,
+    borderHover: 'hover:border-[#D99B24] hover:shadow-[#D99B24]/15',
   }
 ];
 
@@ -111,12 +111,12 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
   };
 
   return (
-    <section id="treatments" className="py-16 lg:py-24 bg-gradient-to-b from-[#FBFBFA] via-[#F4F7F4] to-[#FBFBFA] relative overflow-hidden font-sans border-t border-stone-200/80">
+    <section id="treatments" className="py-16 lg:py-24 bg-gradient-to-b from-[#FFFDF8] via-[#FAF4E8] to-[#FFFDF8] relative overflow-hidden font-sans border-t border-[#EAD9B7]">
       
       {/* Background Soft Glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-10 w-[550px] h-[550px] bg-emerald-100/40 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-orange-100/30 rounded-full blur-[150px]" />
+        <div className="absolute top-0 right-10 w-[550px] h-[550px] bg-[#F8EAC9]/40 rounded-full blur-[140px]" />
+        <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-[#FAF4E8]/60 rounded-full blur-[150px]" />
       </div>
       
       {/* Content Container */}
@@ -125,14 +125,14 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-200/80 text-emerald-800 text-xs font-extrabold uppercase tracking-widest shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#EAD9B7] text-[#B87908] text-xs font-extrabold uppercase tracking-widest shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#B87908]" />
               <span>SPECIALIZED CLINICAL DOMAINS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#24190F] tracking-tight leading-tight">
               Clinical Treatment Departments
             </h2>
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed font-normal">
+            <p className="text-[#65594B] text-sm sm:text-base leading-relaxed font-normal">
               Evidence-guided physiotherapy targeting the root cause of functional limitation across 6 specialized clinical domains.
             </p>
           </div>
@@ -149,7 +149,7 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
                     scrollToIndex(i);
                   }}
                   className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeIndex === i ? 'w-8 bg-emerald-600' : 'w-2 bg-stone-200 hover:bg-stone-300'
+                    activeIndex === i ? 'w-8 bg-[#B87908]' : 'w-2 bg-[#EAD9B7] hover:bg-[#D99B24]'
                   }`}
                   aria-label={`Go to department ${i + 1}`}
                 />
@@ -157,17 +157,17 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex gap-2 pl-4 border-l border-stone-200">
+            <div className="flex gap-2 pl-4 border-l border-[#EAD9B7]">
               <button 
                 onClick={handlePrev} 
-                className="w-10 h-10 rounded-xl bg-white hover:bg-stone-100 border border-stone-200 text-stone-900 flex items-center justify-center transition-all cursor-pointer shadow-xs"
+                className="w-10 h-10 rounded-xl bg-white hover:bg-[#FAF4E8] border border-[#EAD9B7] text-[#24190F] flex items-center justify-center transition-all cursor-pointer shadow-xs"
                 aria-label="Previous Department"
               >
                 <ArrowLeft className="w-4 h-4" />
               </button>
               <button 
                 onClick={handleNext} 
-                className="w-10 h-10 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white flex items-center justify-center transition-all shadow-md shadow-emerald-700/20 cursor-pointer"
+                className="w-10 h-10 rounded-xl bg-[#B87908] hover:bg-[#966205] text-white flex items-center justify-center transition-all shadow-md shadow-[#B87908]/20 cursor-pointer"
                 aria-label="Next Department"
               >
                 <ArrowRight className="w-4 h-4" />
@@ -194,30 +194,30 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
                   onClick={() => navigate(`/services/${item.serviceId}`)}
                   className={`min-w-[85vw] sm:min-w-[340px] lg:min-w-[370px] rounded-3xl overflow-hidden relative cursor-pointer transition-all duration-400 flex flex-col justify-between snap-start bg-white border ${
                     isActive 
-                      ? 'border-emerald-600 shadow-xl shadow-emerald-700/15 -translate-y-2' 
-                      : `border-stone-200/90 ${item.borderHover} shadow-md shadow-stone-200/40 hover:-translate-y-1.5`
+                      ? 'border-[#B87908] shadow-xl shadow-[#B87908]/15 -translate-y-2' 
+                      : `border-[#EAD9B7] ${item.borderHover} shadow-md shadow-[#913d12]/5 hover:-translate-y-1.5`
                   }`}
                 >
                   {/* Image Frame */}
-                  <div className="relative h-52 overflow-hidden bg-stone-900">
+                  <div className="relative h-52 overflow-hidden bg-[#FAF4E8]">
                     <img 
                       src={item.image} 
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/25 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#24190F]/70 via-[#24190F]/20 to-transparent" />
                     
                     {/* Top Badges */}
                     <div className="absolute top-4 left-4 flex items-center gap-2">
-                      <span className="px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md border border-stone-200 text-stone-900 font-mono font-black text-xs shadow-xs">
+                      <span className="px-2.5 py-1 rounded-lg bg-white/95 backdrop-blur-md border border-[#EAD9B7] text-[#24190F] font-mono font-black text-xs shadow-xs">
                         #{item.id}
                       </span>
-                      <span className="px-2.5 py-1 rounded-lg bg-emerald-50 backdrop-blur-md border border-emerald-200 text-emerald-800 text-[10px] font-black uppercase tracking-wider shadow-xs">
+                      <span className="px-2.5 py-1 rounded-lg bg-[#FAF4E8] backdrop-blur-md border border-[#EAD9B7] text-[#B87908] text-[10px] font-black uppercase tracking-wider shadow-xs">
                         {item.category}
                       </span>
                     </div>
 
-                    <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 backdrop-blur-md border border-stone-200 flex items-center justify-center shadow-md">
+                    <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/95 backdrop-blur-md border border-[#EAD9B7] flex items-center justify-center shadow-md">
                       {item.icon}
                     </div>
                   </div>
@@ -225,18 +225,18 @@ export const TreatmentCarousel: React.FC<TreatmentCarouselProps> = ({ onBookClic
                   {/* Card Content Body */}
                   <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
                     <div>
-                      <h3 className="text-xl font-black text-stone-900 mb-2 tracking-wide">
+                      <h3 className="text-xl font-black text-[#24190F] mb-2 tracking-wide">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-[13px] text-stone-600 leading-relaxed font-normal">
+                      <p className="text-xs sm:text-[13px] text-[#65594B] leading-relaxed font-normal">
                         {item.desc}
                       </p>
                     </div>
 
                     {/* Bottom CTA Action */}
-                    <div className="pt-4 border-t border-stone-100 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-emerald-700 hover:text-emerald-900 transition-colors">
+                    <div className="pt-4 border-t border-[#EAD9B7]/50 flex items-center justify-between text-xs font-bold uppercase tracking-wider text-[#B87908] hover:text-[#966205] transition-colors">
                       <span>Explore Protocol</span>
-                      <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 flex items-center justify-center transition-all hover:bg-emerald-600 hover:text-white hover:border-emerald-600">
+                      <div className="w-8 h-8 rounded-full bg-[#FAF4E8] border border-[#EAD9B7] flex items-center justify-center transition-all hover:bg-[#B87908] hover:text-white hover:border-[#B87908]">
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>

@@ -25,7 +25,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onBookClick }) => {
   };
 
   return (
-    <main className="min-h-screen bg-white text-stone-900">
+    <main className="min-h-screen bg-[#FFFDF8] text-[#24190F]">
       {/* 01. Hero Section */}
       <Hero
         onBookClick={onBookClick}

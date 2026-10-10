@@ -1232,7 +1232,7 @@ export const CLINIC_SERVICES: ClinicService[] = [
     afterRehabGuidance: "Parents or caregivers may receive simple activities and exercises that can be incorporated into the child's daily routine. The physiotherapist can guide parents on safe movement practice and home activities.",
     ctaText: "Talk to our physiotherapist to understand how pediatric physiotherapy can support your child's movement and physical development.",
     iconType: 'Heart',
-    image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80',
+    image: '/developmental_delay.png',
     overview: "Pediatric physiotherapy supports children who experience difficulties with movement, balance, strength, coordination, posture, or physical development.",
     keyConditions: [
       'Delayed motor milestones',

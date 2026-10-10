@@ -129,27 +129,27 @@ export const PatientProgress: React.FC = () => {
   };
 
   return (
-    <section id="patient-progress" className="py-16 lg:py-24 bg-gradient-to-b from-[#FBFBFA] via-[#F4F7F4] to-[#FBFBFA] relative overflow-hidden font-sans select-none border-t border-stone-200/80">
+    <section id="patient-progress" className="py-16 lg:py-24 bg-gradient-to-b from-[#FFFDF8] via-[#FAF4E8] to-[#FFFDF8] relative overflow-hidden font-sans select-none border-t border-[#EAD9B7]">
       
       {/* Subtle Atmosphere Lighting */}
-      <div className="absolute top-0 right-10 w-[550px] h-[550px] bg-emerald-100/40 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-orange-100/30 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-10 w-[550px] h-[550px] bg-[#F8EAC9]/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-[#FAF4E8]/60 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1640px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-emerald-300/60 text-emerald-800 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#EAD9B7] text-[#B87908] text-xs font-extrabold uppercase tracking-widest mb-3 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#B87908]" />
               <span>Documented Recovery Outcomes</span>
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
-              Real Patients. <span className="bg-gradient-to-r from-emerald-700 via-teal-700 to-stone-900 bg-clip-text text-transparent">Documented Progress.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#24190F] tracking-tight leading-tight">
+              Real Patients. <span className="bg-gradient-to-r from-[#B87908] via-[#D99B24] to-[#24190F] bg-clip-text text-transparent">Documented Progress.</span>
             </h2>
             
-            <p className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-2xl mt-2 font-normal">
+            <p className="text-[#65594B] text-sm sm:text-base leading-relaxed max-w-2xl mt-2 font-normal">
               Explore patient recovery stories highlighting structural biomechanical restoration, measurable pain reduction, and active independence.
             </p>
           </div>
@@ -158,23 +158,23 @@ export const PatientProgress: React.FC = () => {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               to="/patient-stories"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-stone-200 hover:border-emerald-600 text-stone-900 hover:text-emerald-700 font-bold text-xs sm:text-sm shadow-xs transition-all group"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-[#EAD9B7] hover:border-[#B87908] text-[#24190F] hover:text-[#B87908] font-bold text-xs sm:text-sm shadow-xs transition-all group"
             >
               <span>Read Full Stories</span>
-              <ArrowRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#B87908] group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrevCard}
-                className="w-11 h-11 rounded-2xl bg-white border border-stone-200 text-stone-900 hover:bg-emerald-700 hover:text-white transition-all flex items-center justify-center shadow-xs cursor-pointer"
+                className="w-11 h-11 rounded-2xl bg-white border border-[#EAD9B7] text-[#24190F] hover:bg-[#B87908] hover:text-white hover:border-[#B87908] transition-all flex items-center justify-center shadow-xs cursor-pointer"
                 aria-label="Previous Story"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={handleNextCard}
-                className="w-11 h-11 rounded-2xl bg-white border border-stone-200 text-stone-900 hover:bg-emerald-700 hover:text-white transition-all flex items-center justify-center shadow-xs cursor-pointer"
+                className="w-11 h-11 rounded-2xl bg-white border border-[#EAD9B7] text-[#24190F] hover:bg-[#B87908] hover:text-white hover:border-[#B87908] transition-all flex items-center justify-center shadow-xs cursor-pointer"
                 aria-label="Next Story"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -186,9 +186,7 @@ export const PatientProgress: React.FC = () => {
         {/* Main 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* ========================================================
-              LEFT COLUMN (8 Cols) - PATIENT STORY CARDS CAROUSEL
-          ======================================================== */}
+          {/* LEFT COLUMN (8 Cols) - PATIENT STORY CARDS CAROUSEL */}
           <div 
             className="lg:col-span-8 overflow-hidden relative"
             onMouseEnter={() => setIsHovered(true)}
@@ -214,24 +212,24 @@ export const PatientProgress: React.FC = () => {
                     key={study.id}
                     className={`w-[320px] sm:w-[360px] shrink-0 rounded-3xl bg-white border transition-all duration-300 flex flex-col justify-between overflow-hidden ${
                       isActive 
-                        ? 'border-emerald-600 shadow-xl shadow-emerald-700/10 -translate-y-1.5' 
-                        : 'border-stone-200/90 shadow-md shadow-stone-200/30 hover:border-stone-300'
+                        ? 'border-[#B87908] shadow-xl shadow-[#B87908]/10 -translate-y-1.5' 
+                        : 'border-[#EAD9B7] shadow-md shadow-[#913d12]/5 hover:border-[#B87908]'
                     }`}
                     style={{ minHeight: '480px' }}
                   >
                     {/* Top Image Container */}
-                    <div className="relative h-48 w-full overflow-hidden group/img bg-stone-900">
+                    <div className="relative h-48 w-full overflow-hidden group/img bg-[#FAF4E8]">
                       <img
                         src={study.image}
                         alt={study.title}
                         className="w-full h-full object-cover transition-transform duration-600 ease-out group-hover/img:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#24190F]/80 via-[#24190F]/20 to-transparent" />
                       
                       {/* Floating Category Badge */}
                       <div className="absolute top-3.5 left-3.5 z-10">
-                        <span className="bg-white/95 backdrop-blur-md text-stone-900 rounded-full px-3 py-1.5 text-[10px] font-black tracking-wider uppercase border border-stone-200 shadow-xs flex items-center gap-1.5">
-                          <Activity className="w-3 h-3 text-emerald-600" />
+                        <span className="bg-white/95 backdrop-blur-md text-[#24190F] rounded-full px-3 py-1.5 text-[10px] font-black tracking-wider uppercase border border-[#EAD9B7] shadow-xs flex items-center gap-1.5">
+                          <Activity className="w-3 h-3 text-[#B87908]" />
                           <span>{study.categoryBadge}</span>
                         </span>
                       </div>
@@ -240,29 +238,29 @@ export const PatientProgress: React.FC = () => {
                     {/* Card Body */}
                     <div className="p-6 flex-1 flex flex-col justify-between">
                       <div>
-                        <span className="text-[10px] font-black tracking-widest text-emerald-700 uppercase mb-1 block">
+                        <span className="text-[10px] font-black tracking-widest text-[#B87908] uppercase mb-1 block">
                           CLINICAL CASE STUDY
                         </span>
-                        <h3 className="text-stone-900 text-xl font-black leading-snug mb-2">
+                        <h3 className="text-[#24190F] text-xl font-black leading-snug mb-2">
                           {study.title}
                         </h3>
-                        <p className="text-stone-600 text-xs sm:text-[13px] leading-relaxed mb-4">
+                        <p className="text-[#65594B] text-xs sm:text-[13px] leading-relaxed mb-4">
                           {study.summary}
                         </p>
                       </div>
 
                       {/* Before / After Progress Pill */}
-                      <div className="bg-stone-50 border border-stone-200/80 rounded-2xl p-3.5 mb-4 space-y-2 text-xs">
+                      <div className="bg-[#FAF4E8] border border-[#EAD9B7] rounded-2xl p-3.5 mb-4 space-y-2 text-xs">
                         <div className="flex items-center justify-between">
-                          <span className="text-stone-400 font-bold text-[10px] tracking-wider uppercase">INITIAL STATUS</span>
-                          <span className="text-stone-600 font-medium">{study.beforeText}</span>
+                          <span className="text-[#65594B]/70 font-bold text-[10px] tracking-wider uppercase">INITIAL STATUS</span>
+                          <span className="text-[#65594B] font-medium">{study.beforeText}</span>
                         </div>
-                        <div className="flex items-center justify-between font-bold pt-1.5 border-t border-stone-200/70">
-                          <span className="flex items-center gap-1 text-[10px] tracking-wider uppercase text-orange-700">
-                            <TrendingUp className="w-3.5 h-3.5 text-orange-600" />
+                        <div className="flex items-center justify-between font-bold pt-1.5 border-t border-[#EAD9B7]/70">
+                          <span className="flex items-center gap-1 text-[10px] tracking-wider uppercase text-[#B87908]">
+                            <TrendingUp className="w-3.5 h-3.5 text-[#B87908]" />
                             AFTER CARE
                           </span>
-                          <span className="text-stone-900">{study.afterText}</span>
+                          <span className="text-[#24190F]">{study.afterText}</span>
                         </div>
                       </div>
 
@@ -270,12 +268,12 @@ export const PatientProgress: React.FC = () => {
                       <div className="flex items-center justify-between gap-4 pt-1">
                         <div className="flex-1">
                           <div className="flex items-center justify-between text-[11px] font-bold mb-1.5">
-                            <span className="text-stone-400">RECOVERY METRIC</span>
-                            <span className="text-emerald-700 font-extrabold">{study.progressPercent}%</span>
+                            <span className="text-[#65594B]/70">RECOVERY METRIC</span>
+                            <span className="text-[#B87908] font-extrabold">{study.progressPercent}%</span>
                           </div>
-                          <div className="w-full h-2 bg-stone-100 rounded-full overflow-hidden">
+                          <div className="w-full h-2 bg-[#FAF4E8] rounded-full overflow-hidden border border-[#EAD9B7]/50">
                             <div
-                              className="h-full bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full transition-all duration-1000 ease-out"
+                              className="h-full bg-gradient-to-r from-[#B87908] to-[#D99B24] rounded-full transition-all duration-1000 ease-out"
                               style={{ width: `${study.progressPercent}%` }}
                             />
                           </div>
@@ -283,7 +281,7 @@ export const PatientProgress: React.FC = () => {
 
                         <button 
                           onClick={handleNextCard}
-                          className="w-10 h-10 rounded-2xl bg-stone-50 border border-stone-200 text-stone-900 hover:bg-emerald-700 hover:text-white hover:border-emerald-700 transition-all flex items-center justify-center shrink-0 shadow-xs cursor-pointer"
+                          className="w-10 h-10 rounded-2xl bg-[#FAF4E8] border border-[#EAD9B7] text-[#24190F] hover:bg-[#B87908] hover:text-white hover:border-[#B87908] transition-all flex items-center justify-center shrink-0 shadow-xs cursor-pointer"
                           aria-label="Next Case"
                         >
                           <ArrowRight className="w-4 h-4" />
@@ -301,36 +299,36 @@ export const PatientProgress: React.FC = () => {
               RIGHT COLUMN (4 Cols) - FEATURED LUXURY LIGHT TESTIMONIAL
           ======================================================== */}
           <div className="lg:col-span-4">
-            <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-emerald-50/70 via-white to-stone-50 p-7 sm:p-8 shadow-xl shadow-stone-300/30 text-stone-900 flex flex-col justify-between overflow-hidden border border-emerald-200/80 group min-h-[480px]">
+            <div className="relative w-full h-full rounded-3xl bg-gradient-to-br from-[#FAF4E8] via-white to-[#FFFDF8] p-7 sm:p-8 shadow-xl shadow-[#913d12]/5 text-[#24190F] flex flex-col justify-between overflow-hidden border border-[#EAD9B7] group min-h-[480px]">
               
               {/* Background Glow & Quote */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none" />
-              <Quote className="absolute top-6 right-6 w-16 h-16 text-emerald-600 opacity-20 pointer-events-none" strokeWidth={1} />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#F8EAC9]/40 rounded-full blur-3xl pointer-events-none" />
+              <Quote className="absolute top-6 right-6 w-16 h-16 text-[#B87908] opacity-20 pointer-events-none" strokeWidth={1} />
 
               {/* 5-Star Rating & Quote */}
               <div className="relative z-10">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(TESTIMONIALS[activeTestimonialIndex].rating || 5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-emerald-600 text-emerald-600" />
+                    <Star key={i} className="w-4 h-4 fill-[#B87908] text-[#B87908]" />
                   ))}
                 </div>
 
-                <p className="text-lg sm:text-xl font-bold leading-relaxed text-stone-900 tracking-tight mb-4">
+                <p className="text-lg sm:text-xl font-bold leading-relaxed text-[#24190F] tracking-tight mb-4">
                   "{TESTIMONIALS[activeTestimonialIndex].quote}"
                 </p>
               </div>
 
               {/* Patient Identity & Controls */}
               <div className="relative z-10">
-                <div className="flex items-center gap-3.5 pt-5 border-t border-stone-200/80 mb-6">
-                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-700 to-teal-800 flex items-center justify-center text-white font-extrabold text-sm shrink-0 border border-white/60 shadow-md">
+                <div className="flex items-center gap-3.5 pt-5 border-t border-[#EAD9B7]/80 mb-6">
+                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#B87908] to-[#D99B24] flex items-center justify-center text-white font-extrabold text-sm shrink-0 border border-white/60 shadow-md">
                     {TESTIMONIALS[activeTestimonialIndex].author ? TESTIMONIALS[activeTestimonialIndex].author.charAt(0) : 'P'}
                   </div>
                   <div>
-                    <h4 className="text-stone-900 text-base font-black leading-snug">
+                    <h4 className="text-[#24190F] text-base font-black leading-snug">
                       {TESTIMONIALS[activeTestimonialIndex].author}
                     </h4>
-                    <span className="text-orange-700 text-xs font-bold block mt-0.5">
+                    <span className="text-[#B87908] text-xs font-bold block mt-0.5">
                       {TESTIMONIALS[activeTestimonialIndex].condition}
                     </span>
                   </div>
@@ -344,7 +342,7 @@ export const PatientProgress: React.FC = () => {
                         key={i}
                         onClick={() => setActiveTestimonialIndex(i)}
                         className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          i === activeTestimonialIndex ? 'bg-emerald-700 w-6' : 'bg-stone-300 w-2'
+                          i === activeTestimonialIndex ? 'bg-[#B87908] w-6' : 'bg-[#EAD9B7] w-2'
                         }`}
                         aria-label={`Go to testimonial ${i + 1}`}
                       />
@@ -354,14 +352,14 @@ export const PatientProgress: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={handlePrevTestimonial}
-                      className="w-9 h-9 rounded-xl bg-white border border-stone-200 text-stone-900 hover:bg-emerald-700 hover:text-white transition-all flex items-center justify-center cursor-pointer shadow-xs"
+                      className="w-9 h-9 rounded-xl bg-white border border-[#EAD9B7] text-[#24190F] hover:bg-[#B87908] hover:text-white transition-all flex items-center justify-center cursor-pointer shadow-xs"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft className="w-4 h-4" />
                     </button>
                     <button
                       onClick={handleNextTestimonial}
-                      className="w-9 h-9 rounded-xl bg-white border border-stone-200 text-stone-900 hover:bg-emerald-700 hover:text-white transition-all flex items-center justify-center cursor-pointer shadow-xs"
+                      className="w-9 h-9 rounded-xl bg-white border border-[#EAD9B7] text-[#24190F] hover:bg-[#B87908] hover:text-white transition-all flex items-center justify-center cursor-pointer shadow-xs"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight className="w-4 h-4" />

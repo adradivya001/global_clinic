@@ -10,7 +10,7 @@ interface ClinicPageProps {
 
 export const ClinicPage: React.FC<ClinicPageProps> = ({ onBookClick }) => {
   return (
-    <div className="w-full bg-[#F7FAFD] text-[#07182D] min-h-screen">
+    <div className="w-full bg-[#FFFDF8] text-[#24190F] min-h-screen">
       {/* 01. Clinic Hero */}
       <ClinicHero onBookClick={onBookClick} />
 

@@ -69,7 +69,7 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
         'Thoracic mobility & chest opener protocols',
         'Kinetic chain alignment for everyday ease',
       ],
-      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1000&q=80',
+      image: '/images/conditions/back-pain.png',
       imageLeft: true,
     },
     {
@@ -88,19 +88,19 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#FBFBFA] relative overflow-hidden font-sans border-t border-stone-200/80">
+    <section className="py-20 lg:py-28 bg-[#FFFDF8] relative overflow-hidden font-sans border-t border-[#EAD9B7]">
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <div className="w-8 h-[2px] bg-emerald-600" />
-            <span className="text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase">
+            <div className="w-8 h-[2px] bg-[#B87908]" />
+            <span className="text-[#B87908] font-bold text-xs tracking-[0.2em] uppercase">
               FEATURED AREAS
             </span>
-            <div className="w-8 h-[2px] bg-emerald-600" />
+            <div className="w-8 h-[2px] bg-[#B87908]" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-[1.15]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#24190F] tracking-tight leading-[1.15] font-serif">
             Focused Care For The Way You Move.
           </h2>
         </div>
@@ -118,13 +118,13 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
                   item.imageLeft ? 'lg:order-1' : 'lg:order-2'
                 }`}
               >
-                <div className="relative rounded-[24px] overflow-hidden border border-stone-200 shadow-lg shadow-stone-300/30 bg-stone-900 group">
+                <div className="relative rounded-[24px] overflow-hidden border border-[#EAD9B7] shadow-lg shadow-[#5B3D12]/5 bg-[#FAF4E8] group">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-[360px] sm:h-[420px] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#24190F]/40 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
 
@@ -135,15 +135,15 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
                 }`}
               >
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-800 block mb-2">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#B87908] block mb-2">
                     {item.eyebrow}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-stone-900 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#24190F] tracking-tight font-serif">
                     {item.title}
                   </h3>
                 </div>
 
-                <p className="text-stone-600 text-base sm:text-lg leading-relaxed">
+                <p className="text-[#65594B] text-base sm:text-lg leading-relaxed">
                   {item.desc}
                 </p>
 
@@ -151,8 +151,8 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
                 <ul className="space-y-2.5 pt-2">
                   {item.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span className="text-sm sm:text-base text-stone-800 font-medium leading-snug">
+                      <CheckCircle2 className="w-5 h-5 text-[#B87908] shrink-0 mt-0.5" />
+                      <span className="text-sm sm:text-base text-[#24190F] font-medium leading-snug">
                         {point}
                       </span>
                     </li>
@@ -163,10 +163,10 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
                 <div className="pt-3">
                   <button
                     onClick={onBookClick}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-md transition-all hover:gap-3 cursor-pointer group"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#B87908] to-[#D99B24] hover:from-[#A06806] hover:to-[#C48A1D] text-white font-bold text-sm shadow-md shadow-[#B87908]/20 transition-all hover:gap-3 cursor-pointer group"
                   >
                     <span>Book for {item.title}</span>
-                    <ArrowRight className="w-4 h-4 text-emerald-200 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#F8EAC9] group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </div>
               </div>
@@ -177,3 +177,4 @@ export const FeaturedTreatments: React.FC<FeaturedTreatmentsProps> = ({ onBookCl
     </section>
   );
 };
+

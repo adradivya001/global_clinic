@@ -36,21 +36,21 @@ export const TreatmentMethods: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden font-sans text-stone-900 border-t border-stone-200/80">
+    <section className="py-20 lg:py-28 bg-[#FFFDF8] relative overflow-hidden font-sans text-[#24190F] border-t border-[#EAD9B7]">
       {/* Background Ambience */}
-      <div className="absolute top-10 left-10 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-100/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 left-10 w-96 h-96 bg-[#F8EAC9]/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#FAF4E8]/60 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 backdrop-blur-md mb-4 text-emerald-800 font-bold text-xs tracking-[0.2em] uppercase shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FAF4E8] border border-[#EAD9B7] backdrop-blur-md mb-4 text-[#B87908] font-bold text-xs tracking-[0.2em] uppercase shadow-xs">
             THERAPEUTIC MODALITIES
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 tracking-tight leading-[1.15] mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#24190F] tracking-tight leading-[1.15] mb-4 font-serif">
             Treatment Methods
           </h2>
-          <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#65594B] text-sm sm:text-base leading-relaxed">
             Evidence-backed physical therapy techniques combined to support targeted, safe, and progressive rehabilitation.
           </p>
         </div>
@@ -62,23 +62,23 @@ export const TreatmentMethods: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-[#FBFBFA] border border-stone-200/90 hover:border-emerald-600/40 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl shadow-stone-200/30 flex flex-col justify-between group"
+                className="bg-white border border-[#EAD9B7] hover:border-[#B87908]/40 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl shadow-[#5B3D12]/5 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-6 group-hover:scale-110 group-hover:bg-emerald-700 group-hover:text-white transition-all">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAF4E8] border border-[#EAD9B7] flex items-center justify-center text-[#B87908] mb-6 group-hover:scale-110 group-hover:bg-[#B87908] group-hover:text-white transition-all">
                     <IconComponent className="w-6 h-6 stroke-[2]" />
                   </div>
 
-                  <h3 className="text-lg font-bold text-stone-900 mb-3">
+                  <h3 className="text-lg font-bold text-[#24190F] mb-3">
                     {method.title}
                   </h3>
 
-                  <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-[#65594B] text-xs sm:text-sm leading-relaxed">
                     {method.desc}
                   </p>
                 </div>
 
-                <div className="w-8 h-[2px] bg-stone-200 group-hover:w-full group-hover:bg-emerald-600 transition-all duration-500 mt-6" />
+                <div className="w-8 h-[2px] bg-[#EAD9B7] group-hover:w-full group-hover:bg-[#B87908] transition-all duration-500 mt-6" />
               </div>
             );
           })}
@@ -87,3 +87,4 @@ export const TreatmentMethods: React.FC = () => {
     </section>
   );
 };
+
